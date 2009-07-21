@@ -1,0 +1,11 @@
+<%= page_title 'Category Organizer' %>
+
+<ul>
+	<% for category in @categories_alphabetically %>
+		<li>
+			<%= link_to category.name, category %> 
+			<%= link_to 'merge', :controller => 'category_organizer', :action => 'merge', :id => category.id %>
+			<%= link_to 'delete', {:controller => 'category_organizer', :action => 'delete', :id => category.id}, :confirm => 'Are you sure you want to delete category: ' + category.name   %>
+		</li>
+	<% end %>
+</ul>

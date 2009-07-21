@@ -1,0 +1,20 @@
+<div class="categoryShow">
+	<div class="sectionHeading">
+		<%= page_title "Article related to '#{@category.name.capitalize_each_word}'"%>
+	</div>
+	<div class="moreInformation">
+	</div>
+	
+	<div class="feedItems">
+		<% @feed_items.each{ |feedItem| %>
+			<%= render :partial => 'shared/feed_item_wide', :locals => {:feedItem => feedItem} %>	
+		<% } %>
+	</div>
+	
+	<div class="pagination">
+		<%= will_paginate @feed_items %>
+	</div>
+	
+	<%= render :partial => 'shared/show_comments', :locals => { :comments => @category.comments } %>
+	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/category_comment', :commented_item => @category }%>
+</div>

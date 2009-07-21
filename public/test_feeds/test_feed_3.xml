@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="/css/rss20.xsl" type="text/xsl"?>
+<rss xmlns:pheedo="http://www.pheedo.com/namespace/pheedo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+	<channel>
+		<title>NYT &gt; Small Business</title>
+		<link>http://www.nytimes.com/pages/business/smallbusiness/index.html?partner=rss</link>
+		<atom:link rel="self" type="application/rss+xml" href="http://www.nytimes.com/services/xml/rss/nyt/SmallBusiness.xml"/>
+		<description/>
+
+		<language>en-us</language>
+		<copyright>Copyright 2009
+ The New York Times Company</copyright>
+		<lastBuildDate>Sun, 19 Apr 2009 23:25:28 GMT
+</lastBuildDate>
+		<image>
+			<title>NYT &gt; Small Business</title>
+			<url>http://graphics.nytimes.com/images/section/NytSectionHeader.gif</url>
+
+			<link>http://www.nytimes.com/pages/business/smallbusiness/index.html?partner=rss</link>
+		</image>
+		<item>
+			<title>From High-Finance Pinnacles to Unemployment Line to Mentors</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=dda06e9c24f31250bac78a449b809c40</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/17/nyregion/17startups.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/17/nyregion/17startups.html</guid>
+			<description>To prevent an exodus of Masters of the Universe, also known as unemployed financiers, New York City officials decided to train them to advise small businesses.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=dda06e9c24f31250bac78a449b809c40&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=dda06e9c24f31250bac78a449b809c40&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By PATRICK McGEEHAN</dc:creator>
+			<pubDate>Fri, 17 Apr 2009 07:03:24 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Unemployment</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Volunteers</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Start-ups</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Economic Development Corporation</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Mentors</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Layoffs and Job Reductions</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Entrepreneurship</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">State University of New York</category>
+		</item>
+
+		<item>
+			<title>After the Bank Failure Comes the Debt Collector</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=aeea8fa82c1da6beb6dc238807e6a04c</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/17/business/smallbusiness/17debt.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/17/business/smallbusiness/17debt.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/04/17/business/smallbusiness/17debt.75.jpg" medium="image" height="75" width="75"/>
+
+			<media:description>Robert and Katherine Shoulders borrowed $10 million to add a spa, preschool, tennis courts and more to the Fayetteville Athletic Club in Arkansas.</media:description>
+			<media:credit>Mark Schiefelbein for The New York Times</media:credit>
+			<description>Some small-business owners are in peril of foreclosure after their loans, once held by banks that have since failed, were bought by junk-loan buyers intent on collecting either the cash or the collateral.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=aeea8fa82c1da6beb6dc238807e6a04c&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=aeea8fa82c1da6beb6dc238807e6a04c&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By ERIC LIPTON</dc:creator>
+			<pubDate>Fri, 17 Apr 2009 07:21:17 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Credit</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Banks and Banking</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Foreclosures</category>
+
+		</item>
+		<item>
+			<title>Entrepreneurial Edge: The Local Insurance Agency Hustles in a Slump</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=d0e50622d96ce62f6a3c098ac208db0f</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/16/business/smallbusiness/16edge.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/16/business/smallbusiness/16edge.html</guid>
+
+			<description>Smaller agencies are facing competition from big agencies and the need to adjust what they offer to small businesses.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=d0e50622d96ce62f6a3c098ac208db0f&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=d0e50622d96ce62f6a3c098ac208db0f&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By JAMES FLANIGAN</dc:creator>
+			<pubDate>Thu, 16 Apr 2009 07:18:04 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Insurance</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+		</item>
+
+		<item>
+			<title>Tool Kit: Dealing With Recession-Related Stress</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=367112982e4ce4cd9b85320963e20af9</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/14/business/smallbusiness/14toolkit.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/14/business/smallbusiness/14toolkit.html</guid>
+			<description>Small-business owners can help themselves and their employees deal with stress by keeping the workplace well organized and paying attention to their health.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=367112982e4ce4cd9b85320963e20af9&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=367112982e4ce4cd9b85320963e20af9&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By PAUL B. BROWN</dc:creator>
+			<pubDate>Wed, 15 Apr 2009 02:15:05 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Stress (Human)</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+
+		</item>
+		<item>
+			<title>In the Hunt: Tapping Business Skills That Already Exist</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=312a55ec29d3b112703067656fb8055e</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/09/business/smallbusiness/09hunt.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/09/business/smallbusiness/09hunt.html</guid>
+
+			<media:content url="http://graphics8.nytimes.com/images/2009/04/09/business/smallbusiness/09hunt.75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Donna Young, shopping at a department store in Portsmouth, N.H., will resell what she buys at her store in the Bahamas.</media:description>
+			<media:credit>Herb Swanson for The New York Times</media:credit>
+			<description>Culture shock in New England activated Donna Young&#x2019;s latent entrepreneurial skills, and now she runs a business taking upscale women&#x2019;s clothes to sell in her native Bahamas.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=312a55ec29d3b112703067656fb8055e&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=312a55ec29d3b112703067656fb8055e&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By BRENT BOWERS</dc:creator>
+			<pubDate>Thu, 09 Apr 2009 04:57:09 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Entrepreneurship</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+		</item>
+		<item>
+
+			<title>Yelp Will Let Businesses Respond to Web Reviews</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=7c9bcfe2bc407bdba07f4bc226850580</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/10/technology/internet/10yelp.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/10/technology/internet/10yelp.html</guid>
+			<description>The move is a big change for the site, which has until now steadfastly refused to give businesses significant access to its pages.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=7c9bcfe2bc407bdba07f4bc226850580&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=7c9bcfe2bc407bdba07f4bc226850580&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By CLAIRE CAIN MILLER</dc:creator>
+			<pubDate>Fri, 10 Apr 2009 14:40:36 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Yelp</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+		</item>
+
+		<item>
+			<title>Wealth Matters: Who Gets Hit When the Wealthy Cut Back</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=50a7b175bc75f8e4b06013f2e166df76</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/04/your-money/04wealth.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/04/your-money/04wealth.html</guid>
+			<description>Feeling the effects of the economic downturn, owners of million-dollar homes have been passing the pain on to landscapers.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=50a7b175bc75f8e4b06013f2e166df76&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=50a7b175bc75f8e4b06013f2e166df76&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By PAUL SULLIVAN</dc:creator>
+			<pubDate>Sat, 04 Apr 2009 21:02:54 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Layoffs and Job Reductions</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">High Net Worth Individuals</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Landscaping</category>
+
+		</item>
+		<item>
+			<title>Small Medical Companies, a Font of Innovation, Are Feeling Recession&#x2019;s Pinch</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=014146421aa5d6694d3ccc0a49b933eb</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/04/02/business/smallbusiness/02sbiz.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/04/02/business/smallbusiness/02sbiz.html</guid>
+
+			<media:content url="http://graphics8.nytimes.com/images/2009/04/02/business/02sbiz.75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Steven Nakishige, left, president of InfraReDx, which makes cardiac diagnostic tools, and James Muller, its chief executive.</media:description>
+			<media:credit>Jodi Hilton for The New York Times</media:credit>
+			<description>Small companies are at the heart of creating new health care technologies, and the jobs that follow, but financing is getting hard to come by.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=014146421aa5d6694d3ccc0a49b933eb&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=014146421aa5d6694d3ccc0a49b933eb&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By BARNABY J. FEDER</dc:creator>
+			<pubDate>Thu, 02 Apr 2009 05:49:45 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Medicine and Health</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Recession and Depression</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Layoffs and Job Reductions</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+		</item>
+		<item>
+			<title>NYC: Amid Swaths of Greed, Pockets of Benevolence</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=3d17a6c76d0204b007b26776e5b0a2c7</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/03/31/nyregion/31nyc.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+
+			<guid isPermaLink="false">http://www.nytimes.com/2009/03/31/nyregion/31nyc.html</guid>
+			<description>From Greenwich Village to the Upper East Side, businesses are helping the people who need jobs and the victims of Bernard L. Madoff.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=3d17a6c76d0204b007b26776e5b0a2c7&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=3d17a6c76d0204b007b26776e5b0a2c7&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By CLYDE HABERMAN</dc:creator>
+			<pubDate>Tue, 31 Mar 2009 06:35:49 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">New York City</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Unemployment</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Discount Selling</category>
+		</item>
+		<item>
+			<title>Tool Kit: Nothing is Set in Stone, So Renegotiate</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=7cd71fbc907e523d06183ce3b776fe99</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/03/28/business/smallbusiness/28toolkit.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+
+			<guid isPermaLink="false">http://www.nytimes.com/2009/03/28/business/smallbusiness/28toolkit.html</guid>
+			<description>With the economic downturn continuing, consider every business arrangement in play.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=7cd71fbc907e523d06183ce3b776fe99&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=7cd71fbc907e523d06183ce3b776fe99&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By PAUL B. BROWN</dc:creator>
+			<pubDate>Sat, 28 Mar 2009 06:57:45 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Recession and Depression</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Renting and Leasing</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Housing and Real Estate</category>
+
+		</item>
+		<item>
+			<title>Forging a Hot Link to the Farmer Who Grows the Food</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=4408d79d586e568ef98330b2a50059e1</link>
+			<pheedo:origLink>http://www.nytimes.com/2009/03/28/technology/internet/28farmer.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2009/03/28/technology/internet/28farmer.html</guid>
+
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/28/technology/internet/27farmer.75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Fred Fleming, a Washington State wheat farmer, is a &#x201C;face behind your flour&#x201D; on a Web site created by Stone-Buhr flour.</media:description>
+			<media:credit/>
+			<description>A flour miller in Washington State turns to the Internet to revive once-strong ties between consumers and farmers.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://www.pheedo.com/click.phdo?s=4408d79d586e568ef98330b2a50059e1&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://www.pheedo.com/img.phdo?s=4408d79d586e568ef98330b2a50059e1&amp;p=1&quot;/&gt;&lt;/a&gt;
+
+</description>
+			<dc:creator>By BRAD STONE and MATT RICHTEL</dc:creator>
+			<pubDate>Mon, 30 Mar 2009 03:26:04 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Food</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_keyword">traceability</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Computers and the Internet</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Agriculture</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Local Food</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Stone-Buhr</category>
+		</item>
+		<item>
+			<title>There&#x2019;s Safety in Military Contracts</title>
+			<link>http://www.nytimes.com/2009/03/26/business/smallbusiness/26sbiz.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/26/business/smallbusiness/26sbiz.html</guid>
+			<description>It&#x2019;s not easy to break in, but the Defense Department awards $55 billion of its contracts to small businesses, and the Obama stimulus plan will make even more money available.</description>
+			<dc:creator>By KATE MURPHY</dc:creator>
+			<pubDate>Thu, 26 Mar 2009 05:56:37 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Defense Contracts</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Obama, Barack</category>
+		</item>
+		<item>
+			<title>Japan&#x2019;s Small Exporters Are Hit Hardest</title>
+			<link>http://www.nytimes.com/2009/03/26/business/worldbusiness/26exports.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/26/business/worldbusiness/26exports.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/26/business/26exports1.75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Koki Kikuchi, left, and Masanori Kikuchi have little to keep them busy at a factory in Saitama, Japan.</media:description>
+			<media:credit>Ayumi Nakanishi for The New York Times</media:credit>
+			<description>Small firms, withering in the downturn, employ almost 90 percent of workers in Japan&#x2019;s manufacturing sector.</description>
+			<dc:creator>By HIROKO TABUCHI</dc:creator>
+
+			<pubDate>Thu, 26 Mar 2009 05:43:52 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Japan</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+		</item>
+
+		<item>
+			<title>Recession Challenges Small Businesses</title>
+			<link>http://www.nytimes.com/2009/03/22/nyregion/22small.html?partner=rss&amp;emc=rss</link>
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/22/nyregion/22small.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/22/nyregion/22small.75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Wayne Sosin, the president of Worksman Cycels in Ozone Park, Queens, is one of the small business owners The New York Times has been tracking during the recession. </media:description>
+
+			<media:credit>Rob Bennett for The New York Times</media:credit>
+			<description>The persistent recession keeps a group of small-business owners worried, but with a glimmer of optimism.</description>
+			<dc:creator>By THE NEW YORK TIMES</dc:creator>
+			<pubDate>Sun, 22 Mar 2009 15:38:57 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">New York City</category>
+		</item>
+		<item>
+			<title>A Town Reborn Faces a New Threat</title>
+			<link>http://www.nytimes.com/2009/03/21/business/smallbusiness/21beacon.html?partner=rss&amp;emc=rss</link>
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/21/business/smallbusiness/21beacon.html</guid>
+
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/21/business/21beacon01-75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Beacon&#x2019;s small businesses are hurting from the recession.</media:description>
+			<media:credit>Tom White for The New York Times</media:credit>
+			<description>The recession has taken a heavy toll on the small businesses of Beacon, N.Y., a decade after a renewal attracted antique stores, restaurants and other shopkeepers.</description>
+			<dc:creator>By JODI RUDOREN</dc:creator>
+			<pubDate>Sat, 21 Mar 2009 05:21:21 GMT</pubDate>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Beacon (NY)</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Shopping and Retail</category>
+		</item>
+		<item>
+			<title>Entrepreneurial Edge: As Credit Cards Falter, the Cash Variety Gains Popularity</title>
+			<link>http://www.nytimes.com/2009/03/19/business/smallbusiness/19edge.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/19/business/smallbusiness/19edge.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/19/business/19edge.jpg" medium="image" height="75" width="75"/>
+			<media:description>Jerry R. Welch, chairman of nFinanSe, which services prepaid cards sold through Dollar General and Winn-Dixie stores.</media:description>
+			<media:credit>Laura Pedrick for The New York Times</media:credit>
+			<description>The economy&#x2019;s troubles have deepened the growth of cash cards, which act like portable checking accounts.</description>
+			<dc:creator>By JAMES FLANIGAN</dc:creator>
+
+			<pubDate>Thu, 19 Mar 2009 06:54:43 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Credit and Money Cards</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Shopping and Retail</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Banks and Banking</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Prices (Fares, Fees and Rates)</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Personal Finances</category>
+		</item>
+		<item>
+			<title>At Sports Events, a Media Company Finds a Growing Niche</title>
+			<link>http://www.nytimes.com/2009/03/17/business/smallbusiness/17arena.html?partner=rss&amp;emc=rss</link>
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/17/business/smallbusiness/17arena.html</guid>
+
+			<description>The economic tailspin has claimed many victims, including thousands of small companies. Arena Media Networks, a New York-based start-up, may be bucking the trend.</description>
+			<dc:creator>By KEN BELSON</dc:creator>
+			<pubDate>Tue, 17 Mar 2009 22:08:45 GMT</pubDate>
+		</item>
+		<item>
+			<title>Toolkit: How to Lead in Tough Times</title>
+			<link>http://www.nytimes.com/2009/03/17/business/smallbusiness/17toolkit.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/17/business/smallbusiness/17toolkit.html</guid>
+			<description>Avoid negativity and don&#x2019;t take your employees for granted.</description>
+			<dc:creator>By PAUL B. BROWN</dc:creator>
+			<pubDate>Tue, 17 Mar 2009 18:45:44 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Small Business</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Hiring and Promotion</category>
+		</item>
+		<item>
+			<title>Obama Acts to Aid Small Businesses</title>
+			<link>http://www.nytimes.com/2009/03/17/business/smallbusiness/17sbiz.html?partner=rss&amp;emc=rss</link>
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/17/business/smallbusiness/17sbiz.html</guid>
+
+			<description>The president unveiled a plan to reduce lending fees, ease the tax burden and increase bank liquidity to get credit rolling to small businesses.</description>
+			<dc:creator>By HELENE COOPER</dc:creator>
+			<pubDate>Tue, 17 Mar 2009 22:29:40 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Small Business</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Obama, Barack</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Obama Financial Stability Plan</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Subprime Mortgage Crisis</category>
+		</item>
+		<item>
+			<title>Getting in Sync, Electronically</title>
+			<link>http://www.nytimes.com/2009/03/17/business/smallbusiness/17meet.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/17/business/smallbusiness/17meet.html</guid>
+			<description>Web sites and software have made planning meeting simpler and quicker.</description>
+			<dc:creator>By DAVID STROM</dc:creator>
+			<pubDate>Wed, 18 Mar 2009 01:09:24 GMT</pubDate>
+		</item>
+		<item>
+			<title>Weary of Looking for Work, Some Create Their Own</title>
+
+			<link>http://www.nytimes.com/2009/03/14/technology/start-ups/14startup.html?partner=rss&amp;emc=rss</link>
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/14/technology/start-ups/14startup.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/14/business/14startup01-75.jpg" medium="image" height="75" width="75"/>
+			<media:description>Alex Andon with one of the jellyfish tanks he builds. He started his business after he was laid off.</media:description>
+			<media:credit>Jim Wilson/The New York Times</media:credit>
+			<description>Some laid-off workers are turning to their inner entrepreneur in what could be a boon for the economy.</description>
+
+			<dc:creator>By MATT RICHTEL and JENNA WORTHAM</dc:creator>
+			<pubDate>Mon, 16 Mar 2009 20:50:11 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Entrepreneurship</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">Start-ups</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Layoffs and Job Reductions</category>
+
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Unemployment</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+		</item>
+		<item>
+			<title>At Austin Meeting, Seeking Exposure for New Tech Products</title>
+			<link>http://www.nytimes.com/2009/03/16/technology/start-ups/16southwest.html?partner=rss&amp;emc=rss</link>
+
+			<guid isPermaLink="true">http://www.nytimes.com/2009/03/16/technology/start-ups/16southwest.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2009/03/16/business/16southwest.751.jpg" medium="image" height="75" width="75"/>
+			<media:description>John Otjen, left, and Jennifer Van Grove, gesturing, using new online services at the South by Southwest Interactive conference.</media:description>
+			<media:credit>Erin Trieb for The New York Times</media:credit>
+			<description>For the Web entrepreneur, the South by Southwest Interactive conference in Austin, Tex., can be pivotal in getting a nod from the technorati for a new product.</description>
+			<dc:creator>By JENNA WORTHAM</dc:creator>
+
+			<pubDate>Mon, 16 Mar 2009 14:35:59 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">South by Southwest Music and Media Conference</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/des">Entrepreneurship</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/mdes">New Models, Design and Products</category>
+			<category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Austin (Tex)</category>
+
+		</item>
+	</channel>
+</rss>

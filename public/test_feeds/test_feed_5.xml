@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+ <channel>
+  <title>People.com Celeb Photos</title>
+  <link>http://www.people.com/photos</link>
+  <description>Latest Celeb Photos from People.com</description>
+  <pubDate>Fri, 03 Jul 2009 16:22:20</pubDate>
+  <lastBuildDate>Fri, 03 Jul 2009 16:22:20</lastBuildDate>
+
+  <ttl>60</ttl>
+  <image>
+   <title>PEOPLE.com</title>
+   <url>http://www.people.com/people/static/xml/rss/people.png</url>
+   <link>http://www.people.com</link>
+   <width>120</width>
+
+   <height>60</height>
+  </image>
+  <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/people/photos" type="application/rss+xml" /><item>
+   <title><![CDATA[10 Best Celeb Quotes This Week]]></title>
+   <description>Mark gives Josh "quickie" family-planning advice, plus more from Taylor Swift, John Mayer and other stars&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/PdrE03nuw9g" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/PdrE03nuw9g/0,,20289233,00.html</link>
+   <pubDate>Fri, 03 Jul 2009 06:00:00 EDT</pubDate>
+
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/galleries/bestquotes/090713/mark-consuelos-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/galleries/bestquotes/090713/mark-consuelos-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords><![CDATA[Fergie, Josh Duhamel, Kelly Ripa, Mark Consuelos]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[Hector Vallenilla/Pacific Coast News; Devan/INF]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/gallery/0,,20289233,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[I Really Love My ...]]></title>
+   <description>Nicole's denim jacket! Britney's hot pink bag! See how to get the must-have items that celebs love to wear again and again &amp;#8211; for less!&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/8gwFtnWLb1Q" height="1" width="1"/&gt;</description>
+
+   <link>http://feedproxy.google.com/~r/people/photos/~3/8gwFtnWLb1Q/0,,20053264,00.html</link>
+   <pubDate>Fri, 03 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/stylewatch/irlm/090720/nicole-richie-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/stylewatch/irlm/090720/nicole-richie-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords />
+   <media:credit role="photographer"><![CDATA[Stefan/INF; INF; Limelight]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/stylewatch/gallery/0,,20053264,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+
+  <item>
+   <title><![CDATA[Exclusive Deals]]></title>
+   <description>Get star style for less with these discounts &amp;#8211; only for PEOPLE.com readers! &amp;#8211; on the hottest labels, including celeb favorites like LunaBoston.com, ShopGoldyn.com, MatikoShoes.com and more.&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/EiRxDpe68pU" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/EiRxDpe68pU/0,,20251032,00.html</link>
+   <pubDate>Fri, 03 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/stylewatch/exclusive_deals/090713/luna-boston-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/stylewatch/exclusive_deals/090713/luna-boston-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords />
+   <media:credit role="photographer"><![CDATA[Courtesy Lunaboston.com]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/stylewatch/gallery/0,,20251032,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[You Asked, We Found: Star Looks]]></title>
+   <description>We found the looks you can't stop talking about &amp;#8211; Leighton's floral dress! Lauren's strappy sandals! Get the scoop on where to buy them and how to get the looks for less.&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/Lus0Rxfj0ic" height="1" width="1"/&gt;</description>
+
+   <link>http://feedproxy.google.com/~r/people/photos/~3/Lus0Rxfj0ic/0,,20178816,00.html</link>
+   <pubDate>Fri, 03 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/stylewatch/youasked/090713/leighton-meester-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/stylewatch/youasked/090713/leighton-meester-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords><![CDATA[Leighton Meester]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[Jackson Lee/Splash News Online]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/stylewatch/gallery/0,,20178816,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+
+  <item>
+   <title><![CDATA[Jessica: Fantastic Blonde]]></title>
+   <description>Cali Caliente! Alba lets the sun shine down on her lighter locks. Plus: Brad Pitt, Rob Pattinson, Brad Paisley and more&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/X6W5wTeb7sM" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/X6W5wTeb7sM/0,,20289074,00.html</link>
+   <pubDate>Fri, 03 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/startracks/090713/jessica-alba-2150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/startracks/090713/jessica-alba-275.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+
+   <media:keywords><![CDATA[Jessica Alba]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[Ramey]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/gallery/0,,20289074,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[Kendra: A Real Wedding Belle]]></title>
+   <description>Take a look inside the former Playmate's fairytale wedding to NFL star Hank Baskett at the Playboy Mansion!&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/KAxpt7xqi-s" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/KAxpt7xqi-s/0,,20289276,00.html</link>
+
+   <pubDate>Thu, 02 Jul 2009 15:45:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/galleries/kwilkinson/kendra-wilkinson-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/galleries/kwilkinson/kendra-wilkinson-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords><![CDATA[Hank Baskett, Kendra Wilkinson]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[Elayne Lodge, © Playboy 2009]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/gallery/0,,20289276,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[Last Night's Look: Hit or Miss?]]></title>
+
+   <description>Vote on this week's styles Jessica Simpson, Rihanna and more stars! You decide &amp;#8211; are they fashionistas or flops?&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/H7ygTwMWC-A" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/H7ygTwMWC-A/0,,20288298,00.html</link>
+   <pubDate>Thu, 02 Jul 2009 11:15:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/stylewatch/hitormiss/090713/jessica-simpson-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/stylewatch/hitormiss/090713/jessica-simpson-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords />
+
+   <media:credit role="photographer"><![CDATA[UPI/Landov]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/stylewatch/gallery/0,,20288298,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[Halle &amp; Nahla: Pajama Jet Set]]></title>
+   <description>Berry's 15-month-old is ready for a nighttime takeoff at Los Angeles International Airport. Plus: Rihanna, Justin Timberlake and more&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/9l3g9HOF3uE" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/9l3g9HOF3uE/0,,20288919,00.html</link>
+   <pubDate>Thu, 02 Jul 2009 06:00:00 EDT</pubDate>
+
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/startracks/090713/halle-berry-2150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/startracks/090713/halle-berry-275.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords><![CDATA[Halle Berry]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[VT/SJ/Splash News Online]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/gallery/0,,20288919,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+  <item>
+   <title><![CDATA[Little Look-Alikes!]]></title>
+   <description>They've got big shoes to fill! Meet the women and men who impersonate music's biggest stars &amp;#8211; Britney, Lady Gaga and more&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/l3wlCl9b5J8" height="1" width="1"/&gt;</description>
+
+   <link>http://feedproxy.google.com/~r/people/photos/~3/l3wlCl9b5J8/0,,20288760,00.html</link>
+   <pubDate>Wed, 01 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/galleries/little-look-alikes/mini-britney-150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/galleries/little-look-alikes/mini-britney-75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords />
+   <media:credit role="photographer"><![CDATA[Maury Phillips/WireImage]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/gallery/0,,20288760,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+
+  <item>
+   <title><![CDATA[Beach Beauty Tips]]></title>
+   <description>When it comes to staying gorgeous &amp;#8211; from Kim's sunburn solution to being smooth like Audrina &amp;#8211; we've got the skinny on getting swimsuit-pretty for summer.&lt;img src="http://feeds.feedburner.com/~r/people/photos/~4/d0O0PNA-iy8" height="1" width="1"/&gt;</description>
+   <link>http://feedproxy.google.com/~r/people/photos/~3/d0O0PNA-iy8/0,,20288358,00.html</link>
+   <pubDate>Wed, 01 Jul 2009 06:00:00 EDT</pubDate>
+   <media:group><media:content url="http://img2.timeinc.net/people/i/2009/stylewatch/gallery/beach_patrol/090608/kim_kardashian150.jpg" type="image/jpeg" isDefault="true" expression="full" width="150" height="113" />
+
+   <media:thumbnail url="http://img2.timeinc.net/people/i/2009/stylewatch/gallery/beach_patrol/090608/kim_kardashian75.jpg" type="image/jpeg" isDefault="false" expression="sample" width="75" height="75" />
+   <media:keywords><![CDATA[Kim Kardashian]]></media:keywords>
+   <media:credit role="photographer"><![CDATA[SDFL/Prahl/Splash News Online]]></media:credit></media:group>
+  <feedburner:origLink>http://www.people.com/people/stylewatch/gallery/0,,20288358,00.html?xid=rss-latestphotos</feedburner:origLink></item>
+ </channel>
+</rss>

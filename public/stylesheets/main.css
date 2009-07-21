@@ -1,0 +1,144 @@
+/* Global styles */ 
+*                       { margin: 0px; padding: 0px; outline: none; font-family: Arial; }
+BODY                    { background: url("/images/background.jpg") #DCDCDC 0% 0% repeat-x scroll;}
+A IMG                   { border: 0px; }
+A:link 					{ color: #DF6900; text-decoration: none; }
+A:visited				{ color: #DF6900; text-decoration: none; }
+.sectionHeading         { text-align: center; }
+.clearBoth              { clear:both; }
+H1                      { padding-bottom: 5px; }
+
+.pagination                { padding-top: 8px; padding-right: 20px; text-align: right;       }
+.pagination              A { font-size: 16px;                                                }
+.pagination      A:visited { font-size: 16px;                                                }
+
+/* Layout styles */
+.header                 { margin: auto; width: 830px; height: 150px; position:relative; }
+.header IMG.logo        { position: absolute; left: 19px; top: 15px; }
+.header .motto          { position: absolute; left: 75px; top: 106px; color: white; font-size: 13px; }
+.header .menu           { position: absolute; left: 525px; top: 60px;}
+.header .menu IMG       { margin-left: -4px; }
+.header .search         { position: absolute; left: 562px; top: 98px;}
+.body                   { margin: auto; width: 830px; }
+.footer                 { margin: auto; width: 830px; height: 75px; border-top: 1px gray solid; 
+						  margin-top: 20px; padding-top: 5px; text-align: center; font-size: 13px; }
+.footer A               { font-size: 13px; }
+.footer A:VISITED       { font-size: 13px; }
+.centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
+.centerColumn                   { width: 650px; padding-top: 5px;}
+.rightHandList                  { width: 175px; }
+.rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
+								  background-color: #3D3DC3; color: #DF6900;}
+								
+/* Error Styling */
+.errorExplanation   { border: 4px red solid; background-color: #F44; margin: 0px 25px;}
+
+/* Feed item listing (WIDE)*/
+DIV.feedItemWide                   { text-align: left; padding: 10px 15px 10px 15px;     }
+.feedItemWide H4                   { float:left; font-size: 17px;                        }
+.feedItemWide .feedItemCreated     { padding-left: 15px; text-align: right;              }
+.feedItemWide .description         { clear: both; padding-left: 5px;                     }  
+.feedItemWide .description .source { font-size: 13px; padding-left: 5px;                 }
+.feedItemWide .description .comment{ font-size: 13px; padding-left: 5px;                 }
+.feedWide                          { padding-bottom: 10px;                               }
+
+/* Feed item show page. */
+.feedItemShow .leftColumn             { width: 150px;                                       }
+.feedItemShow .description            { padding: 10px 15px 10px 15px; vertical-align: top;  }
+.feedItemShow .description .fullArticle { padding-bottom: 25px; font-size: 24px;            }
+.feedItemShow .heading                { color: #3D3DC3; font-weight: bold; font-size: 19px; }
+.feedItemShow .categories UL		  { text-align:left; padding-left: 20px;                }
+.feedItemShow .categories LI A        { font-size: 14px;                                    }
+.feedItemShow TABLE.feedItemInfo      { width: 85%; margin: auto;                           }
+.feedItemShow .feedItemInfo TD        { border: 1px solid gray; padding: 1px;               }
+.feedItemShow TABLE.rating TD         { border: 0px; font-size: 12px; text-align: left;     }
+.feedItemShow TABLE.rating .total     { border-top: 4px black double; text-align: center;   }
+
+/* Feed show page */
+.feedShow .feedInfo                   { padding: 10px 0px; }
+.feedShow .title IMG                  { padding-top: 2px;  }
+.feedShow TABLE.feedInfo              { width: 95%; margin: auto; }
+.feedShow TABLE.feedInfo .leftColumn  { width: 125px; }
+.feedShow .whatIsThis                 { font-size: 11px; }
+.feedShow .feedInfo TD                { border: 1px solid gray; padding: 1px; }
+.feedShow UL						  { text-align:left; padding-left: 30px; }
+.feedShow H2                          { padding-top: 30px; }
+
+/* Feed index */
+.feedIndex H1                      { padding-bottom: 10px;}
+.feedIndex UL                      { text-align: left; padding-left: 25px; }
+.feedIndex .addAFeed               { text-align: right; padding-top: 20px; padding-right: 30px;}
+
+/* Category view */
+.categoryShow .feedItems UL        { list-style-type: none;}
+.categoryShow .feedItems LI        { padding-bottom: 4px;}
+
+/* Creating a comment */
+.addComment                     { text-align: left; background-color: #3D3DC3; width: 370px; margin: auto; margin-top: 30px;}
+.addComment .label				{ text-align: right; font-variant: small-caps; color: #DF6900; font-weight:bold; }
+.addComment H3					{ text-align: center; color: #FFF; background-color: #DFAB7D; padding: 5px 0; border: 3px solid #DF6900;}
+.addComment INPUT, .addComment TEXTAREA      { margin: 1px 0px;}
+.addComment .submit             { text-align: right;  }
+.addComment .submit INPUT       { height: 24px; width: 126px;}
+.addComment .body               { border: 3px solid #3D3DC3; background-color: #7F80FF; width: 364px; }
+
+/* Comment Listing */
+.showComments                   { width: 75%; margin: auto; text-align: left; border: 1px solid #000; margin-top: 20px; }
+.showComments H3                { text-align: center; color: #FFF; background-color: #DF6900; padding: 5px 0px; }
+.showComments .heading          { font-variant: small-caps; font-size: 12px; border-top: 1px solid #000; }
+.showComments .heading .title   { font-size: 20px; font-weight: bold; color: #DF6900; }
+.showComments .comment          { padding: 0px; background-color: #DF6900; padding: 15px 140px 15px 15px; 
+								  border-bottom: 1px solid #000; 
+								  background: #DF6900 url('/images/comment_right.gif') right repeat-y; }
+.showComments .left             { float: left; padding-top: 3px; padding-left: 10px; }
+.showComments .right            { float: right; background-color: #3D3DC3; padding:8px; color: #FFF; font-weight: bold; width: 104px;
+								  text-align: right;}
+.showComments .spacer           { height: 5px; background-color: #000;}
+
+
+/* Add a feed */
+.addFeed              { background-color: #DF6900; padding: 30px 30px 30px 30px; width: 60%; margin: auto; margin-top: 5px;}
+.addFeed P			  { padding-bottom: 10px;}
+
+/* User signup table */
+TABLE.userSignup      { margin: auto; margin-top: 10px;}
+TABLE.userSignup .rightAlign { text-align: right; }
+
+/* Widgets */
+.feedNarrow H4	          { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed;}
+.feedNarrow .noLine       { border-bottom: none; }
+.categoryNarrow H4        { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed; }
+.categoryNarrow .noLine   { border-bottom: none; }
+.mediaNarrow H4        { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed; }
+.mediaNarrow .noLine   { border-bottom: none; }
+
+/* Category index page */
+.categoryIndex               { text-align : left; padding-left: 40px; }
+
+/* Join us page */
+.joinUs                      { padding: 0px 10px 10px 10px; text-align: left;  }
+.joinUs H1                   { text-align: center;                             }
+.joinUs UL                   { padding-left: 30px; padding-bottom: 15px;       }
+.joinUs H3                   { padding-bottom: 3px;                            }
+.joinUs P                    { padding: 0px 15px 15px 15px;                    }
+
+/* How it all works */
+.howItAllWorks               { text-align: left; padding: 0px 10px 10px 10px; }
+.howItAllWorks P             { padding: 10px; }
+
+/* Media view page */
+.feedItemMedia TABLE TD      { padding: 5px; }
+
+/* Top small menu */
+.smallMenu                   { position: absolute; left: 450px; font-size: 14px; }
+.smallMenu LI                { display: inline; margin-right: 2px; background: #DCDCDC; 
+	                           padding: 2px 2px 1px 2px; border: 2px solid #3D3DC3;
+	 						   -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+	
+/* Sitemap */
+.siteMap                     { text-align: left;                              }
+.siteMap H2                  { padding-left: 20px;                            }
+.siteMap UL                  { padding-left: 45px; padding-bottom: 10px;      }
+
+/* Search Results */
+.searchResults               { width: 800px; }

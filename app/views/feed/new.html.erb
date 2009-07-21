@@ -1,0 +1,13 @@
+<h1>Add a Feed</h1>
+<%= error_messages_for :feed %>
+<div class="addFeed">
+	Simply type in the URL to the feed you want to add.  
+	<br />For example:
+	<pre>"http://www.somenewsplace.com/rss-feed.xml"</pre>
+	<br />
+	
+	<% form_for :feed, @feed, :url => { :action => 'create' } do |f| %>
+		<%= f.text_field :feedUrl %>
+		<%= submit_tag 'Add' %>
+	<% end %>
+</div>

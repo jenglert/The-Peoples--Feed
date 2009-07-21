@@ -1,0 +1,12 @@
+<div class="categoryIndex">
+	<%= page_title "View All Categories (Page #{@categories.current_page})" %>
+	<ul>
+		<% for category in @categories %>
+			<li><%= link_to category.name.capitalize, category%></li>
+		<% end %>
+	</ul>
+
+	<div class="pagination">
+		<%= will_paginate @categories %>
+	</div>
+</div>

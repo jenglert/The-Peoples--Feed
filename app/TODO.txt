@@ -1,0 +1,17 @@
+##
+## Things that need to get done.
+##
+
+1. Update the comments_count field on all the feed items.
+2. Update the items count all all the comments. (Possibly write a job to do this automatically.)
+3. Fix the validation issue for posting comments. We need to render the appropriate category view page if validation fails.
+4. Draw a picture for the how it works sections.  (News outlets -> TPF -> Consumers)
+5. Add hide category functionality
+6. Make top category list only take into account the past couple of days.
+7. Create an easier way to merge categories.
+8. Add stats to the view article section so that everyone can see why an article ranked the way it did
+9  Add bonus points for news articles that have textual descriptions.
+10. Make only wwww. work.
+11. Make the feed image parsing work.
+12. Fix the rating thing so that we only analyze feeds items that are less than 20 days old.
+13. Increase the width of the google banner

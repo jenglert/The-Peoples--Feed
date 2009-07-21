@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="false" type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="SHOULD_USE_RSPEC_PLUGIN" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="[gem] activeresource (v2.3.2, /Library/Ruby/Gems/1.8/gems/activeresource-2.3.2)" level="application" />
+    <orderEntry type="library" name="[gem] activesupport (v2.3.2, /Users/jimenglert/.gem/ruby/1.8/gems/activesupport-2.3.2)" level="application" />
+    <orderEntry type="library" name="[gem] rake (v0.8.4, /Library/Ruby/Gems/1.8/gems/rake-0.8.4)" level="application" />
+    <orderEntry type="library" name="[gem] activerecord (v2.3.2, /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2)" level="application" />
+    <orderEntry type="library" name="[gem] actionpack (v2.3.2, /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2)" level="application" />
+    <orderEntry type="library" name="[gem] rails (v2.3.2, /Library/Ruby/Gems/1.8/gems/rails-2.3.2)" level="application" />
+    <orderEntry type="library" name="[gem] actionmailer (v2.3.2, /Library/Ruby/Gems/1.8/gems/actionmailer-2.3.2)" level="application" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="0" />
+  </component>
+  <component name="RailsViewFoldersManager">
+    <USER_URLS url="file://$MODULE_DIR$/config" />
+    file://$MODULE_DIR$/config
+    <USER_URLS url="file://$MODULE_DIR$/public/stylesheets" />
+    file://$MODULE_DIR$/public/stylesheets
+    <USER_URLS url="file://$MODULE_DIR$/vendor/plugins" />
+    file://$MODULE_DIR$/vendor/plugins
+    <USER_URLS url="file://$MODULE_DIR$/lib" />
+    file://$MODULE_DIR$/lib
+    <USER_URLS url="file://$MODULE_DIR$/spec" />
+    file://$MODULE_DIR$/spec
+    <USER_URLS url="file://$MODULE_DIR$/public/javascripts" />
+    file://$MODULE_DIR$/public/javascripts
+    <USER_URLS url="file://$MODULE_DIR$/vendor/rails" />
+    file://$MODULE_DIR$/vendor/rails
+  </component>
+</module>
+

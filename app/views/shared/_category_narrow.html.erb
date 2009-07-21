@@ -1,0 +1,16 @@
+<% topCategories.each { |category| %>
+	<div class="categoryNarrow" >
+		<h4>
+			<% link_to category do%>
+				<%= category.name.capitalize %>
+			<% end %>
+		</h4>
+	</div>
+<% } %>
+<div class="categoryNarrow" >
+	<h4 class="noLine">
+		<% link_to :controller => 'category', :action => 'index' do%>
+			View All...
+		<% end %>
+	</h4>
+</div>

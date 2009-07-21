@@ -1,0 +1,16 @@
+<% topMedia.each { |feed_item| %>
+	<div class="mediaNarrow" >
+		<h4>
+			<% link_to feed_item do%>
+				<img src="<%= feed_item.image_url %>" alt="<%= feed_item.title %>" />
+			<% end %>
+		</h4>
+	</div>
+<% } %>
+<div class="mediaNarrow" >
+	<h4 class="noLine">
+		<% link_to :controller => "feed_item", :action => "media" do %>
+			View All ...
+		<% end %>
+	</h4>
+</div>

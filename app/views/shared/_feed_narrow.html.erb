@@ -1,0 +1,16 @@
+<% topFeeds.each { |feed| %>
+	<div class="feedNarrow" >
+		<h4>
+			<% link_to feed do%>
+				<%= feed.title %>
+			<% end %>
+		</h4>
+	</div>
+<% } %>
+<div class="feedNarrow" >
+	<h4 class="noLine">
+		<% link_to :controller => "Feed", :action => "index" do %>
+			View All ...
+		<% end %>
+	</h4>
+</div>

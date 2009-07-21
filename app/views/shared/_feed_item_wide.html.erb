@@ -1,0 +1,15 @@
+<div class="feedItemWide">
+	<h4>
+		<% link_to :controller => 'feed_item', :action => 'redir', :id => feedItem.id do%>
+			<%= truncate h(feedItem.title.fix_html), :length => 50, :omission => '...' %>
+		<% end %>
+	</h4>
+	<div class="feedItemCreated">
+		<%= feedItem.created_at.pretty%>
+	</div>
+	<div class="description">
+		<span class="source"><%= link_to feedItem.feed.title, feedItem.feed %>:</span>
+		<%= truncate h(feedItem.description.fix_html), :length => 360, :omission => "..."  %> 
+		<span class="comment"><%= link_to '(comment)', feedItem %></span>
+	</div>
+</div>

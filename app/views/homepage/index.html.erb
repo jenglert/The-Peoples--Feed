@@ -1,0 +1,6 @@
+<%= page_title 'Top News' %>
+<%= meta_description 'The latest news via RSS ranked by the popularity YOU determine.' %>
+<% @allFeeds.each { |feedItem| %>
+	<%= render :partial => 'shared/feed_item_wide', :locals => {:feedItem => feedItem} %>
+<% } %>
+

@@ -1,0 +1,18 @@
+<div class="feedItemMedia">
+	<table>
+	<% @feed_items.each_with_index do |feed_item, index| %>
+		<% if index % 4 == 0 %>
+			<tr>
+		<% end %>
+			<td>
+				<% link_to feed_item do %>
+					<%= image_tag feed_item.image_url%>
+					<%= feed_item.title %>
+				<% end %>
+			</td>
+		<% if (index % 4 == 3) or index == (@feed_items.length - 1) %>
+			</tr>
+		<% end %>
+	<% end %>
+	</table>
+</div>

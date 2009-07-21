@@ -1,0 +1,42 @@
+<%= page_title 'Join The People''s Feed'%>
+
+<%= error_messages_for :user %>
+<% form_for :user, :url => users_path do |f| -%>
+<table class="userSignup">
+	<tr>
+		<td class="rightAlign">
+			<label for="login">username:</label>
+		</td>
+		<td>
+			<%= f.text_field :login %>
+		</td>
+	</tr>
+	<tr>
+		<td class="rightAlign">
+			<label for="email">email:</label>
+		</td>
+		<td>	
+			<%= f.text_field :email %>
+		</td>
+	</tr>
+	<tr>
+		<td class="rightAlign">
+			<label for="password">password:</label>
+		</td>
+		<td>
+			<%= f.password_field :password %>
+		</td>	
+	</tr>
+	<tr>
+		<td class="rightAlign">
+			<label for="password_confirmation">confirm password:</label>
+		</td>
+		<td>	
+			<%= f.password_field :password_confirmation %>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2"><%= submit_tag 'Sign up' %></td>
+	</tr>
+</table>
+<% end -%>

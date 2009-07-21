@@ -1,0 +1,31 @@
+one:
+  id: 1
+  title: test feed item number 1
+  description: test feed item desc
+  clicks: 150
+  feed_id: 10000
+  created_at: <%= Time.now.to_s(:db) %>
+  
+two:
+  id: 2
+  title: test feed item number 2
+  description: test feed item desc
+  clicks: 100
+  feed_id: 10000
+  created_at: <%= Time.now.ago(40.days).to_s(:db) %>
+
+three:
+  id: 3
+  title: test feed item number 3
+  description: test feed item desc
+  clicks: 100
+  feed_id: 10000
+  created_at: <%= Time.now.ago(10.days).to_s(:db) %>
+  
+four:
+  id: 4
+  title: feed item 4 with a long description
+  description: thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234thisis1234
+  clicks: 0
+  feed_id: 10000
+  created_at: <%= Time.now.to_s(:db) %>  

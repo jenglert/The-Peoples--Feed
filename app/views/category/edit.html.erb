@@ -1,0 +1,23 @@
+<%- form_for :category do |f| -%>
+	<b>id:</b>
+	<%= @category.id %>
+	<%= f.hidden_field :id %>
+	
+	<br />
+	<b>name:</b>
+	<%= @category.name %>
+	<%= f.hidden_field :name %>
+	
+	<br />
+	<b>categories count:</b>
+	<%= @category.feed_item_categories_count %>
+	<%= f.hidden_field :feed_item_categories_count %>
+	
+	<br />
+	<b>visible:</b>
+	<%= f.check_box :visible %>
+	
+	<br />
+	<%= submit_tag 'submit' %>
+	
+<%- end -%>

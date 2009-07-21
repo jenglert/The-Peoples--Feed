@@ -1,0 +1,37 @@
+<div class="feedShow">
+	<table class="feedInfo">
+		<tr>
+			<td colspan="2" class="title">
+				<%= image_tag @feed.imageUrl if @feed.imageUrl %>
+				<%= page_title @feed.title + " RSS Feed" %>
+			</td>
+		</tr>
+		<tr>
+			<td class="leftColumn"><b>Last Updated:</b> <%= @feed.updated_at.pretty%></td>
+			<td><h2><%= @feed.description %></h2></td>
+		</tr>
+		<tr>
+			<td class="leftColumn"><%= @feed.feed_items.count.to_s + ' ' + 'Articles'.pluralize %></td>
+			<td>
+				<b>Rating: </b> <%= @feed.rating %>
+				<span class="whatIsThis">(what is this)</span>
+			</td>
+		</tr>
+	</table>
+
+	<%= render :partial => 'shared/show_comments', :locals => { :comments => @feed.comments } %>
+	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/feed_comment', :commented_item => @feed }%>
+
+	<h2>Articles From This Feed</h2>
+
+	<ul>
+		<% @feed_items.each { |item| %>
+			<li>
+				<%= link_to h(item.title.fix_html), item %>
+			</li>
+		<% } %>
+	</ul>
+	<div class="pagination">
+		<%= will_paginate @feed_items %>
+	</div>
+</div>

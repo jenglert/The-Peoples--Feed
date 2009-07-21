@@ -1,0 +1,19 @@
+<div class="categoriesToMerge">
+	<%= page_title 'Merging Categories'%>
+	
+	<h2>We are merging the "<%= @category_to_merge.name %>" category into the selected categories.</h2>
+	<p>
+		When you perform this operation, the above category will be removed from the system.  Any place where it was
+		linked to an item will be replaced with the selected checkboxes below.  In the future, any new articles with the above category 
+		will be assigned the new categories selected below.	
+	</p>
+	
+	<% form_tag '/category_organizer/submit_merge' do %>
+		<%= hidden_field_tag 'original_category_id', @category_to_merge.id %>
+		<% for other_category in @other_categories %>
+			<%= check_box 'categories', other_category.id %><%= other_category.name%>
+			<br />
+		<% end %>
+		<%= submit_tag 'merge' %>
+	<% end %>
+</div>

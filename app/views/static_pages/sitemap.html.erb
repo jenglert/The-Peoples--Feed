@@ -1,0 +1,23 @@
+<div class="siteMap">
+	<%= page_title "Sitemap - the map to The People's Feed" %>
+	
+	<h2>Contribute</h2>
+	<ul>
+		<li><%= link_to 'Information About Contributing', '/contribute'%></li>
+		<li><%= link_to 'Open Source Information', '/open-source'%></li>
+	</ul>
+	<h2>Use</h2>
+	<ul>
+		<li><%= link_to 'The most popular news articles', '/'%></li>
+		<li><%= link_to 'Categories - Complete list', :controller => 'category', :action => 'index'%></li>
+		<li><%= link_to 'RSS feeds we consume', :controller => 'feed', :action => 'index' %></li>
+		<li><%= link_to 'Recent pictures', :controller => 'feed_item', :action => 'media' %></li>
+		<li><%= link_to 'See all user comments', :controller => 'comment' %></li>
+		<li><%= link_to 'Privacy policy', '/privacy-policy' %></li>
+	</ul>
+	<h2>Promote</h2>
+	<ul>
+		<li><%= link_to 'Add your feed to our feeds', :controller=> 'feed', :action => 'new' %></li>
+		<li><%= link_to 'Advertise on TPF', '/advertise' %></li>
+	</ul>
+</div>

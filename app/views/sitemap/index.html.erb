@@ -1,0 +1,8 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% for item in @items %>
+   <url>
+      <loc><%= item.url %></loc>
+      <lastmod><%= item.created_at.utc.strftime("%Y-%m-%d") %></lastmod>
+   </url>
+<% end %>
+</urlset> 

@@ -1,0 +1,23 @@
+<% if comments.size > 0 %>
+	<div class="showComments">
+		<h3>Comments</h3>
+		<div class="spacer">
+		</div>
+		<% comments.reverse.each { |comment| %>
+			<div class="heading">
+				<div class="left">
+					<span class="title"><%= comment.title %></span> by <%= comment.name %>
+				</div>
+				<div class="right">
+					<%= comment.created_at.pretty%>
+				</div>
+				<div class="clearBoth"></div>
+			</div>
+			<div class="comment">
+				<%= comment.comment%>
+			</div>
+			<div class="spacer">
+			</div>
+		<% } %>
+	</div>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="feedIndex">
+	<%= page_title 'Top RSS Feed Providers' %>
+	<%= meta_description 'A list of the top RSS feed providers.'%>
+
+	<ul>
+
+		<% @feeds.each { |item| %>
+	
+			<li><%= link_to item.title, item %></li>
+		
+		<% }%>
+	</ul>
+
+
+	<div class="addAFeed">
+		<%= link_to 'Add your own feed', :controller => 'feed', :action => 'new'%>
+	</div>
+</div>

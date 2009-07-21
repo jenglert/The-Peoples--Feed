@@ -1,0 +1,91 @@
+<div class="feedItemShow">
+	<div class="sectionHeading">
+		<%= page_title @feed_item.title%>
+	</div>
+	<table class="feedItemInfo">
+		<tr>
+			<td class="categories">
+				<span class="heading">Categories</span>
+				<ul>
+					<% @feed_item.categories.each { |category| %>
+						<li><%= link_to category.name, category %></li>
+					<% } %>
+				</ul>
+			</td>
+			<td class="description" rowspan="2" colspan="3">
+				<div class="fullArticle">
+					<%= link_to 'Read the Full Article',@feed_item.itemUrl %>
+				</div>
+				<div>
+					<%= image_tag @feed_item.image_url if @feed_item.image_url%>
+				</div>
+				<span class="heading">Description: </span></b><%= h(@feed_item.description.fix_html) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="heading">Rating</span>
+				<table class="rating">
+					<tr>
+						<td>
+							Recency Mult.
+						</td>
+						<td>
+							<%= sprintf('%.2f%', @feed_item.time_multiplier * 100) %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Clicks Pts.
+						</td>
+						<td>
+							<%= @feed_item.clicks_points.to_s %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Comments Pts.
+						</td>
+						<td>
+							<%= @feed_item.comments_points.to_s %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Description Pts.
+						</td>
+						<td>
+							<%= @feed_item.description_points.to_s %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Image Pts.
+						</td>
+						<td>
+							<%= @feed_item.image_points.to_s %>
+						</td>
+					</tr>	
+					<tr>
+						<td colspan="2" class="total">
+							Total: <%= sprintf('%.1f', @feed_item.rating) %>
+						</td>
+					</tr>								
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				<span class="heading">Published:</span> <%= @feed_item.created_at.pretty %>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>			
+	</table>
+	<%= render :partial => 'shared/show_comments', :locals => { :comments => @feed_item.comments } %>
+	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/feed_item_comment', :commented_item => @feed_item }%>
+</div>

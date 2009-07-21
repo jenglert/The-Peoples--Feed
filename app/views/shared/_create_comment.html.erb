@@ -1,0 +1,40 @@
+<% form_for :comment, @comment, :url => post_location do |f| %>
+	<%= f.error_messages %>
+	<%= hidden_field_tag 'commented_item_id', commented_item.id%>
+	<div class="addComment">
+		<h3>Create a Comment</h3>
+		<div class="body">
+			<table>
+				<tr>
+					<td class="label">
+						name:
+					</td>
+					<td>
+						<%= f.text_field :name %>
+					</td>
+				</tr>
+				<tr>
+					<td class="label">
+						title:
+					</td>
+					<td>
+						<%= f.text_field :title %>
+					</td>
+				</tr>
+				<tr>
+					<td class="label">
+						comment:
+					</td>
+					<td>
+						<%= f.text_area :comment, :size => "30x7" %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="submit">		
+						<%= image_submit_tag 'add_comment.png'%>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+<% end %>
