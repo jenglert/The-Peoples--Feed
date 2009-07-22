@@ -22,6 +22,7 @@ String.class_eval {
     fixed = fixed.gsub '&#8217;', "'"
     fixed = fixed.gsub '&#8220;', '"'
     fixed = fixed.gsub '&#8221;', '"'
+    fixed = fixed.gsub '&#8211;', '"'
   end
 }
 
