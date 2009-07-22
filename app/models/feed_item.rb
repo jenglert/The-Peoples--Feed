@@ -10,6 +10,17 @@ class FeedItem < ActiveRecord::Base
   has_many :categories, :through => :feed_item_categories
   acts_as_commentable
   
+  def FeedItem.find_top_feed_items
+    feedItems = FeedItem.find(:all, :limit => 100, :order => 'created_at desc')
+    
+    feedItems.sort! { |a, b|  
+      b.rating <=> a.rating
+    }
+    
+    # We only want the top 20 feed items.
+    feedItems.slice!(0, 20)
+  end
+  
   # The overall rating for this feed item.
   def rating
     return time_multiplier * (clicks_points + description_points + comments_points + image_points).to_f
