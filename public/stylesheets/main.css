@@ -133,7 +133,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 
 /* Top small menu */
 .smallMenu                   { position: absolute; left: 450px; font-size: 14px; }
-.smallMenu LI                { display: inline; margin-right: 2px; background: #DCDCDC; 
+.smallMenu LI                { display: inline; margin-right: 2px; background: #EFEFEF; 
 	                           padding: 2px 2px 1px 2px; border: 2px solid #3D3DC3;
 	 						   -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 	
