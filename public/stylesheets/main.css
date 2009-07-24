@@ -19,13 +19,13 @@ H1                      { padding-bottom: 5px; }
 .header .menu           { position: absolute; left: 525px; top: 60px;}
 .header .menu IMG       { margin-left: -4px; }
 .header .search         { position: absolute; left: 562px; top: 98px;}
-.body                   { margin: auto; width: 830px; }
-.footer                 { margin: auto; width: 830px; height: 75px; border-top: 1px gray solid; 
+.body                   { margin: auto; width: 900px; }
+.footer                 { margin: auto; width: 900px; height: 75px; border-top: 1px gray solid; 
 						  margin-top: 20px; padding-top: 5px; text-align: center; font-size: 13px; }
 .footer A               { font-size: 13px; }
 .footer A:VISITED       { font-size: 13px; }
 .centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
-.centerColumn                   { width: 650px; padding-top: 5px;}
+.centerColumn                   { width: 700px; padding-top: 5px;}
 .rightHandList                  { width: 175px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
 								  background-color: #3D3DC3; color: #DF6900;}
@@ -34,7 +34,9 @@ H1                      { padding-bottom: 5px; }
 .errorExplanation   { border: 4px red solid; background-color: #F44; margin: 0px 25px;}
 
 /* Feed item listing (WIDE)*/
-DIV.feedItemWide                   { text-align: left; padding: 10px 15px 10px 15px;     }
+DIV.feedItemWide                   { text-align: left;  margin: 5px 10px 10px 7px;
+													   padding: 5px 7px 5px 7px;
+	                                 background-color: #EFEFEF; border: 1px solid white; }
 .feedItemWide H4                   { float:left; font-size: 17px;                        }
 .feedItemWide .feedItemCreated     { padding-left: 15px; text-align: right;              }
 .feedItemWide .description         { clear: both; padding-left: 5px;                     }  
