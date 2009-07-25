@@ -55,6 +55,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :feed_item_comment
   map.resources :category_organizer
   map.resources :comment
+  map.resources :blog_posts
+  map.connect 'blog', :controller => 'blog_posts'
   
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
   map.connect 'sitemap',        :controller => 'static_pages', :action => 'sitemap'

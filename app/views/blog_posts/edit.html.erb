@@ -1,0 +1,8 @@
+<%= error_messages_for :blog_post %>
+<% form_for @blog_post do |f| %>
+	<%= f.label :title %>: <%= f.text_field :title %><br />
+	<%= f.label :author %>: <%= f.text_field :author %><br />
+	<%= f.label :post %>: <%= f.text_area :post %><br />
+	<%= submit_tag %>
+<% end %>
+	

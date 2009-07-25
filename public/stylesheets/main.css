@@ -11,6 +11,7 @@ H1                      { padding-bottom: 5px; }
 .pagination                { padding-top: 8px; padding-right: 20px; text-align: right;       }
 .pagination              A { font-size: 16px;                                                }
 .pagination      A:visited { font-size: 16px;                                                }
+.fieldWithErrors           { display:inline;                                                 }
 
 /* Layout styles */
 .header                 { margin: auto; width: 830px; height: 150px; position:relative; }
@@ -111,8 +112,8 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .feedNarrow .noLine       { border-bottom: none; }
 .categoryNarrow H4        { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed; }
 .categoryNarrow .noLine   { border-bottom: none; }
-.mediaNarrow H4        { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed; }
-.mediaNarrow .noLine   { border-bottom: none; }
+.mediaNarrow H4           { margin-bottom: 4px; padding-bottom: 4px; border-bottom: 2px #3D3DC3 dashed; }
+.mediaNarrow .noLine      { border-bottom: none; }
 
 /* Category index page */
 .categoryIndex               { text-align : left; padding-left: 40px; }
@@ -144,3 +145,10 @@ TABLE.userSignup .rightAlign { text-align: right; }
 
 /* Search Results */
 .searchResults               { width: 800px; }
+
+/* Blog Posts */
+.blogPost                    { text-align: left;                                        }
+.blogPost H1                 { padding-left: 10px; padding-bottom: 0px;                 }
+.blogPost .byline            { font-size: 11px; padding-left: 20px;                     }  
+.blogPost .post              { background-color: #EFEFEF; border: 1px solid white; 
+	                           padding: 10px; margin: 5px 15px 15px 15px;               }
