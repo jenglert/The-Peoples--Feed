@@ -147,6 +147,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .searchResults               { width: 800px; }
 
 /* Blog Posts */
+.blogPosts H1                { padding-bottom: 10px;                                    }
 .blogPost                    { text-align: left; 
 							   background-color: #EFEFEF; border: 1px solid white;      }
 .blogPost H1                 { padding-left: 10px; padding-bottom: 0px;                 }
