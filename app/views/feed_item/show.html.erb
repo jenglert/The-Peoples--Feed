@@ -76,7 +76,7 @@
 		</tr>
 		<tr>
 			<td>
-				&nbsp;
+				<%= link_to @feed_item.feed.title, @feed_item.feed%>
 			</td>
 			<td>
 				<span class="heading">Published:</span> <%= @feed_item.created_at.pretty %>
