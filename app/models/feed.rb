@@ -54,8 +54,9 @@ class Feed < ActiveRecord::Base
     if result.url
       self.url = result.url.strip
     end
+    
     # Bug: Fix image url parsing
-    #self.imageUrl = result.image.url.strip
+    self.imageUrl = result.image.url.strip if result.image && result.image.url
       
     result.entries.each_with_index do |item, i|
       begin
