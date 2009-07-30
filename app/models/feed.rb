@@ -28,7 +28,7 @@ class Feed < ActiveRecord::Base
   def rating
     feedItemsAdder = 0
     
-    feed_items = FeedItem.find(:all, :conditions => "updated_at < DATE_SUB(curdate(), INTERVAL 20 DAY) and feed_id = #{self.id}")
+    feed_items = FeedItem.find(:all, :conditions => "updated_at > DATE_SUB(curdate(), INTERVAL 20 DAY) and feed_id = #{self.id}")
     
     for feed_item in feed_items
       feedItemsAdder += feed_item.rating
