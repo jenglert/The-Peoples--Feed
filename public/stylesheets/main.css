@@ -12,6 +12,7 @@ H1                      { padding-bottom: 5px; }
 .pagination              A { font-size: 16px;                                                }
 .pagination      A:visited { font-size: 16px;                                                }
 .fieldWithErrors           { display:inline;                                                 }
+.whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
 
 /* Layout styles */
 .header                 { margin: auto; width: 830px; height: 150px; position:relative; }
@@ -36,8 +37,7 @@ H1                      { padding-bottom: 5px; }
 
 /* Feed item listing (WIDE)*/
 DIV.feedItemWide                   { text-align: left;  margin: 5px 10px 10px 7px;
-													   padding: 5px 7px 5px 7px;
-	                                 background-color: #EFEFEF; border: 1px solid white; }
+													   padding: 5px 7px 5px 7px;         }
 .feedItemWide H4                   { float:left; font-size: 17px;                        }
 .feedItemWide .feedItemCreated     { padding-left: 15px; text-align: right;              }
 .feedItemWide .description         { clear: both; padding-left: 5px;                     }  
@@ -150,7 +150,11 @@ TABLE.userSignup .rightAlign { text-align: right; }
 /* Blog Posts */
 .blogPosts H1                { padding-bottom: 15px;                                    }
 .blogPost                    { text-align: left; margin-left: 10px; margin-right: 10px; 
-							   background-color: #EFEFEF; border: 1px solid white;      }
+							   margin-bottom: 15px;                                     }
 .blogPost H1                 { padding-left: 10px; padding-bottom: 0px;                 }
 .blogPost .byline            { font-size: 11px; padding-left: 20px;                     }  
 .blogPost .post              { padding: 10px; margin: 5px 15px 15px 15px;               }
+
+/* Open source info page */
+.openSource                  { margin: 15px; text-align: left; 
+	                           padding: 8px 8px 8px 15px;                               }
