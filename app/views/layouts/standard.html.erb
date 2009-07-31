@@ -9,6 +9,12 @@
 	<% if !@meta_description.nil? %>
 		<meta name="description" content="<%= @meta_description %>" />
 	<% end %>
+	<%= javascript_include_tag "jquery.js" %>
+	<%= javascript_include_tag "jquery.bgiframe.js" %>
+	<%= javascript_include_tag "jquery.delegate.js" %>
+	<%= javascript_include_tag "jquery.tooltip.min.js" %>
+	<%= javascript_include_tag "jquery.dimensions.js"%>
+	<%= javascript_include_tag "main.js" %>
 </head>
 <body>
 	<div class="header">

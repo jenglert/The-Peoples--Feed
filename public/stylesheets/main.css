@@ -14,6 +14,11 @@ H1                      { padding-bottom: 5px; }
 .fieldWithErrors           { display:inline;                                                 }
 .whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
 
+/* Global tooltip CSS */
+#tooltip { 	position: absolute;	z-index: 3000;	border: 1px solid #111;	background-color: #eee;	padding: 4px;	opacity: 0.85; }
+#tooltip h3, #tooltip div { margin: 0; font-size: 15px; width: 400px;}
+
+
 /* Layout styles */
 .header                 { margin: auto; width: 830px; height: 150px; position:relative; }
 .header IMG.logo        { position: absolute; left: 19px; top: 15px; }
