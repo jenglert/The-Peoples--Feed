@@ -158,3 +158,4 @@ TABLE.userSignup .rightAlign { text-align: right; }
 /* Open source info page */
 .openSource                  { margin: 15px; text-align: left; 
 	                           padding: 8px 8px 8px 15px;                               }
+.openSource P                { padding-bottom: 15px;									}
