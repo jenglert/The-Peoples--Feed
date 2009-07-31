@@ -124,7 +124,8 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .joinUs UL                   { padding-left: 45px; padding-bottom: 15px;       }
 .joinUs H2                   { padding-bottom: 3px; padding-left: 25px;        }
 .joinUs H3                   { padding-bottom: 3px; padding-left: 25px;        }
-.joinUs P                    { padding: 0px 15px 15px 35px;                    }
+.joinUs DIV.whiteBackground  { margin: 0px 10px 15px 10px; padding: 3px;       }
+.joinUs P					 { padding-left: 35px; padding-right: 20px;        }
 
 /* How it all works */
 .howItAllWorks               { text-align: left; padding: 0px 10px 10px 10px; }
