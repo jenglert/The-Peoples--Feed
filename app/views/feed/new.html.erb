@@ -1,6 +1,25 @@
-<h1>Add a Feed</h1>
+<%= page_title 'Add an RSS feed'%>
+<%= meta_description "Promote your RSS feed by adding it to the People's feed"%>
 <%= error_messages_for :feed %>
+
+<div class="addFeedGuidlines whiteBackground">
+<p>
+ Although we would love to be able to support every possible feed, we do have some guidelines.  Most of these guidelines help us keep the content relevant and appropriate for TPF consumers.
+</p>
+<dl>
+	<dt>1. English feeds only.</dt>
+	<dl>Interested in adding a non-English feed?  Please <%= link_to 'contribute', :controller => 'static_pages', :action => 'contribute'%> and help us get foreign versions of the site rolling.</dl>
+	<dt>2. No Pornographic Content.</dt>
+	<dl>TPF has users of all ages. Please keep TPF free of both textual and visual pornography.</dl>
+	<dt>3. No Racist Content</dt>
+	<dl>Racist content is not appropriate for everyone.  Please avoid using racist phrase or making racist comments.</dl>
+	<dt>4. Use Common Sense</dt>
+	<dl>If you believe your feed might be inappropriate for some members of the site. Just don't post it.</dl>
+</dl>
+</div>
+
 <div class="addFeed">
+	
 	Simply type in the URL to the feed you want to add.  
 	<br />For example:
 	<pre>"http://www.somenewsplace.com/rss-feed.xml"</pre>
