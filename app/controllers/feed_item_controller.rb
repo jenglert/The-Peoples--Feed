@@ -25,8 +25,8 @@ class FeedItemController < ApplicationController
   end
   
   def media
-    @feed_items = FeedItem.find(:all, :conditions => "updated_at > DATE_SUB(curdate(), INTERVAL 20 DAY) and image_url is not null", 
-            :order => 'updated_at desc')
+    @feed_items = FeedItem.paginate(:all, :conditions => "updated_at > DATE_SUB(curdate(), INTERVAL 20 DAY) and image_url is not null", 
+            :order => 'updated_at desc', :page => params[:page], :per_page => 24)
   end
   
 end

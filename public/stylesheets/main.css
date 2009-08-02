@@ -167,7 +167,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .openSource P                { padding-bottom: 15px;									}
 
 /* Add a feed */
-.addFeedGuidlines            { text-align: left;  padding: 8px; margin-bottom: 10px;    }
+.addFeedGuidlines            { text-align: left;  padding: 8px; margin: 5px 5px 10px 5px;}
 .addFeedGuidlines P          { padding-bottom: 10px;									}
 .addFeedGuidlines H1         { padding-bottom: 10px;									}
 .addFeedGuidlines DT         { padding-left: 8px; font-size: 16px;                      }
