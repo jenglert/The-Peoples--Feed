@@ -1,8 +1,13 @@
 <div class="commentsList">
-	<%= page_title "All Comments" %>
+	<%= page_title "User Comments" %>
 	
-	<% for comment in @comments %>
-		<%= comment %>
-	<% end %>
+	<div class="comment">
+		<% for comment in @comments %>
+			<div class="title"><%= comment.title %></div>
+			<div class="byline"><%= comment.name %></div>
+			
+			
+		<% end %>
+	</div>
 	
 </div>

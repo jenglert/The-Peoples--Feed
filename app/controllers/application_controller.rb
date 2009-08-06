@@ -11,6 +11,28 @@ class ApplicationController < ActionController::Base
   
   caches_action :load_nav_data
   
+  def rescue_404
+    rescue_action_in_public(ActionController::RoutingError)
+    
+  end
+  
+  def rescue_action_in_public(exception)
+    #maybe gather up some data you'd want to put in your error page
+  
+    case exception
+      when ActionController::InvalidAuthenticityToken
+      when ArgumentError
+      when SyntaxError
+        render :template => "shared/error500", :layout => "standard", :status => "500"
+      else
+        render :template => "shared/error404", :layout => "standard", :status => "404"
+    end          
+  end
+
+  def local_request?
+    return false
+  end
+  
   def load_nav_data
     unless read_fragment({:controller => 'homepage', :action => 'homepage', :left_navigation => 'top_feeds'})
       @topFeeds = Feed.find_top_feeds()

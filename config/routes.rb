@@ -77,4 +77,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'update', :controller => 'feed', :action => 'update'
   
   map.root :controller => "homepage"
+  
+  map.connect '*', :controller => 'application', :action => 'rescue_404' 
 end
