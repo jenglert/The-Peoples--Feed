@@ -3,7 +3,7 @@
 	
 	<div class="comment">
 		<% for comment in @comments %>
-			<div class="title"><%= comment.title %></div>
+			<div class="title"><%= link_to comment.title, comment.commentable %></div>
 			<div class="byline"><%= comment.name %></div>
 			
 			

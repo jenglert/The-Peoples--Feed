@@ -18,14 +18,16 @@
 </head>
 <body>
 	<div class="header">
-		<img src="/images/header_logo.png" alt="The People's Feed" class="logo" />
+		<% link_to '/' do %>
+			<img src="/images/header_logo.png" alt="The People's Feed" class="logo" />
+		<% end %>
 		<div class="motto">The latest news ranked according to its popularity by YOU</div>
 		<div class="smallMenu">
 			<ul>
-				<li><%= link_to 'how it works', '/how-it-works' %></li>
-				<li><%= link_to 'contribute', '/contribute' %></li>
-				<li><%= link_to 'open source', '/open-source' %></li>
-				<li><%= link_to 'blog', '/blog' %></li>
+				<li><%= link_to 'how it works', '/how-it-works', :class => 'tooltip', :title => "Learn how The People's Feed works" %></li>
+				<li><%= link_to 'contribute', '/contribute', :class => 'tooltip', :title => "Learn how you can contribute to The People's Feed.  It's easy and very rewarding." %></li>
+				<li><%= link_to 'open source', '/open-source', :class => 'tooltip', :title => "The People's Feed is an open source website.  You can checkout the code on the GitHub." %></li>
+				<li><%= link_to 'blog', '/blog', :class => 'tooltip', :title => "Read The People's Feed's development blog." %></li>
 			</ul>
 		</div>
 		<div class="search">
