@@ -39,6 +39,13 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed
+    feedParseLog = FeedParseLog.new
+    feedParseLog.feed_id = self.id
+    feedParseLog.feed_url = feedUrl
+    feedParseLog.parse_start = Time.new
+    feedParseLog.feed_items_added = 0
+    feedParseLog.save!
+    
     result = Feedzirra::Feed.fetch_and_parse(feedUrl)
     
     if !result.title
@@ -82,6 +89,7 @@ class Feed < ActiveRecord::Base
         
       if FeedItem.find_by_guid(newFeedItem.guid).nil?
         self.feed_items << newFeedItem
+        feedParseLog.feed_items_added += 1
           
         # Only figure out the categories for items that we will be saving
         item.categories.each do |rss_category|
@@ -115,6 +123,8 @@ class Feed < ActiveRecord::Base
       end
     end
     
+    feedParseLog.parse_finish = Time.new
+    feedParseLog.save
     return self.save!
     
   rescue => ex
