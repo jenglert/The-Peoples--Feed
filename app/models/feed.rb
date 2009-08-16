@@ -34,10 +34,10 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feedParseLog = FeedParseLog.create! {:feed_id => self.id,
+    feedParseLog = FeedParseLog.create!({:feed_id => self.id,
                                           :feed_url => feedUrl,
                                           :parse_start => Time.now,
-                                          :feed_items_added => 0}
+                                          :feed_items_added => 0})
     
     result = Feedzirra::Feed.fetch_and_parse(feedUrl)
     
