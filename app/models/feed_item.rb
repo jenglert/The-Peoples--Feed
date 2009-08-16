@@ -23,7 +23,7 @@ class FeedItem < ActiveRecord::Base
   
   # The overall rating for this feed item.
   def rating
-    return time_multiplier * (clicks_points + description_points + comments_points + image_points).to_f
+    return time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
   end
   
   def time_multiplier
@@ -67,7 +67,7 @@ class FeedItem < ActiveRecord::Base
   end
   
   def category_points
-    return self.categories.length
+    return self.category_count
   end
   
    memoize :rating
