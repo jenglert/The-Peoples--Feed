@@ -26,25 +26,18 @@ class Feed < ActiveRecord::Base
   
   # Determines the rating for
   def rating
-    feedItemsAdder = 0
-    
-    feed_items = FeedItem.find(:all, :conditions => "updated_at > DATE_SUB(curdate(), INTERVAL 20 DAY) and feed_id = #{self.id}")
-    
-    for feed_item in feed_items
-      feedItemsAdder += feed_item.rating
-    end
-    
-    return feedItemsAdder
+    return 0 if new_record?    
+    feed_items = FeedItem.find(:all,
+    :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id])
+    feed_items.collect {|feed_item| feed_item.rating}.sum
   end
   
   # Updates the feed
-  def update_feed
-    feedParseLog = FeedParseLog.new
-    feedParseLog.feed_id = self.id
-    feedParseLog.feed_url = feedUrl
-    feedParseLog.parse_start = Time.new
-    feedParseLog.feed_items_added = 0
-    feedParseLog.save!
+  def update_feed    
+    feedParseLog = FeedParseLog.create! {:feed_id => self.id,
+                                          :feed_url => feedUrl,
+                                          :parse_start => Time.now,
+                                          :feed_items_added => 0}
     
     result = Feedzirra::Feed.fetch_and_parse(feedUrl)
     
