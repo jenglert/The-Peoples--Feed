@@ -16,9 +16,9 @@ class Feed < ActiveRecord::Base
   def Feed.find_top_feeds
     feeds = Feed.find(:all)
     
-    feeds.sort!{ |a, b|  
+    feeds.sort! do |a, b|  
       b.rating <=> a.rating
-    }
+    end
     
     # We only want the top 5 feed items.
     feeds.slice!(0, 5)
@@ -34,54 +34,45 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feedParseLog = FeedParseLog.create!({:feed_id => self.id,
-                                          :feed_url => feedUrl,
-                                          :parse_start => Time.now,
-                                          :feed_items_added => 0})
-    
+    feedParseLog = FeedParseLog.create!(  
+      :feed_id => self.id,
+      :feed_url => feedUrl,
+      :parse_start => Time.now,
+      :feed_items_added => 0
+    )
     result = Feedzirra::Feed.fetch_and_parse(feedUrl)
     
-    if !result.title
-      return  # Possibly throw an error here
-    end
+    return unless result.title  #possibly return an error and log it
     self.title = result.title.strip
-    
-    if result.description
-      self.description = result.description.strip.remove_html
-    else 
-      self.description = ""
-    end
-    if result.url
-      self.url = result.url.strip
-    end
+    self.description = result.description.nil? ? "" : result.description.strip.remove_html
+    self.url = result.url.strip if result.url
     
     # Bug: Fix image url parsing
     self.imageUrl = result.image.url.strip if result.image && result.image.url
       
     result.entries.each_with_index do |item, i|
       begin
-      newFeedItem = FeedItem.new
-      newFeedItem.title = item.title.strip.remove_html
-      newFeedItem.itemUrl = item.url.strip
-      newFeedItem.description = item.summary.strip.remove_html
-      
-      if item.media_content and item.media_content.length > 0
-        newFeedItem.image_url = item.media_content[0].url
-      end
+      new_feed_item = FeedItem.new (
+        :title => item.title.strip.remove_html,
+        :itemUrl => item.url.strip,
+        :description => item.summary.strip.remove_html
+      )
+            
+      new_feed_item.image_url = item.media_content[0].url if item.media_content and item.media_content.length > 0
         
       # The guid will be either the defined guid (preferrably) or the item's link
       if !item.id.nil?
-        newFeedItem.guid = item.id.strip
+        new_feed_item.guid = item.id.strip
       elsif !item.url
-        newFeedItem.guid = item.url.strip
+        new_feed_item.guid = item.url.strip
       elsif !item.title
-        newFeedItem.guid = item.title
+        new_feed_item.guid = item.title
       end
         
-      newFeedItem.pub_date = Time.parse("#{item.published}")
+      new_feed_item.pub_date = Time.parse("#{item.published}")
         
-      if FeedItem.find_by_guid(newFeedItem.guid).nil?
-        self.feed_items << newFeedItem
+      if FeedItem.find_by_guid(new_feed_item.guid).nil?
+        self.feed_items << new_feed_item
         feedParseLog.feed_items_added += 1
           
         # Only figure out the categories for items that we will be saving
@@ -106,7 +97,7 @@ class Feed < ActiveRecord::Base
                 end
               end
             
-              newFeedItem.categories << category
+              new_feed_item.categories << category
             end
           end
         end #each_with_index
@@ -125,7 +116,7 @@ class Feed < ActiveRecord::Base
   end
   
   def feed_items_sorted
-    feed_items.sort { |lhs, rhs| rhs.pub_date <=> lhs.pub_date}
+    feed_items.find(:all, :order => 'pub_date DESC')
   end
   
   memoize :rating

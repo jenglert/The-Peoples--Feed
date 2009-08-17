@@ -23,51 +23,40 @@ class FeedItem < ActiveRecord::Base
   
   # The overall rating for this feed item.
   def rating
-    return time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
+    time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
   end
   
   def time_multiplier
     # Calculates a multiplier from 0 to 4 which serves to indicate how new the feed is.
-    time_multiplier = (self.created_at - (Time.now.ago(20.days)))/5.days
+    time_multiplier = (self.created_at - 20.days.ago)/5.days
     # Normalize the time multiplier to a maximum of 1
-    time_multiplier = time_multiplier / 4
-    
-    if time_multiplier < 0.05 
-      return 0
-    end
-    
-    return time_multiplier
+    time_multiplier /= 4
+    return 0 if time_multiplier < 0.05 
+    time_multiplier
   end
   
   def clicks_points
     # Ensure that the number of clicks is always at least 0
-    if self.clicks.nil?
-      self.clicks = 0
-    end
-    
-    return clicks
+    self.clicks = 0 if self.clicks.nil?
+    clicks
   end
   
   def image_points
-    if image_url 
-      return 4
-    end
-    
-    return 0
+    image_url ? 4 : 0
   end
   
   def description_points
-     points = self.description.length / 100
-     points = 2 if points > 2
-     return points
+    points = self.description.length / 100
+    points = 2 if points > 2
+    points
   end
   
   def comments_points
-    return self.comments_count * 5
+    self.comments_count * 5
   end
   
   def category_points
-    return self.category_count
+    self.category_count
   end
   
    memoize :rating
