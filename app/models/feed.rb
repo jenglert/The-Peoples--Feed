@@ -12,26 +12,19 @@ class Feed < ActiveRecord::Base
   validates_uniqueness_of :feedUrl
   validates_presence_of :feed_items  #'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
-  def Feed.find_top_feeds
-    feeds = Feed.find(:all)
-    
-    feeds.sort! do |a, b|  
-      b.rating <=> a.rating
-    end
-    
-    # We only want the top 5 feed items.
-    feeds.slice!(0, 5)
-  end
+  named_scope :top_feeds, :order => 'rating desc', :limit => 5
   
   # Determines the rating for
   def rating
     return 0 if new_record?
     return 0 if self.feed_items.count.zero?    
-    FeedItem.find(
+    calculated_rating = FeedItem.find(
       :all,
       :select => 'sum(rating) as feed_rating',
       :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
       :group => 'feed_id')[0].feed_rating
+    self.update_attributes :rating => calculated_rating
+    calculated_rating
   end
   
   # Updates the feed

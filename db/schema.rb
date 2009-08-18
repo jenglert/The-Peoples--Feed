@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090818131025) do
+ActiveRecord::Schema.define(:version => 20090818143432) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -87,7 +87,8 @@ ActiveRecord::Schema.define(:version => 20090818131025) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
-    t.integer  "clicks",      :default => 0
+    t.integer  "clicks",                                    :default => 0
+    t.decimal  "rating",      :precision => 8, :scale => 2
   end
 
   create_table "sessions", :force => true do |t|
