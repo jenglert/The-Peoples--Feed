@@ -21,5 +21,4 @@ describe FeedItem do
     @feed_item.save!
     @feed_item.rating.should_not == 0
   end
-
 end

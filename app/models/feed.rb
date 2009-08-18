@@ -4,7 +4,6 @@ require 'acts_as_commentable'
 ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
 class Feed < ActiveRecord::Base
-  extend ActiveSupport::Memoizable
   has_many :feed_items
   
   acts_as_commentable
@@ -26,10 +25,13 @@ class Feed < ActiveRecord::Base
   
   # Determines the rating for
   def rating
-    return 0 if new_record?    
-    feed_items = FeedItem.find(:all,
-    :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id])
-    feed_items.collect {|feed_item| feed_item.rating}.sum
+    return 0 if new_record?
+    return 0 if self.feed_items.count.zero?    
+    FeedItem.find(
+      :all,
+      :select => 'sum(rating) as feed_rating',
+      :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
+      :group => 'feed_id')[0].feed_rating
   end
   
   # Updates the feed
@@ -118,6 +120,5 @@ class Feed < ActiveRecord::Base
   def feed_items_sorted
     feed_items.find(:all, :order => 'pub_date DESC')
   end
-  
-  memoize :rating
+
 end
