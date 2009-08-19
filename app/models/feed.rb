@@ -8,8 +8,8 @@ class Feed < ActiveRecord::Base
   
   acts_as_commentable
   
-  validates_presence_of :feedUrl
-  validates_uniqueness_of :feedUrl
+  validates_presence_of :feed_url
+  validates_uniqueness_of :feed_url
   validates_presence_of :feed_items  #'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
   named_scope :top_feeds, :order => 'rating desc', :limit => 5
@@ -29,89 +29,50 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feedParseLog = FeedParseLog.create!(  
+    feed_parse_log = FeedParseLog.new(  
       :feed_id => self.id,
-      :feed_url => feedUrl,
+      :feed_url => self.feed_url,
       :parse_start => Time.now,
       :feed_items_added => 0
     )
-    result = Feedzirra::Feed.fetch_and_parse(feedUrl)
-    
-    return unless result.title  #possibly return an error and log it
-    self.title = result.title.strip
-    self.description = result.description.nil? ? "" : result.description.strip.remove_html
-    self.url = result.url.strip if result.url
-    
-    # Bug: Fix image url parsing
-    self.imageUrl = result.image.url.strip if result.image && result.image.url
-      
-    result.entries.each_with_index do |item, i|
-      begin
-      new_feed_item = FeedItem.new (
-        :title => item.title.strip.remove_html,
-        :itemUrl => item.url.strip,
-        :description => item.summary.strip.remove_html
-      )
-            
-      new_feed_item.image_url = item.media_content[0].url if item.media_content and item.media_content.length > 0
-        
-      # The guid will be either the defined guid (preferrably) or the item's link
-      if !item.id.nil?
-        new_feed_item.guid = item.id.strip
-      elsif !item.url
-        new_feed_item.guid = item.url.strip
-      elsif !item.title
-        new_feed_item.guid = item.title
-      end
-        
-      new_feed_item.pub_date = Time.parse("#{item.published}")
-        
-      if FeedItem.find_by_guid(new_feed_item.guid).nil?
-        self.feed_items << new_feed_item
-        feedParseLog.feed_items_added += 1
-          
-        # Only figure out the categories for items that we will be saving
-        item.categories.each do |rss_category|
-            
-            rss_category.strip.split(',').each do |rss_category_split|
-            
-            if rss_category_split
-              # Create the new category is necessary
-              category = Category.find_by_name(rss_category_split.strip)
-              if !category
-                  
-                # Try to find a merge category before creating a new category.x
-                categoryMerge = CategoryMerge.find_by_merge_src(rss_category_split.strip)
-                if categoryMerge
-                  category = Category.find_by_id(categoryMerge.merge_target)
-                end
-                  
-                if !category
-                  category = Category.new
-                  category.name = rss_category_split.strip
-                end
-              end
-            
-              new_feed_item.categories << category
-            end
-          end
-        end #each_with_index
-      end #if 
-      rescue => ex
-        logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
-      end
-    end
-    
-    feedParseLog.parse_finish = Time.new
-    feedParseLog.save
-    return self.save!
-    
-  rescue => ex
-    logger.error "Unable to update feed: #{self.id}. #{ex.class}: #{ex.class}: #{ex.message}"
+    result = Feedzirra::Feed.fetch_and_parse(feed_url) 
+    initialize_from_result(result, feed_parse_log)
   end
   
   def feed_items_sorted
     feed_items.find(:all, :order => 'pub_date DESC')
   end
-
+  
+  def add_entries(entries, feed_parse_log)
+    #begin
+      entries.each do |item|
+        new_feed_item = FeedItem.initialize_from_entry(item)
+        unless FeedItem.exists?(:guid => new_feed_item.guid)
+          new_feed_item.save!
+          add_feed_item(new_feed_item, feed_parse_log)        
+        end        
+      end #each 
+    #rescue => ex
+      #logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
+    #end
+  end
+  
+  def add_feed_item(new_feed_item, feed_parse_log)
+    self.feed_items << new_feed_item
+    feed_parse_log.increase_items
+  end
+  
+  def initialize_from_result(result, feed_parse_log)
+    return false unless result.title
+    self.title = result.title.strip
+    self.description = result.description.nil? ? "" : result.description.strip.remove_html
+    self.url = result.url.strip if result.url    
+    # Bug: Fix image url parsing
+    self.image_url = result.image.url.strip if result.image && result.image.url 
+    add_entries(result.entries, feed_parse_log)
+    feed_parse_log.parse_finish = Time.new
+    feed_parse_log.save
+    return self.save!
+  end
+  
 end
