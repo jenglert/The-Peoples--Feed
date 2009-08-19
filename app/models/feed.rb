@@ -50,9 +50,6 @@ class Feed < ActiveRecord::Base
       entries.each do |item|
         new_feed_item = FeedItem.initialize_from_entry(item)
         unless FeedItem.exists?(:guid => new_feed_item.guid)
-          puts "AAAAA"
-          puts new_feed_item.inspect
-          puts "BBBBB"
           new_feed_item.save!
           add_feed_item(new_feed_item, feed_parse_log)        
         end        
