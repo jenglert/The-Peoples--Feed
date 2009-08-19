@@ -9,15 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 32) do
-
-  create_table "blog_posts", :force => true do |t|
-    t.string   "title"
-    t.string   "post"
-    t.string   "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 25) do
 
   create_table "categories", :force => true do |t|
     t.string  "name"
@@ -47,7 +39,7 @@ ActiveRecord::Schema.define(:version => 32) do
   add_index "comments", ["user_id"], :name => "fk_comments_user"
 
   create_table "feed_item_categories", :force => true do |t|
-    t.integer "feed_item_id"
+    t.string  "feed_item_id"
     t.integer "category_id"
   end
 
@@ -56,45 +48,28 @@ ActiveRecord::Schema.define(:version => 32) do
 
   create_table "feed_items", :force => true do |t|
     t.string   "title"
-    t.string   "description",                :limit => 4000
+    t.string   "description",     :limit => 4000
     t.string   "itemUrl"
     t.string   "guid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "feed_id"
     t.datetime "pub_date"
-    t.integer  "clicks",                                     :default => 0
-    t.integer  "comments_count",                             :default => 0
+    t.integer  "clicks",                          :default => 0
+    t.integer  "comments_count",                  :default => 0
     t.string   "image_thumbnail"
     t.string   "image_url"
     t.string   "image_credits"
-    t.integer  "feed_item_categories_count"
   end
 
   add_index "feed_items", ["feed_id"], :name => "feed_id"
   add_index "feed_items", ["feed_id"], :name => "index_feed_items_on_feed_id"
   add_index "feed_items", ["guid"], :name => "index_feed_items_on_guid"
 
-  create_table "feed_parse_logs", :force => true do |t|
-    t.integer  "feed_id"
-    t.integer  "feed_items_added"
-    t.datetime "parse_start"
-    t.datetime "parse_finish"
-    t.string   "feed_url"
-  end
-
-  add_index "feed_parse_logs", ["feed_id"], :name => "index_feed_parse_logs_on_feed_id"
-
-  create_table "feed_parse_stats", :id => false, :force => true do |t|
-    t.integer "feed_id"
-    t.integer "dayofyear(parse_start)"
-    t.integer "feed_items_added"
-  end
-
   create_table "feeds", :force => true do |t|
     t.string   "title"
     t.string   "imageUrl"
-    t.string   "feed_url"
+    t.string   "feedUrl"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -121,12 +96,6 @@ ActiveRecord::Schema.define(:version => 32) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
-  end
-
-  create_table "vw_feed_parse_stats", :id => false, :force => true do |t|
-    t.integer "feed_id"
-    t.integer "dayofyear"
-    t.integer "feed_items_added"
   end
 
 end
