@@ -9,8 +9,8 @@ class Feed < ActiveRecord::Base
   
   acts_as_commentable
   
-  validates_presence_of :feedUrl
-  validates_uniqueness_of :feedUrl
+  validates_presence_of :feed_url
+  validates_uniqueness_of :feed_url
   validates_presence_of :feed_items  #'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
   def Feed.find_top_feeds
@@ -34,12 +34,13 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feedParseLog = FeedParseLog.create!({:feed_id => self.id,
-                                          :feed_url => feedUrl,
+    puts feed_url
+    feedParseLog = FeedParseLog.create!(:feed_id => self.id,
                                           :parse_start => Time.now,
-                                          :feed_items_added => 0})
+                                          :feed_items_added => 0,
+                                          :feed_url => feed_url)
     
-    result = Feedzirra::Feed.fetch_and_parse(feedUrl)
+    result = Feedzirra::Feed.fetch_and_parse(feed_url)
     
     if !result.title
       return  # Possibly throw an error here
@@ -112,7 +113,7 @@ class Feed < ActiveRecord::Base
         end #each_with_index
       end #if 
       rescue => ex
-        logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
+        logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}: #{ex.backtrace}"
       end
     end
     
@@ -121,7 +122,7 @@ class Feed < ActiveRecord::Base
     return self.save!
     
   rescue => ex
-    logger.error "Unable to update feed: #{self.id}. #{ex.class}: #{ex.class}: #{ex.message}"
+    logger.error "Unable to update feed: #{self.id}. #{ex.class}: #{ex.class}: #{ex.message}: #{ex.backtrace}"
   end
   
   def feed_items_sorted

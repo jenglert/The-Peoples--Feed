@@ -67,7 +67,7 @@ class FeedItem < ActiveRecord::Base
   end
   
   def category_points
-    return self.category_count
+    return self.categories.size
   end
   
    memoize :rating
