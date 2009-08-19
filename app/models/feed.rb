@@ -34,7 +34,6 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    puts feed_url
     feedParseLog = FeedParseLog.create!(:feed_id => self.id,
                                           :parse_start => Time.now,
                                           :feed_items_added => 0,
