@@ -50,10 +50,13 @@ class Feed < ActiveRecord::Base
       entries.each do |item|
         new_feed_item = FeedItem.initialize_from_entry(item)
         unless FeedItem.exists?(:guid => new_feed_item.guid)
+          puts "AAAAA"
+          puts new_feed_item.inspect
+          puts "BBBBB"
           new_feed_item.save!
           add_feed_item(new_feed_item, feed_parse_log)        
         end        
-      end 
+      end #each 
     #rescue => ex
       #logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
     #end

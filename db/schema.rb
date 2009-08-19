@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090818151204) do
+ActiveRecord::Schema.define(:version => 20090819151348) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -47,25 +47,29 @@ ActiveRecord::Schema.define(:version => 20090818151204) do
   add_index "comments", ["user_id"], :name => "fk_comments_user"
 
   create_table "feed_item_categories", :force => true do |t|
-    t.string  "feed_item_id"
+    t.integer "feed_item_id"
     t.integer "category_id"
   end
 
+  add_index "feed_item_categories", ["category_id"], :name => "category_fk"
+  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_fk"
+
   create_table "feed_items", :force => true do |t|
     t.string   "title"
-    t.string   "description",     :limit => 4000
+    t.string   "description",                :limit => 4000
     t.string   "item_url"
     t.string   "guid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "feed_id"
     t.datetime "pub_date"
-    t.integer  "clicks",                                                        :default => 0
+    t.integer  "clicks",                                                                   :default => 0
     t.string   "image_thumbnail"
     t.string   "image_url"
     t.string   "image_credits"
-    t.integer  "comments_count",                                                :default => 0
-    t.decimal  "rating",                          :precision => 8, :scale => 2
+    t.integer  "comments_count",                                                           :default => 0
+    t.decimal  "rating",                                     :precision => 8, :scale => 2
+    t.integer  "feed_item_categories_count"
   end
 
   add_index "feed_items", ["feed_id"], :name => "index_feed_items_on_feed_id"
@@ -78,6 +82,8 @@ ActiveRecord::Schema.define(:version => 20090818151204) do
     t.datetime "parse_finish"
     t.string   "feed_url"
   end
+
+  add_index "feed_parse_logs", ["feed_id"], :name => "fpl_feed_fk"
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
