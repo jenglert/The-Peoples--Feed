@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   
   def load_nav_data
     unless read_fragment({:controller => 'homepage', :action => 'homepage', :left_navigation => 'top_feeds'})
-      @topFeeds = Feed.find_top_feeds()
+      @topFeeds = Feed.top_feeds
     end
     
     unless read_fragment({:controller => 'homepage', :action => 'homepage', :left_navigation => 'top_categories'})
