@@ -4,7 +4,6 @@ require 'acts_as_commentable'
 ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
 class Feed < ActiveRecord::Base
-  extend ActiveSupport::Memoizable
   has_many :feed_items
   
   acts_as_commentable
@@ -13,120 +12,69 @@ class Feed < ActiveRecord::Base
   validates_uniqueness_of :feed_url
   validates_presence_of :feed_items  #'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
-  def Feed.find_top_feeds
-    feeds = Feed.find(:all)
-    
-    feeds.sort!{ |a, b|  
-      b.rating <=> a.rating
-    }
-    
-    # We only want the top 5 feed items.
-    feeds.slice!(0, 5)
-  end
+  named_scope :top_feeds, :order => 'rating desc', :limit => 5
   
   # Determines the rating for
   def rating
-    return 0 if new_record?    
-    feed_items = FeedItem.find(:all,
-    :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id])
-    feed_items.collect {|feed_item| feed_item.rating}.sum
+    return 0 if new_record?
+    return 0 if self.feed_items.count.zero?    
+    calculated_rating = FeedItem.find(
+      :all,
+      :select => 'sum(rating) as feed_rating',
+      :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
+      :group => 'feed_id')[0].feed_rating.to_d
+    self.update_attributes :rating => calculated_rating
+    calculated_rating
   end
   
   # Updates the feed
   def update_feed    
-    feed_parse_log = FeedParseLog.create!(:feed_id => self.id,
-                                          :parse_start => Time.now,
-                                          :feed_items_added => 0,
-                                          :feed_url => feed_url)
-    
-    result = Feedzirra::Feed.fetch_and_parse(feed_url)
-    
-    if !result.title
-      return  # Possibly throw an error here
-    end
-    self.title = result.title.strip
-    
-    if result.description
-      self.description = result.description.strip.remove_html
-    else 
-      self.description = ""
-    end
-    if result.url
-      self.url = result.url.strip
-    end
-    
-    # Bug: Fix image url parsing
-    self.imageUrl = result.image.url.strip if result.image && result.image.url
-      
-    result.entries.each_with_index do |item, i|
-      begin
-      newFeedItem = FeedItem.new
-      newFeedItem.title = item.title.strip.remove_html
-      newFeedItem.item_url = item.url.strip
-      newFeedItem.description = item.summary.strip.remove_html
-      
-      if item.media_content and item.media_content.length > 0
-        newFeedItem.image_url = item.media_content[0].url
-      end
-        
-      # The guid will be either the defined guid (preferrably) or the item's link
-      if !item.id.nil?
-        newFeedItem.guid = item.id.strip
-      elsif !item.url
-        newFeedItem.guid = item.url.strip
-      elsif !item.title
-        newFeedItem.guid = item.title
-      end
-        
-      newFeedItem.pub_date = Time.parse("#{item.published}")
-        
-      if FeedItem.find_by_guid(newFeedItem.guid).nil?
-        self.feed_items << newFeedItem
-        feed_parse_log.increase_items
-          
-        # Only figure out the categories for items that we will be saving
-        item.categories.each do |rss_category|
-            
-            rss_category.strip.split(',').each do |rss_category_split|
-            
-            if rss_category_split
-              # Create the new category is necessary
-              category = Category.find_by_name(rss_category_split.strip)
-              if !category
-                  
-                # Try to find a merge category before creating a new category.x
-                categoryMerge = CategoryMerge.find_by_merge_src(rss_category_split.strip)
-                if categoryMerge
-                  category = Category.find_by_id(categoryMerge.merge_target)
-                end
-                  
-                if !category
-                  category = Category.new
-                  category.name = rss_category_split.strip
-                end
-              end
-            
-              newFeedItem.categories << category
-            end
-          end
-        end #each_with_index
-      end #if 
-      rescue => ex
-        logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}: #{ex.backtrace}"
-      end
-    end
-    
-    feed_parse_log.parse_finish = Time.new
-    feed_parse_log.save
-    return self.save!
-    
-  rescue => ex
-    logger.error "Unable to update feed: #{self.id}. #{ex.class}: #{ex.class}: #{ex.message}: #{ex.backtrace}"
+    feed_parse_log = FeedParseLog.new(  
+      :feed_id => self.id,
+      :feed_url => self.feed_url,
+      :parse_start => Time.now,
+      :feed_items_added => 0
+    )
+    result = Feedzirra::Feed.fetch_and_parse(feed_url) 
+    save_from_result(result, feed_parse_log)
   end
   
   def feed_items_sorted
-    feed_items.sort { |lhs, rhs| rhs.pub_date <=> lhs.pub_date}
+    feed_items.find(:all, :order => 'pub_date DESC')
   end
   
-  memoize :rating
+  private
+  
+  def add_entries(entries, feed_parse_log)
+    #begin
+      entries.each do |item|
+        new_feed_item = FeedItem.initialize_from_entry(item)
+        unless FeedItem.exists?(:guid => new_feed_item.guid)
+          new_feed_item.save!
+          add_feed_item(new_feed_item, feed_parse_log)        
+        end        
+      end #each 
+    #rescue => ex
+      #logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
+    #end
+  end
+  
+  def add_feed_item(new_feed_item, feed_parse_log)
+    self.feed_items << new_feed_item
+    feed_parse_log.increase_items
+  end
+  
+  def save_from_result(result, feed_parse_log)
+    return false unless result.title
+    self.title = result.title.strip
+    self.description = result.description.nil? ? "" : result.description.strip.remove_html
+    self.url = result.url.strip if result.url    
+    # Bug: Fix image url parsing
+    self.image_url = result.image.url.strip if result.image && result.image.url 
+    add_entries(result.entries, feed_parse_log)
+    feed_parse_log.parse_finish = Time.new
+    feed_parse_log.save
+    return self.save!
+  end
+  
 end
