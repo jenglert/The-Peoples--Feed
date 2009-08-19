@@ -6,6 +6,6 @@ class CreateCategory < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :feed_item_categories
+    drop_table :categories
   end
 end
