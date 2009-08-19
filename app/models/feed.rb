@@ -22,7 +22,7 @@ class Feed < ActiveRecord::Base
       :all,
       :select => 'sum(rating) as feed_rating',
       :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
-      :group => 'feed_id')[0].feed_rating
+      :group => 'feed_id')[0].feed_rating.to_d
     self.update_attributes :rating => calculated_rating
     calculated_rating
   end
@@ -36,12 +36,14 @@ class Feed < ActiveRecord::Base
       :feed_items_added => 0
     )
     result = Feedzirra::Feed.fetch_and_parse(feed_url) 
-    initialize_from_result(result, feed_parse_log)
+    save_from_result(result, feed_parse_log)
   end
   
   def feed_items_sorted
     feed_items.find(:all, :order => 'pub_date DESC')
   end
+  
+  private
   
   def add_entries(entries, feed_parse_log)
     #begin
@@ -51,7 +53,7 @@ class Feed < ActiveRecord::Base
           new_feed_item.save!
           add_feed_item(new_feed_item, feed_parse_log)        
         end        
-      end #each 
+      end 
     #rescue => ex
       #logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
     #end
@@ -62,7 +64,7 @@ class Feed < ActiveRecord::Base
     feed_parse_log.increase_items
   end
   
-  def initialize_from_result(result, feed_parse_log)
+  def save_from_result(result, feed_parse_log)
     return false unless result.title
     self.title = result.title.strip
     self.description = result.description.nil? ? "" : result.description.strip.remove_html
