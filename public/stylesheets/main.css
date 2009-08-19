@@ -32,7 +32,7 @@ H1                      { padding-bottom: 5px; }
 .footer A               { font-size: 13px; }
 .footer A:VISITED       { font-size: 13px; }
 .centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
-.centerColumn                   { width: 700px; padding-top: 5px;}
+.centerColumn                   { width: 700px; padding-top: 10px;}
 .rightHandList                  { width: 175px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
 								  background-color: #3D3DC3; color: #DF6900;}
@@ -162,7 +162,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .blogPost .post              { padding: 10px; margin: 5px 15px 15px 15px;               }
 
 /* Open source info page */
-.openSource                  { margin: 15px; text-align: left; 
+.openSource                  { margin: 0px 15px 15px 15px; text-align: left; 
 	                           padding: 8px 8px 8px 15px;                               }
 .openSource P                { padding-bottom: 15px;									}
 
