@@ -10,7 +10,7 @@ class FeedOneTest < ActiveSupport::TestCase
       assert_equal 'feedUrl', feed.errors.entries[0][0]
       assert_equal "can't be blank", feed.errors.entries[0][1]      
       
-      feed.feedUrl = 'jim'
+      feed.feed_url = 'jim'
       
       assert !feed.save
       
