@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20090818151204) do
     t.integer "category_id"
   end
 
-  add_index "feed_item_categories", ["category_id"], :name => "category_id"
-  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_id"
+  add_index "feed_item_categories", ["category_id"], :name => "category_fk"
+  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_fk"
 
   create_table "feed_items", :force => true do |t|
     t.string   "title"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(:version => 20090818151204) do
     t.integer  "feed_id"
     t.datetime "pub_date"
     t.integer  "clicks",                                                                   :default => 0
-    t.integer  "comments_count",                                                           :default => 0
     t.string   "image_thumbnail"
     t.string   "image_url"
     t.string   "image_credits"
-    t.integer  "feed_item_categories_count"
+    t.integer  "comments_count",                                                           :default => 0
     t.decimal  "rating",                                     :precision => 8, :scale => 2
+    t.integer  "feed_item_categories_count"
   end
 
   add_index "feed_items", ["feed_id"], :name => "feed_id"
@@ -84,13 +84,7 @@ ActiveRecord::Schema.define(:version => 20090818151204) do
     t.string   "feed_url"
   end
 
-  add_index "feed_parse_logs", ["feed_id"], :name => "index_feed_parse_logs_on_feed_id"
-
-  create_table "feed_parse_stats", :id => false, :force => true do |t|
-    t.integer "feed_id"
-    t.integer "dayofyear(parse_start)"
-    t.integer "feed_items_added"
-  end
+  add_index "feed_parse_logs", ["feed_id"], :name => "fpl_feed_fk"
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
