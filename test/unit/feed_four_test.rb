@@ -24,7 +24,7 @@ class FeedThreeTest < ActiveSupport::TestCase
     # check each feed item.
     @feed.feed_items.each { |feed_item|
       assert_not_nil feed_item.title
-      assert_not_nil feed_item.itemUrl
+      assert_not_nil feed_item.item_url
       assert_not_nil feed_item.guid
       assert_not_nil feed_item.pub_date
       

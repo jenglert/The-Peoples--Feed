@@ -34,7 +34,7 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feedParseLog = FeedParseLog.create!(:feed_id => self.id,
+    feed_parse_log = FeedParseLog.create!(:feed_id => self.id,
                                           :parse_start => Time.now,
                                           :feed_items_added => 0,
                                           :feed_url => feed_url)
@@ -62,7 +62,7 @@ class Feed < ActiveRecord::Base
       begin
       newFeedItem = FeedItem.new
       newFeedItem.title = item.title.strip.remove_html
-      newFeedItem.itemUrl = item.url.strip
+      newFeedItem.item_url = item.url.strip
       newFeedItem.description = item.summary.strip.remove_html
       
       if item.media_content and item.media_content.length > 0
@@ -82,7 +82,7 @@ class Feed < ActiveRecord::Base
         
       if FeedItem.find_by_guid(newFeedItem.guid).nil?
         self.feed_items << newFeedItem
-        feedParseLog.feed_items_added += 1
+        feed_parse_log.increase_items
           
         # Only figure out the categories for items that we will be saving
         item.categories.each do |rss_category|
@@ -116,8 +116,8 @@ class Feed < ActiveRecord::Base
       end
     end
     
-    feedParseLog.parse_finish = Time.new
-    feedParseLog.save
+    feed_parse_log.parse_finish = Time.new
+    feed_parse_log.save
     return self.save!
     
   rescue => ex

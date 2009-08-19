@@ -27,7 +27,7 @@ class FeedThreeTest < ActiveSupport::TestCase
     # check each feed item.
     @feed.feed_items.each { |feed_item|
       assert_not_nil feed_item.title
-      assert_not_nil feed_item.itemUrl
+      assert_not_nil feed_item.item_url
       assert_not_nil feed_item.guid
       assert_not_nil feed_item.pub_date
     }
@@ -36,7 +36,7 @@ class FeedThreeTest < ActiveSupport::TestCase
     
     assert_equal 9, first_feed_item.feed_item_categories.length
     assert_equal 'From High-Finance Pinnacles to Unemployment Line to Mentors', first_feed_item.title
-    assert_equal 'http://feeds.nytimes.com/click.phdo?i=dda06e9c24f31250bac78a449b809c40', first_feed_item.itemUrl
+    assert_equal 'http://feeds.nytimes.com/click.phdo?i=dda06e9c24f31250bac78a449b809c40', first_feed_item.item_url
     assert_equal 'Unemployment', first_feed_item.categories[0].name
     
   end
