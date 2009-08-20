@@ -19,7 +19,7 @@ class FeedOneTest < ActiveSupport::TestCase
   
   def test_save_feed_without_items_throws_error
     feed = Feed.new
-    feed.feedUrl = 'jim'
+    feed.feed_url = 'jim'
     
     feed.save
     
