@@ -39,11 +39,12 @@ class FeedTwoTest < ActiveSupport::TestCase
     assert_equal 1, categories_for_first_item.length
     assert_equal 'heartburn', categories_for_first_item[0].name
     
-    categories_for_last_item = @feed.feed_items[7].categories
+    categories_for_last_item = @feed.feed_items[7].categories.collect { |category| category.name}.sort!
     
-    assert_equal 8, categories_for_last_item.length
-    assert_equal 'heartburn', categories_for_last_item[0].name
-    assert_equal 'exercise', categories_for_last_item[5].name
+    expected_categories = ['gerd', 'general health lifestyle', 'ibs', 'heartburn', 'fitness', 'exercise', 'diet', 'nutrition']
+    expected_categories.sort!
+    
+    assert expected_categories.eql?(categories_for_last_item)
   end
   
   def test_update_twice
