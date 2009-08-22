@@ -15,9 +15,8 @@ while($running) do
   # Replace this with your code
   ActiveRecord::Base.logger.info "This daemon is still running at #{Time.now}.\n"
   
-  for feed in Feed.find(:all)
-     feed.update_feed
-  end
+  Feed.find(:all).each {|feed| feed.update_feed}
   
-  sleep 60
+  # Updating all the feeds usually takes pretty long so it's not necessary to sleep for that long.
+  sleep 5 
 end
