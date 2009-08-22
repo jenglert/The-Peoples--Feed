@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
     t.integer "category_id"
   end
 
-  add_index "feed_item_categories", ["category_id"], :name => "category_fk"
-  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_fk"
+  add_index "feed_item_categories", ["category_id"], :name => "category_id"
+  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_id"
 
   create_table "feed_items", :force => true do |t|
     t.string   "title"
@@ -64,14 +64,15 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
     t.integer  "feed_id"
     t.datetime "pub_date"
     t.integer  "clicks",                                                                   :default => 0
+    t.integer  "comments_count",                                                           :default => 0
     t.string   "image_thumbnail"
     t.string   "image_url"
     t.string   "image_credits"
-    t.integer  "comments_count",                                                           :default => 0
     t.decimal  "rating",                                     :precision => 8, :scale => 2
     t.integer  "feed_item_categories_count"
   end
 
+  add_index "feed_items", ["feed_id"], :name => "feed_id"
   add_index "feed_items", ["feed_id"], :name => "index_feed_items_on_feed_id"
   add_index "feed_items", ["guid"], :name => "index_feed_items_on_guid"
 
@@ -83,7 +84,13 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
     t.string   "feed_url"
   end
 
-  add_index "feed_parse_logs", ["feed_id"], :name => "fpl_feed_fk"
+  add_index "feed_parse_logs", ["feed_id"], :name => "index_feed_parse_logs_on_feed_id"
+
+  create_table "feed_parse_stats", :id => false, :force => true do |t|
+    t.integer "feed_id"
+    t.integer "dayofyear(parse_start)"
+    t.integer "feed_items_added"
+  end
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
@@ -118,10 +125,12 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
     t.datetime "remember_token_expires_at"
   end
 
-  create_table "vw_feed_parse_stats", :id => false, :force => true do |t|
-    t.integer "feed_id"
-    t.integer "dayofyear"
-    t.integer "feed_items_added"
-  end
+  #Custom SQL
+  execute "create or replace view vw_feed_parse_stats as (select feed_id, dayofyear(parse_start) dayofyear, feed_items_added from feed_parse_logs group by dayofyear(parse_start), feed_id);"
+  execute "alter table feed_item_categories add constraint category_fk foreign key (category_id) references categories(id);"
+  change_column :feed_item_categories, :feed_item_id, :integer
+  execute "alter table feed_item_categories add constraint feed_item_fk foreign key (feed_item_id) references feed_items(id);"
+  execute "alter table feed_items add constraint feed_fk foreign key (feed_id) references feeds(id);"
+  execute "alter table feed_parse_logs add constraint fpl_feed_fk foreign key (feed_id) references feeds(id);"
 
 end

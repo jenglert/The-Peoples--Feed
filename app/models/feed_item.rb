@@ -102,7 +102,7 @@ class FeedItem < ActiveRecord::Base
   end
   
   def comments_points
-    self.comments.count * 5
+    self.comments_count * 5
   end
   
   def category_points
