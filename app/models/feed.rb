@@ -30,14 +30,8 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    feed_parse_log = FeedParseLog.new(  
-      :feed_id => self.id,
-      :feed_url => self.feed_url,
-      :parse_start => Time.now,
-      :feed_items_added => 0
-    )
     result = Feedzirra::Feed.fetch_and_parse(feed_url) 
-    save_from_result(result, feed_parse_log)
+    save_from_result(result)
   end
   
   def feed_items_sorted
@@ -65,7 +59,14 @@ class Feed < ActiveRecord::Base
     feed_parse_log.increase_items
   end
   
-  def save_from_result(result, feed_parse_log)
+  def save_from_result(result)
+    feed_parse_log = FeedParseLog.create!(  
+      :feed_id => self.id,
+      :feed_url => self.feed_url,
+      :parse_start => Time.now,
+      :feed_items_added => 0
+    )
+    
     return false unless result.title
     self.title = result.title.strip
     self.description = result.description.nil? ? "" : result.description.strip.remove_html
