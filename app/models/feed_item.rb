@@ -71,7 +71,8 @@ class FeedItem < ActiveRecord::Base
   
   # The overall rating for this feed item.
   def calculate_rating
-    self.rating = time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
+    rating = time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
+    self.update_attributes :rating => self
   end
   
   def time_multiplier

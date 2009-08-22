@@ -32,6 +32,12 @@ class Feed < ActiveRecord::Base
   def update_feed    
     result = Feedzirra::Feed.fetch_and_parse(feed_url) 
     save_from_result(result)
+  
+    # Update the ratings for all the feed items created with 20 days.
+    FeedItems.find(:all, :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id]).each { |feed_item| feed_item.calculate_rating }
+    
+    # Force the feed's rating to be updated
+    self.rating
   end
   
   def feed_items_sorted
