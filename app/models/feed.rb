@@ -10,7 +10,7 @@ class Feed < ActiveRecord::Base
   
   validates_presence_of :feed_url
   validates_uniqueness_of :feed_url
-  validates_presence_of :feed_items  #'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
+  validates_presence_of :feed_items  , :message => 'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
   named_scope :top_feeds, :order => 'rating desc', :limit => 5
   
@@ -20,9 +20,10 @@ class Feed < ActiveRecord::Base
     return 0 if self.feed_items.count.zero?    
     calculated_rating = FeedItem.find(
       :all,
-      :select => 'sum(rating) as feed_rating',
+      :select => 'IFNULL(sum(rating), 0) as feed_rating',
       :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
       :group => 'feed_id')[0].feed_rating.to_d
+      
     self.update_attributes :rating => calculated_rating
     calculated_rating
   end
