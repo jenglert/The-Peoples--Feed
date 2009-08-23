@@ -70,7 +70,8 @@ class FeedItem < ActiveRecord::Base
   end
   
   def update_rating
-    self.update_attributes :rating => calculate_rating
+    new_rating = calculate_rating
+    self.update_attributes :rating => new_rating if new_rating != self.rating
   end
   
   # The overall rating for this feed item.
