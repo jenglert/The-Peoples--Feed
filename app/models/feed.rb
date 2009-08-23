@@ -83,7 +83,7 @@ class Feed < ActiveRecord::Base
     add_entries(result.entries, feed_parse_log)
     feed_parse_log.parse_finish = Time.new
     feed_parse_log.save
-    return self.save!
+    return self.save
   end
   
 end
