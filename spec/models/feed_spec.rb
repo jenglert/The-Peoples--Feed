@@ -77,4 +77,14 @@ describe FeedItem do
     feed.feed_items << FeedItem.new
     feed.save.should be_true
   end
+  
+  it "should return quickly for non-existent URLs" do
+    start_time = Time.new
+    feed = Feed.new(:feed_url => 'thisurlshouldneverexist')
+    
+    # Update the feed - This should not succeed
+    feed.update_feed
+    
+    (Time.new - start_time).should < 5.seconds
+  end
 end

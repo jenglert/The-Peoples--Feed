@@ -73,7 +73,8 @@ class Feed < ActiveRecord::Base
       :feed_items_added => 0
     )
     
-    return false unless result.title
+    return false unless result && result.title
+    
     self.title = result.title.strip
     self.description = result.description.nil? ? "" : result.description.strip.remove_html
     self.url = result.url.strip if result.url    
