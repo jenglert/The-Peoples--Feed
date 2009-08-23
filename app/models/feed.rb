@@ -34,7 +34,7 @@ class Feed < ActiveRecord::Base
     save_from_result(result)
   
     # Update the ratings for all the feed items created with 20 days.
-    FeedItems.find(:all, :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id]).each { |feed_item| feed_item.calculate_rating }
+    FeedItem.find(:all, :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id]).each { |feed_item| feed_item.update_rating }
     
     # Force the feed's rating to be updated
     self.rating
