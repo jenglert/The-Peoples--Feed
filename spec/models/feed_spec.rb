@@ -2,7 +2,8 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe FeedItem do
   
-  before(:all) do
+  before(:each) do
+    # Clear all the feed parse logs
     FeedParseLog.destroy_all
   end
 
