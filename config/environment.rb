@@ -34,7 +34,6 @@ Rails::Initializer.run do |config|
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.active_record.default_timezone = :utc
-  config.active_record.timestamped_migrations = false
 
   # Use the file store cache
   config.cache_store = :file_store, "#{RAILS_ROOT}/tmp/cache"

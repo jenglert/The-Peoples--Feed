@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090819151348) do
+ActiveRecord::Schema.define(:version => 20090823002806) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
 
   add_index "feed_parse_logs", ["feed_id"], :name => "index_feed_parse_logs_on_feed_id"
 
-  create_table "feed_parse_stats", :id => false, :force => true do |t|
-    t.integer "feed_id"
-    t.integer "dayofyear(parse_start)"
+  create_table "feed_parse_stats", :force => true do |t|
+    t.integer "feed_id",          :null => false
+    t.date    "parse_day"
     t.integer "feed_items_added"
   end
 
@@ -114,6 +114,18 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "testjim", :force => true do |t|
+    t.string   "title"
+    t.string   "image_url"
+    t.string   "feed_url"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
+    t.integer  "clicks",                                    :default => 0
+    t.decimal  "rating",      :precision => 8, :scale => 2
+  end
+
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "email"
@@ -124,13 +136,5 @@ ActiveRecord::Schema.define(:version => 20090819151348) do
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
   end
-
-  #Custom SQL
-  execute "create or replace view vw_feed_parse_stats as (select feed_id, dayofyear(parse_start) dayofyear, feed_items_added from feed_parse_logs group by dayofyear(parse_start), feed_id);"
-  execute "alter table feed_item_categories add constraint category_fk foreign key (category_id) references categories(id);"
-  change_column :feed_item_categories, :feed_item_id, :integer
-  execute "alter table feed_item_categories add constraint feed_item_fk foreign key (feed_item_id) references feed_items(id);"
-  execute "alter table feed_items add constraint feed_fk foreign key (feed_id) references feeds(id);"
-  execute "alter table feed_parse_logs add constraint fpl_feed_fk foreign key (feed_id) references feeds(id);"
 
 end
