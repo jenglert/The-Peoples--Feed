@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe FeedItem do
+  
+  before(:all) do
+    FeedParseLog.destroy_all
+  end
 
   it "should set rating to 0 if new record" do
     @feed = Feed.new
@@ -53,5 +57,23 @@ describe FeedItem do
     FeedParseLog.count.should == 1
     Category.count.should == 2
   end
+  
+  it "should not save if the feed URL is blank" do
+    feed = Feed.new
+    feed.save.should be_false
+    
+    feed.errors.entries[0][0].should == 'feed_url'
+    feed.errors.entries[0][1].should == "can't be blank"
+  end
 
+  it "should not save without any feed items" do
+    feed = Feed.new(:feed_url => 'thisdoesnotexist')
+    feed.save.should be_false
+    
+    feed.errors.entries.length.should == 1
+    
+    # We should be able to save the feed item after we have added a feed item.
+    feed.feed_items << FeedItem.new
+    feed.save.should be_true
+  end
 end
