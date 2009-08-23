@@ -10,9 +10,14 @@ class Feed < ActiveRecord::Base
   
   validates_presence_of :feed_url
   validates_uniqueness_of :feed_url
-  validates_presence_of :feed_items  , :message => 'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided or email <a href=mailto:webmaster@thepeoplesfeed.com>us</a> for asisstence.'
   
   named_scope :top_feeds, :order => 'rating desc', :limit => 5
+  
+  def validate
+    if feed_items.length == 0
+      errors.add_to_base 'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided.'
+    end
+  end
   
   # Determines the rating for
   def rating
