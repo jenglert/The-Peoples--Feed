@@ -15,7 +15,6 @@ config.action_view.debug_rjs                         = true
 # Currently, caching is enabled in the development environment to make development easier. It is necessary to ensure that the site
 # still works if you actual reload the cached pages.  You can do this either by removing the cached files or disabling the cache.
 config.action_controller.perform_caching             = true
-ActionController::Base.cache_store = :file_store, "/path/to/cache/directory" 
 
 
 # Don't care if the mailer can't send
