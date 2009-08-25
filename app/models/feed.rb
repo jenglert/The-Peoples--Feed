@@ -66,7 +66,7 @@ class Feed < ActiveRecord::Base
         end        
       end #each 
     rescue => ex
-      logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
+      logger.error "Unable to parse feed #{self.id}. #{ex.class}: #{ex.message} : #{ex.backtrace}"
   end
   
   def add_feed_item(new_feed_item, feed_parse_log)
