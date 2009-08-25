@@ -67,6 +67,9 @@ class FeedItem < ActiveRecord::Base
         end
       end
     end
+    
+  rescue ex
+    LOG.error "Failed to update categories: " + ex.message
   end
   
   def update_rating

@@ -23,11 +23,16 @@ class Feed < ActiveRecord::Base
   def rating
     return 0 if new_record?
     return 0 if self.feed_items.count.zero?    
-    calculated_rating = FeedItem.find(
+    calculated_rating = 0
+    
+    # This query can return nil if there are no feed items that match the conditions.
+    result = FeedItem.find(
       :all,
-      :select => 'IFNULL(sum(rating), 0) as feed_rating',
+      :select => 'sum(rating) as feed_rating',
       :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
-      :group => 'feed_id')[0].feed_rating.to_d
+      :group => 'feed_id')[0]
+      
+    calculated_rating = result.feed_rating.to_d unless result.nil?
       
     self.update_attributes :rating => calculated_rating
     calculated_rating
@@ -60,16 +65,16 @@ class Feed < ActiveRecord::Base
           add_feed_item(new_feed_item, feed_parse_log)        
         end        
       end #each 
-    #rescue => ex
-      #logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
-    #end
+    rescue => ex
+      logger.error "Unable to parse feed item #{self.id}. #{ex.class}: #{ex.message}"
   end
   
   def add_feed_item(new_feed_item, feed_parse_log)
     self.feed_items << new_feed_item
     feed_parse_log.increase_items
   end
-  
+
+  # Save the result of the Feedzirra request into the database.
   def save_from_result(result)
     feed_parse_log = FeedParseLog.create!(  
       :feed_id => self.id,
@@ -77,14 +82,20 @@ class Feed < ActiveRecord::Base
       :parse_start => Time.now,
       :feed_items_added => 0
     )
-    
-    return false unless result && result.title
+
+    # We need to check whether the result will respond to certain methods. Depending
+    # on the type of feed that was parsed, all of these parameters may or may not
+    # be present.
+    return false unless result && result.respond_to?('title') && result.title
     
     self.title = result.title.strip
-    self.description = result.description.nil? ? "" : result.description.strip.remove_html
+
+    # The SAX machine may or may not have added description
+    self.description = result.respond_to?('description') && result.description ? result.description.strip.remove_html : ""
+
     self.url = result.url.strip if result.url    
     # Bug: Fix image url parsing
-    self.image_url = result.image.url.strip if result.image && result.image.url 
+    self.image_url = result.image.url.strip if result.respond_to?('image') && result.image && result.image.url
     add_entries(result.entries, feed_parse_log)
     feed_parse_log.parse_finish = Time.new
     feed_parse_log.save
