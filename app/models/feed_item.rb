@@ -114,7 +114,6 @@ class FeedItem < ActiveRecord::Base
   end
   
   def category_points
-    self.categories.count
-
+    self.categories.count > 3 ? 3 : self.categories.count
   end
 end
