@@ -2,7 +2,7 @@
 <html>
 <head>
 	<%= stylesheet_link_tag 'main' %>
-	<meta name="verify-v1" content="qnzsIVoN1EFhSa6I3djN8bQ0o9x+L1NZp/eJ6C6XCao=" >
+        <meta name="verify-v1" content="qnzsIVoN1EFhSa6I3djN8bQ0o9x+L1NZp/eJ6C6XCao=" ></meta>
 	<title>
 		<%= "#@page_title - " if !@page_title.nil? %> The People's Feed
 	</title>
@@ -44,13 +44,13 @@
 		</div>
 		<div class="menu" >
 			<% link_to '/' do %>
-				<img src="/images/menu_01.png" alt="Top RSS feeds">
+				<img src="/images/menu_01.png" alt="Top RSS feeds" />
 			<% end %>
 			<% link_to :controller => 'feed', :action => 'new' do %>
-				<img src="/images/menu_02.png" alt="Add a RSS feed">
+				<img src="/images/menu_02.png" alt="Add a RSS feed" />
 			<% end %>
 			<% link_to :controller => 'users', :action => 'new' do %>
-				<img src="/images/menu_03.png" alt="Join the People's feed">
+				<img src="/images/menu_03.png" alt="Join the People's feed" />
 			<% end %>
 		</div>
 	</div>

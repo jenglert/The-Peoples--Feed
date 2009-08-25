@@ -6,7 +6,7 @@
 			</td>
 			<td>
 				<h4>
-					<% link_to ({:controller => "feed_item", :action => "redir", :id => feedItem.id }, :target => '_blank') do%>
+					<% link_to({:controller => "feed_item", :action => "redir", :id => feedItem.id }, :target => '_blank') do%>
 						<%= truncate h(feedItem.title.fix_html), :length => 60, :omission => '...' %>
 					<% end %>
 				</h4>
@@ -18,7 +18,6 @@
 					<%= truncate h(feedItem.description.fix_html), :length => 360, :omission => "..."  %> 
 					<span class="comment"><%= link_to '(comment)', feedItem %></span>
 				</div>
-			</div>
 			</td>
 		</tr>
 	</table>
