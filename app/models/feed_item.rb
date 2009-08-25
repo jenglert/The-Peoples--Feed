@@ -68,7 +68,7 @@ class FeedItem < ActiveRecord::Base
       end
     end
     
-  rescue ex
+  rescue => ex
     LOG.error "Failed to update categories: " + ex.message
   end
   
