@@ -15,7 +15,7 @@
 			</td>
 			<td class="description" rowspan="2" colspan="3">
 				<div class="fullArticle">
-					<%= link_to 'Read the Full Article',@feed_item.itemUrl %>
+					<%= link_to 'Read the Full Article',@feed_item.item_url %>
 				</div>
 				<div>
 					<%= image_tag @feed_item.image_url if @feed_item.image_url%>
@@ -72,7 +72,7 @@
 							Comments Pts.
 						</td>
 						<td>
-							<%= @feed_item.comment_points.to_s %>
+							<%= @feed_item.comments_points.to_s %>
 						</td>
 					</tr>
 					<tr>

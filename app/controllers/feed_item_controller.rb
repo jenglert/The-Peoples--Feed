@@ -21,7 +21,7 @@ class FeedItemController < ApplicationController
     @feed_item.clicks = @feed_item.clicks + 1
     @feed_item.save
     
-    redirect_to @feed_item.itemUrl
+    redirect_to @feed_item.item_url
   end
   
   def media

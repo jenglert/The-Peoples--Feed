@@ -133,7 +133,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .joinUs P					 { padding-left: 35px; padding-right: 20px;        }
 
 /* How it all works */
-.howItAllWorks               { text-align: left; padding: 0px 10px 10px 10px; }
+.howItAllWorks               { text-align: left; padding: 0px 10px 10px 10px; margin: 0px 10px 10px 10px; }
 .howItAllWorks P             { padding: 10px; }
 
 /* Media view page */

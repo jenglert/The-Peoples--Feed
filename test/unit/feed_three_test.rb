@@ -20,7 +20,7 @@ class FeedThreeTest < ActiveSupport::TestCase
     assert_equal 22, @feed.feed_items.length
     assert_equal "", @feed.description
 #   This doesn't work yet.
-#   assert_equal 'http://graphics.nytimes.com/images/section/NytSectionHeader.gif', @feed.imageUrl
+#   assert_equal 'http://graphics.nytimes.com/images/section/NytSectionHeader.gif', @feed.image_url
     assert_equal 'NYT > Small Business', @feed.title
     assert_equal 'http://www.nytimes.com/pages/business/smallbusiness/index.html?partner=rss', @feed.url
     

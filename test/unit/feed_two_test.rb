@@ -20,7 +20,7 @@ class FeedTwoTest < ActiveSupport::TestCase
     assert_equal 8, @feed.feed_items.length
     assert_equal "All of QualityHealth's original articles and news stories, updated to your RSS reader or to your website every day", @feed.description
 #   This needs to be fixed.
-#   assert_equal 'http://www.qualityhealth.com/resources/qh2/widgets/images/qhlogo.jpg', @feed.imageUrl
+#   assert_equal 'http://www.qualityhealth.com/resources/qh2/widgets/images/qhlogo.jpg', @feed.image_url
     assert_equal 'All content from QualityHealth, updated daily', @feed.title
     assert_equal 'http://www.qualityhealth.com/', @feed.url
     
