@@ -11,7 +11,7 @@ class FeedItem < ActiveRecord::Base
   before_save :calculate_rating
   
   def FeedItem.find_top_feed_items
-    FeedItem.find(:all, :limit => 20, :order => 'rating desc, created_at desc')
+    FeedItem.find(:all, :limit => 20, :order => 'rating desc')
   end
 
 
@@ -69,7 +69,7 @@ class FeedItem < ActiveRecord::Base
     end
     
   rescue => ex
-    LOG.error "Failed to update categories: " + ex.message
+    LOG.error "Failed to update categories: #{ex.message}: #{ex.backtrace}"
   end
   
   def update_rating
@@ -83,11 +83,9 @@ class FeedItem < ActiveRecord::Base
   end
   
   def time_multiplier
-    # Calculates a multiplier from 0 to 4 which serves to indicate how new the feed is.
+    # Calculates a multiplier from 0 to 1 which serves to indicate how new the feed is.
     time = self.created_at || Time.now
-    time_multiplier = (time - 20.days.ago)/5.days
-    # Normalize the time multiplier to a maximum of 1
-    time_multiplier /= 4
+    time_multiplier = (time - 3.days.ago)/3.days
     return 0 if time_multiplier < 0.05 
     time_multiplier
   end
