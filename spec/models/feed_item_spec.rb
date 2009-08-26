@@ -105,4 +105,24 @@ describe FeedItem do
     @feed_item.update_categories(@categories)
     @feed_item.categories.length.should == 1
   end
+
+  it "should have recent feeds that return feeds from the last 3 days" do
+    feeditem1 = FeedItem.create!(:created_at => 1.days.ago)
+    feeditem2 = FeedItem.create!(:created_at => 2.days.ago)
+    feeditem3 = FeedItem.create!(:created_at => 3.1.days.ago)
+    feeditem4 = FeedItem.create!(:created_at => 4.days.ago)
+
+    FeedItem.recent.should include(feeditem1)
+    FeedItem.recent.should include(feeditem2)
+    FeedItem.recent.should_not include(feeditem3)
+    FeedItem.recent.should_not include(feeditem4)
+  end
+  
+  it "should be searchable by feed id" do
+    feed = Feed.create!(:feed_url => 'test', :feed_items => [FeedItem.create!()])
+    feeditem1 = FeedItem.create!(:feed_id => feed.id)
+    
+    FeedItem.for_feed(feed.id).should include(feeditem1)
+    FeedItem.for_feed(-1).should_not include(feeditem1)
+  end
 end

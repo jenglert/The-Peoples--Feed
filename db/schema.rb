@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090823002806) do
+ActiveRecord::Schema.define(:version => 20090826032117) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20090823002806) do
     t.string   "image_url"
     t.string   "image_credits"
     t.decimal  "rating",                                     :precision => 8, :scale => 2
-    t.integer  "feed_item_categories_count"
+    t.integer  "feed_item_categories_count",                                               :default => 0
   end
 
   add_index "feed_items", ["feed_id"], :name => "feed_id"

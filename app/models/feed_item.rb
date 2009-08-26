@@ -9,11 +9,13 @@ class FeedItem < ActiveRecord::Base
   acts_as_commentable
   
   before_save :calculate_rating
+
+  named_scope :recent, :conditions => ["created_at > ?", 3.days.ago]
+  named_scope :for_feed, lambda { |*args| {:conditions => ["feed_id = ?", args.first]}}
   
   def FeedItem.find_top_feed_items
     FeedItem.find(:all, :limit => 20, :order => 'rating desc')
   end
-
 
   # The guid will be either the defined guid (preferrably) or the entry's link
   def set_guid_from_entry(entry)

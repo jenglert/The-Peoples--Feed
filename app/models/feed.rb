@@ -29,8 +29,7 @@ class Feed < ActiveRecord::Base
     result = FeedItem.find(
       :all,
       :select => 'sum(rating) as feed_rating',
-      :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id],
-      :group => 'feed_id')[0]
+      :conditions => ["created_at > ? and feed_id = ?", 3.days.ago, self.id])[0]
       
     calculated_rating = result.feed_rating.to_d unless result.nil?
       
@@ -40,11 +39,11 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
-    result = Feedzirra::Feed.fetch_and_parse(feed_url) 
+    result = Feedzirra::Feed.fetch_and_parse(feed_url, :compress => true, :timeout => 5) 
     save_from_result(result)
   
-    # Update the ratings for all the feed items created with 20 days.
-    FeedItem.find(:all, :conditions => ["updated_at > ? and feed_id = ?", 20.days.ago, self.id]).each { |feed_item| feed_item.update_rating }
+    # Update the ratings for all the feed items created with 3 days.
+    FeedItem.recent.for_feed(self.id).each { |feed_item| feed_item.update_rating }
     
     # Force the feed's rating to be updated
     self.rating
