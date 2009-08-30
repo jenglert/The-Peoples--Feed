@@ -15,7 +15,7 @@
 			<td class="leftColumn"><%= @feed.feed_items.count.to_s + ' ' + 'Articles'.pluralize %></td>
 			<td>
 				<a class="tooltip" title="The People's Feed uses a rating system to help determine which feeds are the most popular in the overal scheme of things.  Rather than using a closed, proprietary system like Google, we use an open ratings system.  This allows the community at large to have input on the most effective ratings.">
-				<b>Rating: </b> <%= sprintf('%.1f', @feed.rating) unless rating.nil? %>
+				<b>Rating: </b> <%= sprintf('%.1f', @feed.rating) unless @feed.rating.nil? %>
 				<span class="whatIsThis">(what is this)</span>
 			</td>
 		</tr>
