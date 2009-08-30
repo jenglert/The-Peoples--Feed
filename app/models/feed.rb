@@ -31,7 +31,7 @@ class Feed < ActiveRecord::Base
       :select => 'sum(rating) as feed_rating',
       :conditions => ["created_at > ? and feed_id = ?", 3.days.ago, self.id])[0]
       
-    calculated_rating = result.feed_rating.to_d unless result.nil?
+    calculated_rating = result.feed_rating.to_d unless result.nil? or result.feed_rating.nil?
       
     self.update_attributes :rating => calculated_rating
     calculated_rating
