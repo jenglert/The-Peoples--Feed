@@ -16,6 +16,11 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new
     render :action => 'edit'
   end
+  
+  def update
+    @blog_post = BlogPost.new(params[:blog_post])
+    @blog_post.save
+  end
 
   def create
     @blog_post = BlogPost.new(params[:blog_post])
