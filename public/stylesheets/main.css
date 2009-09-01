@@ -151,7 +151,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .siteMap UL                  { padding-left: 45px; padding-bottom: 10px;      }
 
 /* Search Results */
-.searchResults               { width: 800px; }
+.searchResults               { width: 800px; margin-top: 15px;}
 
 /* Blog Posts */
 .blogPosts H1                { padding-bottom: 15px;                                    }
