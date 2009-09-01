@@ -177,4 +177,4 @@ TABLE.userSignup .rightAlign { text-align: right; }
 /* Email Subscription Join */
 .emailSubscription           { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
 .emailSubscription .errorExplanation { margin: 15px 15px;                              }
-.emailSubscriptionSuccess    { margin: 0px 10px 10px 10px;                             }
+.emailSubscriptionSuccess    { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
