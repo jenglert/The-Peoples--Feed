@@ -18,8 +18,11 @@ describe FeedItem do
     @feed_item = FeedItem.create!
     @feed_item.rating.should == 0
     @feed_item.image_url = 'http://localhost'
-    @feed_item.save!
-    @feed_item.rating.should_not == 0
+    @feed_item.save
+    @feed_item.rating.should  be_close(4, 0.0001)
+    
+    # After getting the item from the database, the rating should still not be 0
+    FeedItem.find(@feed_item.id).rating.should be_close(4, 0.0001)
   end
   
   it "should set guid to id" do
@@ -124,5 +127,9 @@ describe FeedItem do
     
     FeedItem.for_feed(feed.id).should include(feeditem1)
     FeedItem.for_feed(-1).should_not include(feeditem1)
+  end
+  
+  it "should be able to update the rating" do
+  
   end
 end

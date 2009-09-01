@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090826032117) do
+ActiveRecord::Schema.define(:version => 20090901034340) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(:version => 20090826032117) do
   end
 
   add_index "comments", ["user_id"], :name => "fk_comments_user"
+
+  create_table "email_subscriptions", :force => true do |t|
+    t.string   "email"
+    t.integer  "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feed_item_categories", :force => true do |t|
     t.integer "feed_item_id"

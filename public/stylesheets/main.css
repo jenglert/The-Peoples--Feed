@@ -131,6 +131,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .joinUs H3                   { padding-bottom: 3px; padding-left: 25px;        }
 .joinUs DIV.whiteBackground  { margin: 0px 10px 15px 10px; padding: 3px;       }
 .joinUs P					 { padding-left: 35px; padding-right: 20px;        }
+.joinUs .emailSubscription   { padding-left: 50px; padding-top: 16px;          }
 
 /* How it all works */
 .howItAllWorks               { text-align: left; padding: 0px 10px 10px 10px; margin: 0px 10px 10px 10px; }
@@ -167,9 +168,13 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .openSource P                { padding-bottom: 15px;									}
 
 /* Add a feed */
-.addFeedGuidlines            { text-align: left;  padding: 8px; margin: 5px 5px 10px 5px;
-	}
+.addFeedGuidlines            { text-align: left;  padding: 8px; margin: 5px 5px 10px 5px; }
 .addFeedGuidlines P          { padding-bottom: 10px;									}
 .addFeedGuidlines H1         { padding-bottom: 10px;									}
 .addFeedGuidlines DT         { padding-left: 8px; font-size: 16px;                      }
 .addFeedGuidlines DL         { padding-left: 20px; font-size: 13px; padding-bottom: 5px;}
+
+/* Email Subscription Join */
+.emailSubscription           { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
+.emailSubscription .errorExplanation { margin: 15px 15px;                              }
+.emailSubscriptionSuccess    { margin: 0px 10px 10px 10px;                             }

@@ -5,7 +5,19 @@
 		<p>
 			ThePeoplesFeed needs help. Smart, ingenious folks just like you can help this site grow.  There are many different ways to contribute.  Please help harvest the sea of RSS feeds.
 		</p>
+	</div>
+	<div class="whiteBackground">
+		<h2>Receive Email Updates</h2>
+		<p>
+			Enter your email address below to receive interesting updates about the development efforts at ThePeoplesFeed.  We won't email you more than once a month and we certainly won't share your email with anyone else.
+		</p>
+		<div class="emailSubscription">
+			<% form_for EmailSubscription.new do |f| %>
+				email: <%= f.text_field :email %>
+				<%= submit_tag 'Join' %>
+			<% end %>
 		</div>
+	</div>
 	<div class="whiteBackground">
 		<h2>Why Contribute</h2>
 		<p>

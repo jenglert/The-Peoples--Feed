@@ -51,11 +51,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :category
   map.resources :category_comment
   map.resources :homepage
-  map.resources :update_feeds
   map.resources :feed_item_comment
   map.resources :category_organizer
   map.resources :comment
   map.resources :blog_posts
+  map.resources :email_subscriptions
   map.connect 'blog', :controller => 'blog_posts'
   
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'

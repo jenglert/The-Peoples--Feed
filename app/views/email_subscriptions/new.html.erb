@@ -1,0 +1,12 @@
+<div class="emailSubscription whiteBackground">
+
+	<%= page_title "Join The People's Feed Newsletter" %>
+	
+	<p>The People's Feed offers a monthly newsletter. The newsletter contains interesting challenges that The People's Feed has faced.  We promise never to send a newsletter more than once a month. Also, we promise never to give your information to anyone else.
+	</p>
+	<% form_for @email_subscription do |f| %>
+		<%= error_messages_for :email_subscription %>
+		email:<%= f.text_field :email %>
+		<%= submit_tag "Join"%>
+	<% end %>
+</div>
