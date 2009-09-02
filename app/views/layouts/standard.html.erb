@@ -124,5 +124,8 @@
 	pageTracker._trackPageview();
 	} catch(err) {}</script>
 	
+	<div class="lastUpdated">
+		Last Updated: <%= FeedItem.find(:all, :select => "max(created_at) as created")[0].created %>
+	</div>
 </body>
 </html>

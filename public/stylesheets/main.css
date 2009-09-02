@@ -13,6 +13,7 @@ H1                      { padding-bottom: 5px; }
 .pagination      A:visited { font-size: 16px;                                                }
 .fieldWithErrors           { display:inline;                                                 }
 .whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
+.lastUpdated               { font-size: 8px;                                                 }
 
 /* Global tooltip CSS */
 #tooltip { 	position: absolute;	z-index: 3000;	border: 1px solid #111;	background-color: #eee;	padding: 4px;	opacity: 0.85; }
