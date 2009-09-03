@@ -1,13 +1,16 @@
 <div class="commentsList">
-	<%= page_title "User Comments" %>
+	<%= page_title "Comments" %>
 	
-	<div class="comment">
 		<% for comment in @comments %>
-			<div class="title"><%= link_to comment.title, comment.commentable %></div>
-			<div class="byline"><%= comment.name %></div>
-			
+			<div class="comment whiteBackground">
+				<div class="title">
+					<%= link_to comment.title, comment.commentable %>
+					By <%= comment.name %>
+				</div>
+				<div class="date"><%= comment.created_at.pretty %></div>
+				<div class="clearBoth"></div>
+				<div class="commentBody"><%= comment.comment %></div>
+			</div>
 			
 		<% end %>
-	</div>
-	
 </div>

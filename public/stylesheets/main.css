@@ -179,3 +179,9 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .emailSubscription           { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
 .emailSubscription .errorExplanation { margin: 15px 15px;                              }
 .emailSubscriptionSuccess    { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
+
+/* Comments list */
+.commentsList .commentBody   { text-align: left; padding-left: 40px;                                }
+.commentsList .comment       { padding-bottom : 5px; margin: 10px 50px 10px 50px; padding-top: 5px; }
+.commentsList .comment .title{ float: left; padding-left: 25px; padding-bottom: 10px;               }
+.commentsList .comment .date { float: right; padding-right: 10px;                                   }
