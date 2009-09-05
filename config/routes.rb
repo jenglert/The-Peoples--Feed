@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users
-
-  map.resource :session
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -42,7 +38,11 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  
+
+  map.resource :session
+  map.resources :users, :collection => { :login_submit => :post }
+  map.connect 'login', :controller => 'users', :action => 'login'
+  map.connect 'logout', :controller => 'users', :action => 'logout'
   map.resources :feed
   map.resources :feed_comment
   map.connect 'feed_item/media', :controller => 'feed_item', :action => 'media'
@@ -53,7 +53,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :homepage
   map.resources :feed_item_comment
   map.resources :category_organizer
-  map.resources :comment
+  map.resources :comments
   map.resources :blog_posts
   map.resources :email_subscriptions
   map.connect 'blog', :controller => 'blog_posts'

@@ -15,6 +15,10 @@ H1                      { padding-bottom: 5px; }
 .whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
 .lastUpdated               { font-size: 8px;                                                 }
 
+.flashes                   { margin: auto; padding-bottom: 15px;                                                }
+.flashes .error            { background-color: red; margin-left: 100px; margin-right: 100px; padding: 10px;     }
+.flashes .notice           { background-color: #00FF99; margin-left: 100px; margin-right: 100px; padding: 10px; }
+
 /* Global tooltip CSS */
 #tooltip { 	position: absolute;	z-index: 3000;	border: 1px solid #111;	background-color: #eee;	padding: 4px;	opacity: 0.85; }
 #tooltip h3, #tooltip div { margin: 0; font-size: 15px; width: 400px;}
@@ -33,7 +37,7 @@ H1                      { padding-bottom: 5px; }
 .footer A               { font-size: 13px; }
 .footer A:VISITED       { font-size: 13px; }
 .centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
-.centerColumn                   { width: 700px; padding-top: 10px;}
+.centerColumn                   { width: 690px; padding-top: 10px; padding-right: 10px; }
 .rightHandList                  { width: 175px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
 								  background-color: #3D3DC3; color: #DF6900;}
@@ -142,7 +146,7 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .feedItemMedia TABLE TD      { padding: 5px; }
 
 /* Top small menu */
-.smallMenu                   { position: absolute; left: 450px; font-size: 16px; }
+.smallMenu                   { position: absolute; left: 400px; font-size: 16px; }
 .smallMenu LI                { display: inline; margin-right: 2px; background: #EFEFEF; 
 	                           padding: 2px 2px 1px 2px; border: 2px solid #3D3DC3;
 	 						   -moz-border-radius: 5px; -webkit-border-radius: 5px; }
@@ -176,7 +180,8 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .addFeedGuidlines DL         { padding-left: 20px; font-size: 13px; padding-bottom: 5px;}
 
 /* Email Subscription Join */
-.emailSubscription           { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
+.emailSubscription           { margin: 0px 10px 10px 10px; padding-bottom: 15px; padding-left: 10px; padding-right: 10px; }
+.emailSubscription P         { padding-bottom: 20px;                                   }
 .emailSubscription .errorExplanation { margin: 15px 15px;                              }
 .emailSubscriptionSuccess    { margin: 0px 10px 10px 10px; padding-bottom: 15px;       }
 

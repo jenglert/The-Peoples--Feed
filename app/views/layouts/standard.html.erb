@@ -22,40 +22,24 @@
 			<img src="/images/header_logo.png" alt="The People's Feed" class="logo" />
 		<% end %>
 		<div class="motto">The latest news ranked according to its popularity by YOU</div>
-		<div class="smallMenu">
-			<ul>
-				<li><%= link_to 'how it works', '/how-it-works', :class => 'tooltip', :title => "Learn how The People's Feed works" %></li>
-				<li><%= link_to 'contribute', '/contribute', :class => 'tooltip', :title => "Learn how you can contribute to The People's Feed.  It's easy and very rewarding." %></li>
-				<li><%= link_to 'open source', '/open-source', :class => 'tooltip', :title => "The People's Feed is an open source website.  You can checkout the code on the GitHub." %></li>
-				<li><%= link_to 'blog', '/blog', :class => 'tooltip', :title => "Read The People's Feed's development blog." %></li>
-			</ul>
-		</div>
-		<div class="search">
-			<form action="http://www.thepeoplesfeed.com/search" id="cse-search-box">
-			  <div>
-			    <input type="hidden" name="cx" value="partner-pub-7279077462237001:a7h0rp-l74h" />
-			    <input type="hidden" name="cof" value="FORID:10" />
-			    <input type="hidden" name="ie" value="ISO-8859-1" />
-			    <input type="text" name="q" size="20" />
-			    <input type="submit" name="sa" value="Search" />
-			  </div>
-			</form>
-			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
-		</div>
-		<div class="menu" >
-			<% link_to '/' do %>
-				<img src="/images/menu_01.png" alt="Top RSS feeds" />
-			<% end %>
-			<% link_to :controller => 'feed', :action => 'new' do %>
-				<img src="/images/menu_02.png" alt="Add a RSS feed" />
-			<% end %>
-			<% link_to :controller => 'users', :action => 'new' do %>
-				<img src="/images/menu_03.png" alt="Join the People's feed" />
-			<% end %>
-		</div>
+		
+		<%= render :partial => 'shared/main_menu_insert' %>
 	</div>
 	<div class="body">
 		<div class="centerColumn">
+			<div class="flashes">
+				<% if flash.has_key?(:error) %>
+					<div class="error">
+						<%= flash[:error] %>
+					</div>
+				<% end %>
+				<% if flash.has_key?(:notice) %>
+					<div class="notice">
+						<%= flash[:notice] %>
+					</div>
+				<% end %>
+			</div>
+			
 			<%= yield %>
 		</div>
 		<div class="rightHandList">

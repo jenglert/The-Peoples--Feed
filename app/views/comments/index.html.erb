@@ -10,6 +10,12 @@
 				<div class="date"><%= comment.created_at.pretty %></div>
 				<div class="clearBoth"></div>
 				<div class="commentBody"><%= comment.comment %></div>
+				
+				<% if admin_logged_in?%>
+					<div class="delete">
+						<%= link_to_remote 'Delete', :url => 'comments', :method => :delete %>
+					</div>
+				<% end %>
 			</div>
 			
 		<% end %>

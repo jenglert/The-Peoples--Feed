@@ -2,7 +2,11 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  # Be sure to include AuthenticationSystem in Application Controller instead
+  include AuthenticatedSystem
+  
   helper :all # include all helpers, all the time
+  helper_method :admin_logged_in?
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
   before_filter :load_nav_data
@@ -11,22 +15,23 @@ class ApplicationController < ActionController::Base
   
   caches_action :load_nav_data
   
-  def rescue_404
-    rescue_action_in_public(ActionController::RoutingError)
-    
+  # Determines whether an administrator is logged in.
+  def admin_logged_in? 
+    logged_in? && current_user.admin
   end
   
-  def rescue_action_in_public(exception)
-    #maybe gather up some data you'd want to put in your error page
+  # Filter that will ensure that the admin is logged in
+  def admin_authorized?
+    redirect_to '/' if !admin_logged_in?
+  end
   
-    case exception
-      when ActionController::InvalidAuthenticityToken
-      when ArgumentError
-      when SyntaxError
-        render :template => "shared/error500", :layout => "standard", :status => "500"
-      else
-        render :template => "shared/error404", :layout => "standard", :status => "404"
-    end          
+  def rescue_404
+    rescue_action_in_public(ActionController::RoutingError)
+  end
+  
+  # In case of an error, we show this exception.
+  def rescue_action_in_public(exception)
+    render :template => "shared/error500", :layout => "standard", :status => "500"         
   end
 
   def local_request?

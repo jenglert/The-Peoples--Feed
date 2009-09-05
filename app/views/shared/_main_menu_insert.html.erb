@@ -1,0 +1,51 @@
+<div class="smallMenu">
+	<ul>
+		<li><%= link_to 'how it works', '/how-it-works', :class => 'tooltip', :title => "Learn how The People's Feed works" %></li>
+		<li><%= link_to 'contribute', '/contribute', :class => 'tooltip', :title => "Learn how you can contribute to The People's Feed.  It's easy and very rewarding." %></li>
+		<li><%= link_to 'open source', '/open-source', :class => 'tooltip', :title => "The People's Feed is an open source website.  You can checkout the code on the GitHub." %></li>
+		<li><%= link_to 'blog', '/blog', :class => 'tooltip', :title => "Read The People's Feed's development blog." %></li>
+		<% if !logged_in? %>
+			<li><%= link_to 'login', '/sessions/new', :class => 'tooltip', :title => "Login to The People's Feed" %></li>
+		<% else %>
+			<li><%= link_to 'logout', '/sessions/destroy', :class => 'tooltip', :title => "Logout. Remember to come back soon!" %></li>		
+		<% end %>
+		
+	</ul>
+</div>
+<div class="search">
+	<form action="http://www.thepeoplesfeed.com/search" id="cse-search-box">
+	  <div>
+	    <input type="hidden" name="cx" value="partner-pub-7279077462237001:a7h0rp-l74h" />
+	    <input type="hidden" name="cof" value="FORID:10" />
+	    <input type="hidden" name="ie" value="ISO-8859-1" />
+	    <input type="text" name="q" size="20" />
+	    <input type="submit" name="sa" value="Search" />
+	  </div>
+	</form>
+	<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+</div>
+
+<div class="menu" >
+	<% if !logged_in? %>
+		<% link_to '/' do %>
+			<img src="/images/menu_01.png" alt="Top RSS feeds" />
+		<% end %>
+		<% link_to :controller => 'feed', :action => 'new' do %>
+			<img src="/images/menu_02.png" alt="Add a RSS feed" />
+		<% end %>
+		<% link_to :controller => 'users', :action => 'new' do %>
+			<img src="/images/menu_03.png" alt="Join the People's feed" />
+		<% end %>
+	<% end %>
+	<% if logged_in? %>
+		<% link_to '/' do %>
+			<img src="/images/menu_logged_in_01.png" alt="Top RSS feeds" />
+		<% end %>
+		<% link_to :controller => 'feed', :action => 'new' do %>
+			<img src="/images/menu_logged_in_02.png" alt="Add a RSS feed" />
+		<% end %>
+		<% link_to :controller => 'users', :action => 'new' do %>
+			<img src="/images/menu_logged_in_03.png" alt="Join the People's feed" />
+		<% end %>
+	<% end %>
+</div>

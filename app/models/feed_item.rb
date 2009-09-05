@@ -8,7 +8,7 @@ class FeedItem < ActiveRecord::Base
   has_many :categories, :through => :feed_item_categories
   acts_as_commentable
   
-  # before_save :update_rating
+  before_save :calculate_rating
 
   named_scope :recent, :conditions => ["created_at > ?", 3.days.ago]
   named_scope :for_feed, lambda { |*args| {:conditions => ["feed_id = ?", args.first]}}
@@ -75,13 +75,14 @@ class FeedItem < ActiveRecord::Base
   end
   
   def update_rating
+    orig_rating = self.rating
     new_rating = calculate_rating
-    self.update_attributes :rating => new_rating if new_rating != self.rating
+    self.update_attributes :rating => new_rating if (new_rating - orig_rating).abs > 0.1
   end
-  
+
   # The overall rating for this feed item.
   def calculate_rating
-    time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
+    self.rating = time_multiplier * (clicks_points + description_points + comments_points + image_points + category_points).to_f
   end
   
   def time_multiplier

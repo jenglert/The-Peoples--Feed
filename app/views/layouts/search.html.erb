@@ -33,17 +33,8 @@
 			</form>
 			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
 		</div>
-		<div class="menu" >
-			<% link_to '/' do %>
-				<img src="/images/menu_01.png" alt="Top RSS feeds" />
-			<% end %>
-			<% link_to :controller => 'feed', :action => 'new' do %>
-				<img src="/images/menu_02.png" alt="Add a RSS feed" />
-			<% end %>
-			<% link_to :controller => 'users', :action => 'new' do %>
-				<img src="/images/menu_03.png" alt="Join the People's feed" />
-			<% end %>
-		</div>
+		
+		<%= render :partial => 'shared/main_menu_insert' %>
 	</div>
 	<div class="body">
 	    <%= yield %>
