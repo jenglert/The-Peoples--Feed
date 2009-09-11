@@ -5,5 +5,5 @@ jQuery(document).ready(function() {
 });
 
 // Hide the flash messages after 5 seconds
-//setTimeout("jQuery('.flashes').slideUp('slow')", 6000)
+setTimeout("jQuery('.flashes').slideUp('slow')", 6000)
 
