@@ -1,0 +1,46 @@
+<div class="userPreferences">
+	<%= page_title 'Edit Your Preferences' %>
+	
+	<% form_for :user_preference, @user_preference do |f| %>
+		<%= f.hidden_field :id %>
+		<table>
+			<tr>
+				<td class="label">
+					Favorite Categories
+				</td>
+				<td>
+					<%= f.collection_select :favorite_category, @user_preference.user_category_selections, 'id', 'name' %>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					Favorite Feed
+				</td>
+				<td>
+					<%= f.collection_select :favorite_feed, @user_preference.user_feed_selections, 'id', 'title' %>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					Show Ads
+				</td>
+				<td>
+					<%= f.check_box :show_ads%>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					Hide Member Info
+				</td>
+				<td>
+					<%= f.check_box :hide_member_info %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="update">
+					<%= f.submit 'Update'%>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+</div>
