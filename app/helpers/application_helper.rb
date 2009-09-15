@@ -14,4 +14,13 @@ module ApplicationHelper
     return ""
   end
   
+  def show_ads()
+    if current_user 
+      preferences = UserPreference.find_by_user_id(current_user.id)
+      return preferences.show_ads unless preferences.nil?
+    end
+    
+    true 
+  end
+  
 end

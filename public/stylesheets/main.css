@@ -15,9 +15,9 @@ H1                      { padding-bottom: 5px; }
 .whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
 .lastUpdated               { font-size: 8px;                                                 }
 
-.flashes                   { margin: auto; padding-bottom: 15px;                                                }
-.flashes .error            { background-color: red; margin-left: 100px; margin-right: 100px; padding: 10px;     }
-.flashes .notice           { background-color: #00FF99; margin-left: 100px; margin-right: 100px; padding: 10px; }
+.flashes                   { margin: auto;                                                                      }
+.flashes .error            { background-color: red; margin-left: 100px; margin-right: 100px; padding: 10px; margin-bottom: 10px;    }
+.flashes .notice           { background-color: #00FF99; margin-left: 100px; margin-right: 100px; padding: 10px; margin-bottom: 10px;}
 
 /* Global tooltip CSS */
 #tooltip { 	position: absolute;	z-index: 3000;	border: 1px solid #111;	background-color: #eee;	padding: 4px;	opacity: 0.85; }
@@ -190,3 +190,9 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .commentsList .comment       { padding-bottom : 5px; margin: 10px 50px 10px 50px; padding-top: 5px; }
 .commentsList .comment .title{ float: left; padding-left: 25px; padding-bottom: 10px;               }
 .commentsList .comment .date { float: right; padding-right: 10px;                                   }
+
+/* User Preferences Setup */
+.userPreferences TABLE     { margin: auto;}
+.userPreferences TD        { text-align: left; padding: 1px 10px 2px 10px;   }
+.userPreferences TD.label  { text-align: right;   }
+.userPreferences TD.update { text-align: center;  }

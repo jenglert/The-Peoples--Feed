@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090903030956) do
+ActiveRecord::Schema.define(:version => 20090911204213) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(:version => 20090903030956) do
     t.integer "category_id"
   end
 
-  add_index "feed_item_categories", ["category_id"], :name => "category_id"
-  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_id"
+  add_index "feed_item_categories", ["category_id"], :name => "category_fk"
+  add_index "feed_item_categories", ["feed_item_id"], :name => "feed_item_fk"
 
   create_table "feed_items", :force => true do |t|
     t.string   "title"
@@ -71,15 +71,14 @@ ActiveRecord::Schema.define(:version => 20090903030956) do
     t.integer  "feed_id"
     t.datetime "pub_date"
     t.integer  "clicks",                                                                   :default => 0
-    t.integer  "comments_count",                                                           :default => 0
     t.string   "image_thumbnail"
     t.string   "image_url"
     t.string   "image_credits"
+    t.integer  "comments_count",                                                           :default => 0
     t.decimal  "rating",                                     :precision => 8, :scale => 2
     t.integer  "feed_item_categories_count",                                               :default => 0
   end
 
-  add_index "feed_items", ["feed_id"], :name => "feed_id"
   add_index "feed_items", ["feed_id"], :name => "index_feed_items_on_feed_id"
   add_index "feed_items", ["guid"], :name => "index_feed_items_on_guid"
 
@@ -121,16 +120,14 @@ ActiveRecord::Schema.define(:version => 20090903030956) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "testjim", :force => true do |t|
-    t.string   "title"
-    t.string   "image_url"
-    t.string   "feed_url"
-    t.string   "description"
+  create_table "user_preferences", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "show_ads"
+    t.integer  "favorite_category"
+    t.integer  "favorite_feed"
+    t.boolean  "hide_member_info",  :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "url"
-    t.integer  "clicks",                                    :default => 0
-    t.decimal  "rating",      :precision => 8, :scale => 2
   end
 
   create_table "users", :force => true do |t|

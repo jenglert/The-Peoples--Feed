@@ -2,11 +2,13 @@
 	<table>
 		<tr>
 			<td>
-				<%= image_tag(feedItem.image_url) if feedItem.image_url%>
+				<% link_to({:controller => "feed_item", :action => "redir", :id => feedItem.id }, :target => '_blank') do %>
+					<%= image_tag(feedItem.image_url) if feedItem.image_url%>
+				<% end %>
 			</td>
 			<td>
 				<h4>
-					<% link_to({:controller => "feed_item", :action => "redir", :id => feedItem.id }, :target => '_blank') do%>
+					<% link_to({:controller => "feed_item", :action => "redir", :id => feedItem.id }, :target => '_blank') do %>
 						<%= truncate h(feedItem.title.fix_html), :length => 60, :omission => '...' %>
 					<% end %>
 				</h4>

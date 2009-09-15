@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :models
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -39,6 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
 
+  map.resource :user_preference
   map.resource :session
   map.resources :users, :collection => { :login_submit => :post }
   map.connect 'login', :controller => 'users', :action => 'login'
