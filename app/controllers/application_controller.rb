@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   
   caches_action :load_nav_data
   
+  # Fixes any URL's that are not quite perfect but parseable by providing a redirect to the proper URL.
+  def fix_sloppy_urls(content)
+    puts request.path
+    puts url_for(content)
+    if !url_for(content).ends_with?(request.path)
+      redirect_to content
+    end 
+  end
+  
   # Determines whether an administrator is logged in.
   def admin_logged_in? 
     logged_in? && current_user.admin

@@ -6,6 +6,7 @@ class BlogPostsController < ApplicationController
   
   def show
     @blog_post = BlogPost.find(params[:id])
+    fix_sloppy_urls(@blog_post)
   end
   
   def edit

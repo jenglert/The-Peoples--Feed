@@ -45,5 +45,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
+require 'extensions/all'
 require "will_paginate" 
 require 'cgi'
