@@ -7,4 +7,8 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :post, :message => 'Actually make a post please'
   
   acts_as_commentable
+  
+  def to_param
+    "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-')}"
+  end
 end
