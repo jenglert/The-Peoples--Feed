@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090911204213) do
+ActiveRecord::Schema.define(:version => 20090918024155) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20090911204213) do
 
   add_index "feed_items", ["feed_id"], :name => "index_feed_items_on_feed_id"
   add_index "feed_items", ["guid"], :name => "index_feed_items_on_guid"
+  add_index "feed_items", ["rating"], :name => "index_feed_items_on_rating"
 
   create_table "feed_parse_logs", :force => true do |t|
     t.integer  "feed_id"
