@@ -1,5 +1,5 @@
 <div class="blogPost whiteBackground">
-	<h1><%= show.title %></h1>
+	<h1><%= link_to show.title, show %></h1>
 	<span class="byline">&mdash; posted by <%= show.author %> on <%= show.created_at.pretty %></span>
 	<div class="post">
 		<%= show.post %>

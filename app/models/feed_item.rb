@@ -117,4 +117,9 @@ class FeedItem < ActiveRecord::Base
   def category_points
     self.feed_item_categories_count > 3 ? 3 : self.feed_item_categories_count
   end
+  
+  # This method provides a more SEO friendly URL.
+  def to_param
+    "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-')}"
+  end
 end

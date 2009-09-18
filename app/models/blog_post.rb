@@ -8,6 +8,7 @@ class BlogPost < ActiveRecord::Base
   
   acts_as_commentable
   
+  # This method provides a more SEO friendly URL.
   def to_param
     "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-')}"
   end
