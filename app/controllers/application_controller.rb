@@ -31,7 +31,10 @@ class ApplicationController < ActionController::Base
   
   # Filter that will ensure that the admin is logged in
   def admin_authorized?
-    redirect_to '/' if !admin_logged_in?
+    if !admin_logged_in?
+      flash[:error] = 'You do not have sufficient privledges to access that page.'
+      redirect_to :controller => 'sessions', :action => 'new'
+    end
   end
   
   def rescue_404

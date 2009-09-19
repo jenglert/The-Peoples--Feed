@@ -3,4 +3,7 @@
 	<%= page_title "Development Blog"%>
 	<%= render :partial => 'show', :collection => @blog_posts %>
 	
+	<% if admin_logged_in? %>
+		<%= link_to 'New', :controller => 'blog_posts', :action => 'new' %>
+	<% end %>
 </div>

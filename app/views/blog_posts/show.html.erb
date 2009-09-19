@@ -1,2 +1,6 @@
 <%= page_title @blog_post.title, :write => false %>
 <%= render :partial => 'show', :locals => { :show => @blog_post }%>
+
+<% if admin_logged_in? %>
+	<%= link_to 'Edit', :controller => 'blog_posts', :action => 'edit', :id => @blog_post %>
+<% end %>
