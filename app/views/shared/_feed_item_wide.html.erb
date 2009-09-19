@@ -18,7 +18,7 @@
 				<div class="description">
 					<span class="source"><%= link_to feedItem.feed.title, feedItem.feed %>:</span>
 					<%= truncate h(feedItem.description.fix_html), :length => 360, :omission => "..."  %> 
-					<span class="comment"><%= link_to '(comment)', feedItem %></span>
+					<span class="comment"><%= link_to '(more)', feedItem %></span>
 				</div>
 			</td>
 		</tr>

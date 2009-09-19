@@ -19,8 +19,12 @@ class BlogPostsController < ApplicationController
   end
   
   def update
-    @blog_post = BlogPost.new(params[:blog_post])
+    @blog_post = BlogPost.find(params[:id])
+    
+    @blog_post.update_attributes params[:blog_post]
     @blog_post.save
+    
+    redirect_to @blog_post
   end
 
   def create
