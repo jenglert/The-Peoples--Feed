@@ -2,7 +2,7 @@
 	<%= page_title "Comments" %>
 	
 		<% for comment in @comments %>
-			<div class="comment whiteBackground">
+			<div class="comment whiteBackground" id="comment<%= comment.id %>">
 				<div class="title">
 					<%= link_to comment.title, comment.commentable %>
 					By <%= comment.name %>
@@ -13,10 +13,12 @@
 				
 				<% if admin_logged_in?%>
 					<div class="delete">
-						<%= link_to 'Destroy', comment, :method => :delete %>
+						<%= link_to 'Destroy', { :action => 'remove', :id => comment.id } , { :class => 'deleteComment' } %>
 					</div>
 				<% end %>
 			</div>
 			
 		<% end %>
+		
+		<%= will_paginate @comments %>
 </div>

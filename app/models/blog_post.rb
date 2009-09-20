@@ -1,5 +1,5 @@
 require 'acts_as_commentable'
-ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
+  ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
 class BlogPost < ActiveRecord::Base
   validates_presence_of :author, :message => 'Please specify an author.'

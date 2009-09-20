@@ -103,6 +103,11 @@
 			</td>
 		</tr>			
 	</table>
+	<div class="emailAFriend">
+		<h3>Email a Friend</h3>
+		
+		
+	</div>
 	<%= render :partial => 'shared/show_comments', :locals => { :comments => @feed_item.comments } %>
 	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/feed_item_comment', :commented_item => @feed_item }%>
 </div>

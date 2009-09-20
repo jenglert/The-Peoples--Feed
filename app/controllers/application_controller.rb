@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :load_nav_data
   
+  after_filter OutputCompressionFilter
+  
   layout 'standard'
   
   caches_action :load_nav_data
