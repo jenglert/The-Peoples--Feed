@@ -5,7 +5,7 @@
 			<div class="comment whiteBackground" id="comment<%= comment.id %>">
 				<div class="title">
 					<%= link_to comment.title, comment.commentable %>
-					By <%= comment.name %>
+					By <%= h comment.name %>
 				</div>
 				<div class="date"><%= comment.created_at.pretty %></div>
 				<div class="clearBoth"></div>
