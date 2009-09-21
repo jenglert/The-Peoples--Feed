@@ -9,7 +9,7 @@
 				</div>
 				<div class="date"><%= comment.created_at.pretty %></div>
 				<div class="clearBoth"></div>
-				<div class="commentBody"><%= comment.comment %></div>
+				<div class="commentBody"><%= h comment.comment %></div>
 				
 				<% if admin_logged_in?%>
 					<div class="delete">
