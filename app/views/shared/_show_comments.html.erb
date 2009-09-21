@@ -6,7 +6,7 @@
 		<% comments.reverse.each { |comment| %>
 			<div class="heading">
 				<div class="left">
-					<span class="title"><%= comment.title %></span> by <%= comment.name %>
+					<span class="title"><%= h comment.title %></span> by <%= comment.name %>
 				</div>
 				<div class="right">
 					<%= comment.created_at.pretty%>
