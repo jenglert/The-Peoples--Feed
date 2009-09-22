@@ -3,6 +3,7 @@ class SitemapController < ApplicationController
   layout 'blank'
   
   caches_page :index
+  skip_after_filter OutputCompressionFilter
 
   # Renders the sitemap.xml URL
   def index
