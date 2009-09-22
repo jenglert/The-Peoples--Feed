@@ -16,7 +16,7 @@ class SitemapController < ApplicationController
       @items.push SitemapElement.new(url_for(feed), feed.created_at)
     end
   
-    for feed_item in FeedItem.find(:all, :select => "id, created_at", :limit => 1000, :order => 'created_at desc')
+    for feed_item in FeedItem.find(:all, :select => "id, created_at, title", :limit => 3000, :order => 'created_at desc')
       @items.push SitemapElement.new(url_for(feed_item), feed_item.created_at)
     end
 
