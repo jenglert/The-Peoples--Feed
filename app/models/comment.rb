@@ -1,6 +1,14 @@
 class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
-  validates_presence_of :name, :title, :comment
+  validates_presence_of :email, :title, :email, :comment
+  
+  # Validates that the domain exists
+  validate :validate_email?
+  
+  def validate_email? 
+    validation_errors = EmailValidationHelper.validate_email(self.email)
+    errors.add_to_base validation_errors if validation_errors.length > 0
+  end
   
   # NOTE: install the acts_as_votable plugin if you 
   # want user to vote on the quality of comments.

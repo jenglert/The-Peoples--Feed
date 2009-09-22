@@ -7,7 +7,10 @@ class FeedItemCommentController < ApplicationController
     # Be sure to also increment the comment count.
     feed_item.comments_count = feed_item.comments_count + 1
     feed_item.comments << comment
-    feed_item.save!
+    
+    if !feed_item.save
+      flash[:error] = "Unable to save comment. Please try again."
+    end
     
     redirect_to feed_item
   end
