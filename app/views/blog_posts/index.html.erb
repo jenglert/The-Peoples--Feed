@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="Development Blog RSS Feed" href="<%= url_for :only_path => false, :controller => 'blog.xml' %>" />
+<% end %>
+
 <% meta_description "Blog related to development tasks on The People's Feed" %>
 <div class="blogPosts">
 	<%= page_title "Development Blog"%>
@@ -8,7 +12,7 @@
 	<% end %>
 	
 	<div class="rssLinks">
-		<% link_to :controller => 'blog_posts', :format => 'xml' do %>
+		<% link_to :controller => 'blog.xml' do %>
 			RSS <img src="/images/feed-icon-16x16.jpg">
 		<% end %>
 	</div>
