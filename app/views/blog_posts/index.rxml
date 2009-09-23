@@ -13,6 +13,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
        xml.link        url_for(:only_path => false, :controller => 'blog_posts', :action => 'show', :id => blog_post)
        xml.description blog_post.post
        xml.guid        url_for(:only_path => false, :controller => 'blog_posts', :action => 'show', :id => blog_post)
+       xml.pubDate     blog_post.created_at.to_s(:rfc822)
      end
    end
 

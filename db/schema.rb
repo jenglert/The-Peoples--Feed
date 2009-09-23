@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090918024155) do
+ActiveRecord::Schema.define(:version => 20090922031038) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title"
-    t.string   "post"
+    t.text     "post"
     t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,9 +42,20 @@ ActiveRecord::Schema.define(:version => 20090918024155) do
     t.string   "commentable_type", :limit => 15, :default => "", :null => false
     t.integer  "user_id",                        :default => 0,  :null => false
     t.string   "name"
+    t.string   "email"
   end
 
   add_index "comments", ["user_id"], :name => "fk_comments_user"
+
+  create_table "email_messages", :force => true do |t|
+    t.string   "recipient_email_address"
+    t.string   "sender_email_address"
+    t.integer  "type"
+    t.text     "body"
+    t.datetime "date_sent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "email_subscriptions", :force => true do |t|
     t.string   "email"
