@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "Development Blog @ The People's Feed"
+   xml.link        url_for :only_path => false, :controller => 'blog'
+   xml.description "Thepeoplesfeed.com is a open source development initiative."
+
+   @blog_posts.each do |blog_post|
+     xml.item do
+       xml.title       blog_post.title
+       xml.link        url_for blog_post
+       xml.description blog_post.post
+       xml.guid        url_for blog_post
+     end
+   end
+
+ end
+end

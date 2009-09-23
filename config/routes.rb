@@ -60,6 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :blog_posts
   map.resources :email_subscriptions
   map.connect 'blog', :controller => 'blog_posts'
+  map.connect 'blog.xml', :controller => 'blog_posts', :format => 'xml'
   
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
   map.connect 'sitemap',        :controller => 'static_pages', :action => 'sitemap'

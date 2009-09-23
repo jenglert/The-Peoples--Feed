@@ -4,6 +4,11 @@ class BlogPostsController < ApplicationController
   
   def index
     @blog_posts = BlogPost.find(:all, :order => 'created_at desc')
+    
+    respond_to do |format|
+      format.html
+      format.xml
+    end
   end
   
   def show

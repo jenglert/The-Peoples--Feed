@@ -6,4 +6,10 @@
 	<% if admin_logged_in? %>
 		<%= link_to 'New', :controller => 'blog_posts', :action => 'new' %>
 	<% end %>
+	
+	<div class="rssLinks">
+		<% link_to :controller => 'blog_posts', :format => 'xml' do %>
+			RSS <img src="/images/feed-icon-16x16.jpg">
+		<% end %>
+	</div>
 </div>

@@ -169,6 +169,8 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .blogPost UL                 { padding: 10px 10px 10px 10px;                                   }
 .blogPost OL                 { padding: 10px 10px 10px 10px;                                   }
 .blogPost PRE                { background: #DDD; border: 1px #BBB solid; padding-left: 15px;   }
+.blogPosts .rssLinks         { text-align: right; padding-right: 11px;                         }
+.blogPosts .rssLinks IMG     { vertical-align: text-bottom;                                    }
 
 /* Open source info page */
 .openSource                  { margin: 0px 15px 15px 15px; text-align: left; 
