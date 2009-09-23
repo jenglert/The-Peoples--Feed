@@ -10,9 +10,9 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
    @blog_posts.each do |blog_post|
      xml.item do
        xml.title       blog_post.title
-       xml.link        url_for blog_post
+       xml.link        url_for(:only_path => false, :controller => 'blog_posts', :action => 'show', :id => blog_post)
        xml.description blog_post.post
-       xml.guid        url_for blog_post
+       xml.guid        url_for(:only_path => false, :controller => 'blog_posts', :action => 'show', :id => blog_post)
      end
    end
 
