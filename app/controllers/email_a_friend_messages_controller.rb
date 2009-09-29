@@ -1,5 +1,7 @@
 class EmailAFriendMessagesController < ApplicationController
   
+  before_filter :login_required
+  
   # Unimplemnted at this point. Eventually, we might have functionality where a consumer could email a friend about the
   # site in general.
   def new
