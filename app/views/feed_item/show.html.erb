@@ -106,7 +106,7 @@
 	<div class="emailAFriend collapseable">
 		<h3>Email a Friend</h3>
 		<div class="body to_collapse">
-			<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port}#{request.path}") do |f| %>
+			<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
 			<table>
 				<tr>
 					<td class="label">Friend's Email:</td>

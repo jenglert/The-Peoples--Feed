@@ -5,7 +5,7 @@ class EmailAFriendMessagesController < ApplicationController
   def new
     @email_a_friend_message = EmailAFriendMessage.new
     
-    @email_a_friend_message.url = "http://#{request.host}:#{request.port}/" if @email_a_friend_message.url.nil?
+    @email_a_friend_message.url = "http://#{request.host}:#{request.port if request.port != 80}/" if @email_a_friend_message.url.nil?
     
   end
 
