@@ -47,11 +47,12 @@ ActiveRecord::Schema.define(:version => 20090922031038) do
 
   add_index "comments", ["user_id"], :name => "fk_comments_user"
 
-  create_table "email_messages", :force => true do |t|
+  create_table "email_a_friend_messages", :force => true do |t|
     t.string   "recipient_email_address"
     t.string   "sender_email_address"
-    t.integer  "type"
-    t.text     "body"
+    t.string   "url"
+    t.string   "title"
+    t.text     "message"
     t.datetime "date_sent"
     t.datetime "created_at"
     t.datetime "updated_at"

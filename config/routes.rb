@@ -59,6 +59,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resources :blog_posts
   map.resources :email_subscriptions
+  map.resources :email_a_friend_messages
   map.connect 'blog', :controller => 'blog_posts'
   map.connect 'blog.xml', :controller => 'blog_posts', :format => 'xml'
   

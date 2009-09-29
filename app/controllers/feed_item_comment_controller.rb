@@ -9,7 +9,7 @@ class FeedItemCommentController < ApplicationController
     feed_item.comments << comment
     
     if !feed_item.save
-      flash[:error] = "Unable to save comment. Please try again."
+      flash[:error] = "Unable to save comment. Please try again."˝
     end
     
     redirect_to feed_item

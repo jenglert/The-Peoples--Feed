@@ -40,6 +40,15 @@ Rails::Initializer.run do |config|
 
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
 
+  config.action_mailer.smtp_settings = {
+    :address        => 'mail.thepeoplesfeed.com',
+    :port           => 26,
+    :domain         => 'www.thepeoplesfeed.com',
+    :authentication => :login,
+    :user_name      => 'webmaster@thepeoplesfeed.com',
+    :password       => 'thepeoplesfeed'
+  }
+
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de

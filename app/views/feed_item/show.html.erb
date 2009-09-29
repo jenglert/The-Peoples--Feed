@@ -103,10 +103,37 @@
 			</td>
 		</tr>			
 	</table>
-	<div class="emailAFriend">
+	<div class="emailAFriend collapseable">
 		<h3>Email a Friend</h3>
-		
-		
+		<div class="body to_collapse">
+			<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port}#{request.path}") do |f| %>
+			<table>
+				<tr>
+					<td class="label">Friend's Email:</td>
+					<td><%= f.text_field :recipient_email_address %></td>
+				</tr>
+				<tr>
+					<td class="label">Your Email:</td>
+					<td><%= f.text_field :sender_email_address %></td>
+				</tr>
+				<tr>
+					<td class="label">URL:</td>
+					<td><%= f.text_field :url, :readonly => true %></td>
+				</tr>
+				<tr>
+					<td class="label">Subject:</td>
+					<td><%= f.text_field :title %></td>
+				</tr>
+				<tr>
+					<td class="label">Message:</td>
+					<td><%= f.text_area :message, :cols => 25, :rows => 10 %></td>
+				</tr>
+				<tr>
+					<td colspan="2"><%= submit_tag 'Email A Friend' %></td>
+				</tr>
+			</table>
+			<% end %>
+		</div>
 	</div>
 	<%= render :partial => 'shared/show_comments', :locals => { :comments => @feed_item.comments } %>
 	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/feed_item_comment', :commented_item => @feed_item }%>

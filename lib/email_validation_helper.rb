@@ -1,4 +1,5 @@
 # Module that can be included for some extra email validation functions
+require 'resolv'
 module EmailValidationHelper 
   
   # A constant regex for the desired email address.

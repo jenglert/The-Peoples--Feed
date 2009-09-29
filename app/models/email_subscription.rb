@@ -1,4 +1,3 @@
-require 'resolv'
 class EmailSubscription < ActiveRecord::Base
   
   # Validates the presence of an email address

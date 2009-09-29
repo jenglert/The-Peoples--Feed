@@ -1,0 +1,33 @@
+<div class="emailAFriendForm">
+	<%= page_title "Email A Friend"%>
+	<%= error_messages_for :email_a_friend_message %>
+	<% form_for @email_a_friend_message do |f| %>
+		<table>
+			<tr>
+				<td>Friend's Email</td>
+				<td><%= f.text_field :recipient_email_address %></td>
+			</tr>
+			<tr>
+				<td>Your Email</td>
+				<td><%= f.text_field :sender_email_address %></td>
+			</tr>
+			<tr>
+				<td>URL</td>
+				<td><%= f.text_field :url, :readonly => true %></td>
+			</tr>
+			<tr>
+				<td>Message Subject</td>
+				<td><%= f.text_field :title %></td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td><%= f.text_area :message, :cols => 19, :rows => 10 %></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<%= submit_tag "Email A Friend" %>
+				</td>
+			</tr>
+		</table>
+	<% end%>
+</div>

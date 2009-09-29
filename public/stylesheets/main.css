@@ -201,3 +201,13 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .userPreferences TD        { text-align: left; padding: 1px 10px 2px 10px;   }
 .userPreferences TD.label  { text-align: right;   }
 .userPreferences TD.update { text-align: center;  }
+
+/* Email A Friend Page */
+.emailAFriendForm TABLE    { margin: auto;        }
+.emailAFriendForm TABLE TD { padding: 1px;        }
+/* Widget */
+.emailAFriend              { width: 370px; margin: auto; padding-top: 5px;                                                          }
+.emailAFriend H3           { background-color: #DFAB7D; border: 3px solid #DF6900; color: #FFF; padding: 5px 0; text-align: center; }
+.emailAFriend .body        { background-color: #7F80FF; border: 3px solid #3D3DC3; width: 364px;                                    }
+.emailAFriend TD           { text-align: left; }
+.emailAFriend .body .label { color: #DF6900; text-align: right; }
