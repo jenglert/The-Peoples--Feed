@@ -1,9 +1,10 @@
-<% form_for :comment, @comment, :url => post_location do |f| %>
-	<%= f.error_messages %>
-	<%= hidden_field_tag 'commented_item_id', commented_item.id%>
-	<div class="addComment">
-		<h3>Create a Comment</h3>
-		<div class="body">
+<div class="addComment">
+	<h3>Create a Comment</h3>
+	<div class="body">
+		<% if logged_in? %>
+			<% form_for :comment, @comment, :url => post_location do |f| %>
+			<%= f.error_messages %>
+			<%= hidden_field_tag 'commented_item_id', commented_item.id%>
 			<table>
 				<tr>
 					<td class="label">
@@ -43,6 +44,21 @@
 					</td>
 				</tr>
 			</table>
-		</div>
+			<% end %>
+		<% else %>
+			<div class="loginInstruction">Please login to use this functionality.</div>
+			<div class="miniLoginBox">
+				<% form_tag session_path do -%>
+					<p><label for="login">Login</label>
+					<%= text_field_tag 'login' %></p>
+
+					<p><label for="password">Password</label>
+					<%= password_field_tag 'password' %></p>
+
+
+					<p><%= submit_tag 'Log in' %></p>
+				<% end -%>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+</div>

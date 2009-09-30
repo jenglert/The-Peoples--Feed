@@ -106,32 +106,48 @@
 	<div class="emailAFriend collapseable">
 		<h3>Email a Friend</h3>
 		<div class="body to_collapse">
-			<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
-			<table>
-				<tr>
-					<td class="label">Friend's Email:</td>
-					<td><%= f.text_field :recipient_email_address %></td>
-				</tr>
-				<tr>
-					<td class="label">Your Email:</td>
-					<td><%= f.text_field :sender_email_address %></td>
-				</tr>
-				<tr>
-					<td class="label">URL:</td>
-					<td><%= f.text_field :url, :readonly => true %></td>
-				</tr>
-				<tr>
-					<td class="label">Subject:</td>
-					<td><%= f.text_field :title %></td>
-				</tr>
-				<tr>
-					<td class="label">Message:</td>
-					<td><%= f.text_area :message, :cols => 25, :rows => 10 %></td>
-				</tr>
-				<tr>
-					<td colspan="2"><%= submit_tag 'Email A Friend' %></td>
-				</tr>
-			</table>
+			<% if logged_in? %>
+				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
+				<table>
+					<tr>
+						<td class="label">Friend's Email:</td>
+						<td><%= f.text_field :recipient_email_address %></td>
+					</tr>
+					<tr>
+						<td class="label">Your Email:</td>
+						<td><%= f.text_field :sender_email_address %></td>
+					</tr>
+					<tr>
+						<td class="label">URL:</td>
+						<td><%= f.text_field :url, :readonly => true %></td>
+					</tr>
+					<tr>
+						<td class="label">Subject:</td>
+						<td><%= f.text_field :title %></td>
+					</tr>
+					<tr>
+						<td class="label">Message:</td>
+						<td><%= f.text_area :message, :cols => 25, :rows => 10 %></td>
+					</tr>
+					<tr>
+						<td colspan="2"><%= submit_tag 'Email A Friend' %></td>
+					</tr>
+				</table>
+				<% end %>
+			<% else %>
+				Please login to use this functionality.
+				<div class="miniLoginBox">
+					<% form_tag session_path do -%>
+						<p><label for="login">Login</label>
+						<%= text_field_tag 'login' %></p>
+
+						<p><label for="password">Password</label>
+						<%= password_field_tag 'password' %></p>
+
+
+						<p><%= submit_tag 'Log in' %></p>
+					<% end -%>
+				</div>
 			<% end %>
 		</div>
 	</div>

@@ -14,7 +14,13 @@ class SessionsController < ApplicationController
       # Always drop the logged in cookie.
       cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => Time.new + 360.days }
 
-      redirect_back_or_default('/')
+      default = '/'
+
+      puts "referrer:" + request.referrer
+      # Attempt to determine if we came from the login page, if so, do nothing. If not, go to the page we used to be at
+      default = request.referrer if !request.referrer.include?('sessions')
+
+      redirect_back_or_default(default)
       flash[:notice] = "Logged in successfully"
     else
       flash[:error] = "Username/Password not recognized.  Please try again."
