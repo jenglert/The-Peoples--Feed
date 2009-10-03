@@ -1,5 +1,7 @@
 class FeedCommentController < ApplicationController
 
+  before_filter :login_required
+
   def create
     comment = Comment.new(params[:comment])
     feed = Feed.find(params[:commented_item_id])
