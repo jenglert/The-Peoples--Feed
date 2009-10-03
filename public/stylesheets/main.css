@@ -45,7 +45,7 @@ INPUT                      { -moz-border-radius: 5px; -webkit-border-radius: 5px
 .centerColumn                   { width: 740px; padding-top: 10px; padding-right: 10px; }
 .rightHandList                  { width: 175px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
-								  background-color: #3D3DC3; color: #DF6900;}
+								  background-color: #CCF; color: #DF6900;}
 								
 /* Error Styling */
 .errorExplanation   { border: 4px red solid; background-color: #F44; margin: 0px 25px;}
