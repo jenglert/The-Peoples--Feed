@@ -1,6 +1,6 @@
 /* Global styles */ 
 *                       { margin: 0px; padding: 0px; outline: none; font-family: Arial; }
-BODY                    { background: url("/images/background.jpg") #DCDCDC 0% 0% repeat-x scroll;}
+BODY                    { background: url("/images/background.jpg") #DDD 0% 0% repeat-x scroll;}
 A IMG                   { border: 0px; }
 A:link 					{ color: #DF6900; text-decoration: none; }
 A:visited				{ color: #DF6900; text-decoration: none; }
@@ -8,11 +8,12 @@ A:visited				{ color: #DF6900; text-decoration: none; }
 .clearBoth              { clear:both; }
 H1                      { padding-bottom: 5px; }
 
+INPUT                      { -moz-border-radius: 5px; -webkit-border-radius: 5px;            }
 .pagination                { padding-top: 8px; padding-right: 20px; text-align: right;       }
 .pagination              A { font-size: 16px;                                                }
 .pagination      A:visited { font-size: 16px;                                                }
 .fieldWithErrors           { display:inline;                                                 }
-.whiteBackground           { background-color: #EFEFEF; border: 1px solid white;             }
+.whiteBackground           { background-color: #FFF; border: 1px solid white;             }
 .lastUpdated               { font-size: 8px;                                                 }
 
 .flashes                   { margin: auto;                                                                      }
@@ -25,19 +26,23 @@ H1                      { padding-bottom: 5px; }
 
 
 /* Layout styles */
-.header                 { margin: auto; width: 830px; height: 120px; position:relative; }
+.header                 { margin: auto; width: 950px; height: 120px; position:relative; }
 .header IMG.logo        { position: absolute; left: 19px; }
 .header .motto          { position: absolute; left: 75px; top: 80px; color: white; font-size: 13px; }
-.header .menu           { position: absolute; left: 525px; top: 29px;}
+.header .menu           { position: absolute; left: 645px; top: 29px;}
 .header .menu IMG       { margin-left: -4px; }
-.header .search         { position: absolute; left: 562px; top: 70px;}
-.body                   { margin: auto; width: 900px; }
-.footer                 { margin: auto; width: 900px; height: 75px; border-top: 1px gray solid; 
+.header .search         { position: absolute; left: 682px; top: 70px;}
+.smallMenu                   { position: absolute; left: 520px; font-size: 16px; }
+.smallMenu LI                { display: inline; margin-right: 2px; background: #EFEFEF; 
+	                           padding: 2px 2px 1px 2px; border: 2px solid #3D3DC3;
+	 						   -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+.body                   { margin: auto; width: 950px; }
+.footer                 { margin: auto; width: 950px; height: 75px; border-top: 1px gray solid; 
 						  margin-top: 20px; padding-top: 5px; text-align: center; font-size: 13px; }
 .footer A               { font-size: 13px; }
 .footer A:VISITED       { font-size: 13px; }
 .centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
-.centerColumn                   { width: 690px; padding-top: 10px; padding-right: 10px; }
+.centerColumn                   { width: 740px; padding-top: 10px; padding-right: 10px; }
 .rightHandList                  { width: 175px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
 								  background-color: #3D3DC3; color: #DF6900;}
@@ -145,12 +150,6 @@ TABLE.userSignup .rightAlign { text-align: right; }
 
 /* Media view page */
 .feedItemMedia TABLE TD      { padding: 5px; }
-
-/* Top small menu */
-.smallMenu                   { position: absolute; left: 400px; font-size: 16px; }
-.smallMenu LI                { display: inline; margin-right: 2px; background: #EFEFEF; 
-	                           padding: 2px 2px 1px 2px; border: 2px solid #3D3DC3;
-	 						   -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 	
 /* Sitemap */
 .siteMap                     { text-align: left;                              }
