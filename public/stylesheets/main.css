@@ -209,8 +209,10 @@ TABLE.userSignup .rightAlign { text-align: right; }
 .emailAFriend              { width: 370px; margin: auto; padding-top: 5px;                                                          }
 .emailAFriend H3           { background-color: #DFAB7D; border: 3px solid #DF6900; color: #FFF; padding: 5px 0; text-align: center; }
 .emailAFriend .body        { background-color: #7F80FF; border: 3px solid #3D3DC3; width: 364px; padding: 5px 0 0 0;                }
-.emailAFriend TD           { text-align: left; }
-.emailAFriend .body .label { color: #DF6900; text-align: right; }
+.emailAFriend TD           { text-align: left;                                                                                      }
+.emailAFriend .body .label { color: #DF6900; text-align: right;                                                                     }
+.emailAFriend .submit      { text-align: right;                                                                                     } 
+.emailAFriend .submit INPUT{ height: 24px; width: 126px;                                                                            }
 
 /* Mini login box */
 .miniLoginBox              { margin: auto; padding: 5px 75px 5px 5px; text-align: right; }
