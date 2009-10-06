@@ -5,6 +5,7 @@
 			<% form_for :comment, @comment, :url => post_location do |f| %>
 			<%= f.error_messages %>
 			<%= hidden_field_tag 'commented_item_id', commented_item.id%>
+			<%= f.hidden_field :email, :value => current_user.email %>
 			<table>
 				<tr>
 					<td class="label">
@@ -12,14 +13,6 @@
 					</td>
 					<td>
 						<%= f.text_field :name %>
-					</td>
-				</tr>
-				<tr>
-					<td class="label">
-						email:
-					</td>
-					<td>
-						<%= f.text_field :email %>
 					</td>
 				</tr>
 				<tr>

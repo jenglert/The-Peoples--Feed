@@ -42,6 +42,7 @@ module EmailValidationHelper
     return if result.nil?
     
     domain = result[1]
+    mx = -1
     Resolv::DNS.open do |dns|
       mx = dns.getresources(domain, Resolv::DNS::Resource::IN::MX)
     end

@@ -3,14 +3,11 @@
 	<div class="body to_collapse">
 		<% if logged_in? %>
 			<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
+			<%= f.hidden_field :sender_email_address, :value => current_user.email %>
 			<table>
 				<tr>
 					<td class="label">Friend's Email:</td>
 					<td><%= f.text_field :recipient_email_address %></td>
-				</tr>
-				<tr>
-					<td class="label">Your Email:</td>
-					<td><%= f.text_field :sender_email_address %></td>
 				</tr>
 				<tr>
 					<td class="label">URL:</td>
