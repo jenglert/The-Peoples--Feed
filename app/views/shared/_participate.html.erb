@@ -1,0 +1,104 @@
+<%= render :partial => 'shared/show_comments', :locals => { :comments => item.comments }%>
+<div class="addComment">
+	<h3>
+		<a href="javascript:tpf.hideShowCommentSection()">
+			Add a Comment <img src="/images/expand.png" width="14" height="14"> 
+		</a>
+		| 
+		<a href="javascript:tpf.hideShowEmailAFriendSection()">
+			Email A Friend <img src="/images/expand.png" width="14" height="14">
+		</a>
+	</h3>
+	<div class="body">
+		<% if logged_in? %>
+			<div style="display: none;" id="commentSection">
+				<% form_for :comment, @comment, :url => post_location do |f| %>
+				<%= f.error_messages %>
+				<%= hidden_field_tag 'commented_item_id', item.id%>
+				<table>
+					<tr>
+						<td class="label">
+							name:
+						</td>
+						<td>
+							<%= f.text_field :name %>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							email:
+						</td>
+						<td>
+							<%= f.text_field :email %>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							title:
+						</td>
+						<td>
+							<%= f.text_field :title %>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							comment:
+						</td>
+						<td>
+							<%= f.text_area :comment, :size => "30x7" %>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="submit">		
+							<%= image_submit_tag 'add_comment.png'%>
+						</td>
+					</tr>
+				</table>
+				<% end %>
+			</div>
+			<div style="display: none;" id="emailAFriendSection">
+				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
+				<table>
+					<tr>
+						<td class="label">Friend's Email:</td>
+						<td><%= f.text_field :recipient_email_address %></td>
+					</tr>
+					<tr>
+						<td class="label">Your Email:</td>
+						<td><%= f.text_field :sender_email_address %></td>
+					</tr>
+					<tr>
+						<td class="label">URL:</td>
+						<td><%= f.text_field :url, :readonly => true %></td>
+					</tr>
+					<tr>
+						<td class="label">Subject:</td>
+						<td><%= f.text_field :title %></td>
+					</tr>
+					<tr>
+						<td class="label">Message:</td>
+						<td><%= f.text_area :message, :cols => 25, :rows => 10 %></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="submit"><%= image_submit_tag 'email_a_friend.png'%></td>
+					</tr>
+				</table>
+				<% end %>
+			</div>
+		<% else %>
+			<div class="loginInstruction">Please login to use this functionality.</div>
+			<div class="miniLoginBox">
+				<% form_tag session_path do -%>
+					<p><label for="login">Login</label>
+					<%= text_field_tag 'login' %></p>
+
+					<p><label for="password">Password</label>
+					<%= password_field_tag 'password' %></p>
+
+
+					<p><%= submit_tag 'Log in' %></p>
+				<% end -%>
+			</div>
+		<% end %>
+	</div>
+</div>

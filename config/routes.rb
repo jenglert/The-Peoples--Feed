@@ -66,7 +66,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'privacy-policy', :controller => 'static_pages', :action => 'privacy_policy'
   map.connect 'sitemap',        :controller => 'static_pages', :action => 'sitemap'
   map.connect 'contact-us',     :controller => 'static_pages', :action => 'contact_us'
-  map.connect 'advertise',      :controller => 'static_pages', :action => 'advertise'
   map.connect 'contribute',     :controller => 'static_pages', :action => 'contribute'
   map.connect 'how-it-works',   :controller => 'static_pages', :action => 'how_it_works'
   map.connect 'search',         :controller => 'static_pages', :action => 'search'
