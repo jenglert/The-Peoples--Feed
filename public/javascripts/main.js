@@ -4,6 +4,8 @@ jQuery(document).ready(function() {
 	
 	// Ajax submit methods
 	jQuery(".deleteComment").linkWithAjax();
+	
+	jQuery(document).pngFix();
 });
 
 // Define the variable tpf if it isn't defined
