@@ -1,11 +1,11 @@
 <%= render :partial => 'shared/show_comments', :locals => { :comments => item.comments }%>
 <div class="addComment">
 	<h3>
-		<a href="javascript:tpf.hideShowCommentSection()">
+		<a href="#" onclick="javascript:tpf.hideShowCommentSection()">
 			Add a Comment <img src="/images/expand.png" width="14" height="14"> 
 		</a>
 		| 
-		<a href="javascript:tpf.hideShowEmailAFriendSection()">
+		<a href="#" onclick="javascript:tpf.hideShowEmailAFriendSection()">
 			Email A Friend <img src="/images/expand.png" width="14" height="14">
 		</a>
 	</h3>
