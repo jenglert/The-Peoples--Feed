@@ -71,6 +71,7 @@ DIV.feedItemWide                   { text-align: left;  margin: 5px 10px 10px 7p
 .feedItemShow .feedItemInfo TD        { border: 1px solid gray; padding: 1px;               }
 .feedItemShow TABLE.rating TD         { border: 0px; font-size: 12px; text-align: left;     }
 .feedItemShow TABLE.rating .total     { border-top: 4px black double; text-align: center;   }
+.feedItemShow .relatedArticles        { padding-top: 35px;                                  }
 
 /* Feed show page */
 .feedShow .feedInfo                   { padding: 10px 0px; }

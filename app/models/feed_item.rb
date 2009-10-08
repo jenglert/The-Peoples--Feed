@@ -16,6 +16,13 @@ class FeedItem < ActiveRecord::Base
   def FeedItem.find_top_feed_items
     FeedItem.find(:all, :limit => 20, :order => 'rating desc')
   end
+  
+  # Finds feed items related to the current feed item we are looking at.
+  def related_feed_items 
+    FeedItem.find(:all, :include => 'feed_item_categories', 
+         :conditions => ["feed_item_categories.category_id in (?)", categories.collect {|category| category.id}],
+         :limit => 10, :order => "created_at desc")
+  end
 
   # The guid will be either the defined guid (preferrably) or the entry's link
   def set_guid_from_entry(entry)

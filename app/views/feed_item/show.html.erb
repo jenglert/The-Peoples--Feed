@@ -104,4 +104,9 @@
 		</tr>			
 	</table>
 	<%= render :partial => 'shared/participate', :locals => { :post_location => '/feed_item_comment', :item => @feed_item }%>
+	
+	<h2 class="relatedArticles">Related Articles</h2>
+	<% @feed_item.related_feed_items.each { |feedItem| %>
+		<%= render :partial => 'shared/feed_item_wide', :locals => {:feedItem => feedItem} %>
+	<% } %>
 </div>
