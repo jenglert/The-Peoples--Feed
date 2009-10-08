@@ -50,7 +50,7 @@
 				<% end %>
 			</div>
 			<div style="display: none;" id="emailAFriendSection">
-				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}:#{request.port if request.port != 80}#{request.path}") do |f| %>
+				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}#{":" + request.port if request.port != 80}#{request.path}") do |f| %>
 				<%= f.hidden_field :sender_email_address, :value => current_user.email %>
 				<table>
 					<tr>
