@@ -35,4 +35,29 @@ class SessionsController < ApplicationController
     flash[:notice] = "You have been logged out."
     redirect_back_or_default('/')
   end
+  
+  def forgot_password  
+  end
+  
+  def send_forgot_password
+    users = User.find_all_by_email(params[:email])
+    
+    if users.length <= 0
+      # This is potential security whole since users could find all the emails in our database. 
+      # At this point, the added user flexibility is better than the added security.
+      flash[:error] = "Unable to find a user with that email."
+      render :action => 'forgot_password'
+      return
+    end
+    
+    new_password = SecureRandom.base64(5)
+    
+    users[0].password = new_password
+    users[0].password_confirmation = new_password
+    users[0].save!
+    
+    flash[:notice] = "We are emailing you a replacement password."
+    ConsumerMailer.deliver_forgot_password(users[0].email, new_password)
+    redirect_back_or_default('/')
+  end
 end

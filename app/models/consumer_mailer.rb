@@ -6,5 +6,12 @@ class ConsumerMailer < ActionMailer::Base
     subject "#{email_a_friend_settings.title} - The People's Feed"
     body :email_a_friend_settings => email_a_friend_settings
   end  
+  
+  def forgot_password(email, password)
+    recipients email
+    from "webmaster@thepeoplesfeed.com"
+    subject "Your password from The People's Feed"
+    body :password => password
+  end
 
 end

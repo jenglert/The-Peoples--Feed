@@ -42,7 +42,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
 
   map.resource :user_preference
-  map.resource :session
+  map.resource :session, :collection => { :send_forgot_password => :post }
   map.resources :users, :collection => { :login_submit => :post }
   map.connect 'login', :controller => 'users', :action => 'login'
   map.connect 'logout', :controller => 'users', :action => 'logout'
