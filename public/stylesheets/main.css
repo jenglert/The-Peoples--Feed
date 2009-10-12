@@ -217,3 +217,10 @@ TABLE.userSignup .rightAlign { text-align: right; }
 
 /* Mini login box */
 .miniLoginBox              { margin: auto; padding: 5px 75px 5px 5px; text-align: right; }
+
+/* Login Screen */
+.login                     { width: 500px; margin: auto; padding: 5px; }
+.login .forgotPassword     { padding-top: 30px;                        }
+
+/* Forgot Password Screen */
+.forgotPassword FORM       { padding-top: 10px; padding-bottom: 15px;  }

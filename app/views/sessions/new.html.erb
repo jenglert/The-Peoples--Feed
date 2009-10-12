@@ -1,16 +1,18 @@
 <div class="login whiteBackground">
 	<%= page_title 'Login'%>
 	<% form_tag session_path do -%>
-	<p><label for="login">Login</label><br/>
+	<p><label for="login">Username</label>
 	<%= text_field_tag 'login' %></p>
 
-	<p><label for="password">Password</label><br/>
+	<p><label for="password">Password</label>
 	<%= password_field_tag 'password' %></p>
 
 	
 	<p><%= submit_tag 'Log in' %></p>
 	<% end -%>
-	
-	<%= link_to "Forgot Password", :controller => 'sessions', :action => 'forgot_password' %>
+
+	<div class="forgotPassword">
+		<%= link_to "Forgot Password", :controller => 'sessions', :action => 'forgot_password' %>
+	</div>
 </div>
 
