@@ -1,5 +1,5 @@
 require 'active_support/secure_random'
-
+  
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
@@ -52,7 +52,7 @@ class SessionsController < ApplicationController
       return
     end
     
-    new_password = SecureRandom.base64(5)
+    new_password = User.random_password
     
     users[0].password = new_password
     users[0].password_confirmation = new_password
