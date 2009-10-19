@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :password, :password_confirmation
   
   def self.random_password
-    Array.new(8) { (rand(122-97) + 97).chr }.join
+    Array.new(8) { (rand(?z-?a) + ?a).chr }.join
   end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
