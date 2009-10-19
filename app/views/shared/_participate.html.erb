@@ -38,7 +38,7 @@
 							comment:
 						</td>
 						<td>
-							<%= f.text_area :comment, :size => "30x7" %>
+							<%= f.text_area :comment %>
 						</td>
 					</tr>
 					<tr>
@@ -50,7 +50,7 @@
 				<% end %>
 			</div>
 			<div style="display: none;" id="emailAFriendSection">
-				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}#{":" + request.port if request.port != 80}#{request.path}") do |f| %>
+				<% form_for EmailAFriendMessage.new(:url => "http://#{request.host}#{":" + request.port.to_s if request.port != 80}#{request.path}") do |f| %>
 				<%= f.hidden_field :sender_email_address, :value => current_user.email %>
 				<table>
 					<tr>
@@ -67,7 +67,7 @@
 					</tr>
 					<tr>
 						<td class="label">Message:</td>
-						<td><%= f.text_area :message, :cols => 25, :rows => 10 %></td>
+						<td><%= f.text_area :message %></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="submit"><%= image_submit_tag 'email_a_friend.png'%></td>

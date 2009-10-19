@@ -48,6 +48,9 @@ module EmailValidationHelper
     end
     
     mx.size > 0 ? true : false   
+    
+  rescue
+    return true
   end
   
 end

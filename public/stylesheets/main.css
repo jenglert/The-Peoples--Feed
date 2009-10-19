@@ -93,14 +93,15 @@ DIV.feedItemWide                   { text-align: left;  margin: 5px 10px 10px 7p
 .categoryShow .feedItems LI        { padding-bottom: 4px;}
 
 /* Creating a comment */
-.addComment                     { text-align: left; background-color: #3D3DC3; width: 370px; margin: auto; margin-top: 30px;}
+.addComment                     { text-align: left; background-color: #3D3DC3; width: 500px; margin: auto; margin-top: 30px;}
 .addComment .label				{ text-align: right; font-variant: small-caps; color: #DF6900; font-weight:bold; }
 .addComment H3					{ text-align: center; color: #FFF; background-color: #DFAB7D; padding: 5px 0; border: 3px solid #DF6900;}
 .addComment INPUT, .addComment TEXTAREA      { margin: 1px 0px;}
 .addComment .submit             { text-align: right;  }
 .addComment .submit INPUT       { height: 24px; width: 126px;}
-.addComment .body               { border: 3px solid #3D3DC3; background-color: #7F80FF; width: 364px;  }
+.addComment .body               { border: 3px solid #3D3DC3; background-color: #7F80FF; width: 492px;  }
 .addComment .loginInstruction   { text-align: center; padding-top: 5px;  }
+.addComment TEXTAREA            { width: 360px; height: 150px;}
 
 /* Comment Listing */
 .showComments                   { width: 75%; margin: auto; text-align: left; border: 1px solid #000; margin-top: 20px; }

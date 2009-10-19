@@ -16,6 +16,5 @@
 		<%= will_paginate @feed_items %>
 	</div>
 	
-	<%= render :partial => 'shared/show_comments', :locals => { :comments => @category.comments } %>
-	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/category_comment', :commented_item => @category }%>
+	<%= render :partial => 'shared/participate', :locals => { :post_location => '/category_comment', :item => @category }%>
 </div>

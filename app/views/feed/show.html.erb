@@ -21,8 +21,7 @@
 		</tr>
 	</table>
 
-	<%= render :partial => 'shared/show_comments', :locals => { :comments => @feed.comments } %>
-	<%= render :partial => 'shared/create_comment', :locals => { :post_location => '/feed_comment', :commented_item => @feed }%>
+    <%= render :partial => 'shared/participate', :locals => { :post_location => '/feed_comment', :item => @feed }%>
 
 	<h2>Articles From This Feed</h2>
 
