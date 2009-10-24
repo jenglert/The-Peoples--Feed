@@ -115,7 +115,9 @@
 	} catch(err) {}</script>
 	
 	<div class="lastUpdated">
-		Last Updated: <%= FeedItem.find(:all, :conditions => "created_at = (select max(created_at) from feed_items)" )[0].created_at.pretty %>
+		Last Updated: <%= 
+			FeedItem.find(:all, :conditions => "created_at = (select max(created_at) from feed_items)" )[0].created_at.pretty if FeedItem.find(:all, :conditions => "created_at = (select max(created_at) from feed_items)" ).length > 0
+		%>
 	</div>
 </body>
 </html>
