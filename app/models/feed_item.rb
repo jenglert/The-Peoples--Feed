@@ -4,7 +4,7 @@ ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 class FeedItem < ActiveRecord::Base
   
   belongs_to :feed
-  has_many :feed_item_categories
+  has_many :feed_item_categories, :dependent => :destroy
   has_many :categories, :through => :feed_item_categories
   acts_as_commentable
   
