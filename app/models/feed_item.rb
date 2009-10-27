@@ -21,7 +21,7 @@ class FeedItem < ActiveRecord::Base
   def related_feed_items 
     FeedItem.find(:all, :include => 'feed_item_categories', 
          :conditions => ["feed_item_categories.category_id in (?)", categories.collect {|category| category.id}],
-         :limit => 10, :order => "created_at desc")
+         :limit => 10, :order => "created_at desc") - [self]
   end
 
   # The guid will be either the defined guid (preferrably) or the entry's link

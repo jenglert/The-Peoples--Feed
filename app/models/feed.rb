@@ -4,7 +4,7 @@ require 'acts_as_commentable'
 ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
 class Feed < ActiveRecord::Base
-  has_many :feed_items
+  has_many :feed_items, :dependent => :destroy
   has_many :user_preferences
   
   acts_as_commentable

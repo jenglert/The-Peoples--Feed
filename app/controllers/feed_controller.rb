@@ -1,5 +1,7 @@
 class FeedController < ApplicationController
   
+  before_filter :admin_authorized?, :only => [:remove_feed]
+  
   def index
     @feeds = Feed.find(:all)
   end
@@ -31,6 +33,18 @@ class FeedController < ApplicationController
   def update
     @feeds = Feed.find(:all)
     @feeds.each { |feed| feed.update_feed }
+  end
+  
+  def remove_feed
+    feed = Feed.find(params[:id])
+    
+    if feed.destroy
+      flash[:notice] = "The feed has been sucessfully deleted."
+    else
+      flash[:error] = "Unable to delete feed"
+    end
+    
+    redirect_to :controller => 'feed', :action => 'index'
   end
   
 end

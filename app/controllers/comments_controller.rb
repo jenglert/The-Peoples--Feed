@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   
+  before_filter :admin_authorized?, :only => [:remove]
+  
   def index
     @comments = Comment.paginate(:all, :per_page => 40,  :page => params[:page])
   end

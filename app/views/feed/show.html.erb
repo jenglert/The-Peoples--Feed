@@ -20,6 +20,12 @@
 			</td>
 		</tr>
 	</table>
+	
+	<div class="adminControls">
+		<% if admin_logged_in? %>
+		    <%= link_to 'Delete', :controller => 'feed', :action => 'remove_feed', :id => @feed.id %>
+		<% end %>
+	</div>
 
     <%= render :partial => 'shared/participate', :locals => { :post_location => '/feed_comment', :item => @feed }%>
 
