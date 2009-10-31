@@ -14,6 +14,13 @@ class Feed < ActiveRecord::Base
   
   named_scope :top_feeds, :order => 'rating desc', :limit => 5
   
+  before_remove :destroy_feed_parse_logs
+  
+  # Removes all the feed parse logs before destroying the 
+  def destroy_feed_parse_logs
+    FeedParseLog.find_all_by_feed_id(self.id).each { |fpl| fpl.destroy }
+  end
+  
   def validate
     if feed_items.length == 0
       errors.add_to_base 'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided.'
