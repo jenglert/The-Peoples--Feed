@@ -18,5 +18,5 @@ while($running) do
   Feed.find(:all).each {|feed| feed.update_feed}
   
   # Updating all the feeds usually takes pretty long so it's not necessary to sleep for that long.
-  sleep 150 
+  sleep 500 
 end
