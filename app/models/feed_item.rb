@@ -107,7 +107,7 @@ class FeedItem < ActiveRecord::Base
   end
   
   def image_points
-    image_url ? 4 : 0
+    image_url ? 3 : 0
   end
   
   def description_points
