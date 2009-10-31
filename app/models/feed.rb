@@ -14,7 +14,7 @@ class Feed < ActiveRecord::Base
   
   named_scope :top_feeds, :order => 'rating desc', :limit => 5
   
-  before_remove :destroy_feed_parse_logs
+  before_destroy :destroy_feed_parse_logs
   
   # Removes all the feed parse logs before destroying the 
   def destroy_feed_parse_logs
