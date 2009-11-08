@@ -20,3 +20,8 @@ end
 every 10.minutes do
   command "/home/jamesro/thepeoplesfeed/script/getIssues.sh > /home/jamesro/cron.log"
 end
+
+# Fetch new feeds
+every 30.minutes do 
+  runner "Feed.find(:all).each {|feed| feed.update_feed}"
+end
