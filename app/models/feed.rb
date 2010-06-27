@@ -1,7 +1,6 @@
 require 'rss/2.0'
 require 'open-uri'
 require 'acts_as_commentable'
-require 'ruby-prof'
 
 ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
@@ -110,6 +109,7 @@ class Feed < ActiveRecord::Base
     # be present.
     return false unless result && result.respond_to?('title') && result.title
     
+
     # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
     if (result.entries.size() > 45) 
       self.update_attribute(:disabled, true)
