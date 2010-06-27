@@ -1,11 +1,15 @@
 require 'rss/2.0'
 require 'open-uri'
 require 'acts_as_commentable'
+require 'ruby-prof'
+
 ActiveRecord::Base.send(:include, Juixe::Acts::Commentable)
 
 class Feed < ActiveRecord::Base
   has_many :feed_items, :dependent => :destroy
   has_many :user_preferences
+  
+  belongs_to :site
   
   acts_as_commentable
   
@@ -47,7 +51,12 @@ class Feed < ActiveRecord::Base
   
   # Updates the feed
   def update_feed    
+    return if (self.disabled)
+    
+    startTime = Time.now
+    
     result = Feedzirra::Feed.fetch_and_parse(feed_url, :compress => true, :timeout => 5) 
+    
     save_from_result(result)
   
     # Update the ratings for all the feed items created with 3 days.
@@ -55,6 +64,11 @@ class Feed < ActiveRecord::Base
     
     # Force the feed's rating to be updated
     self.rating
+    
+    # Ensure that the operation took less than 15 seconds. If it took more, set the feed to disabled.
+    if(Time.now - startTime > 15) 
+      update_attribute(:disabled, true)
+    end
   end
   
   def feed_items_sorted
@@ -68,6 +82,7 @@ class Feed < ActiveRecord::Base
       entries.each do |item|
         new_feed_item = FeedItem.initialize_from_entry(item)
         unless FeedItem.exists?(:guid => new_feed_item.guid)
+          startTime = Time.now
           new_feed_item.save!
           add_feed_item(new_feed_item, feed_parse_log)        
         end        
@@ -95,6 +110,12 @@ class Feed < ActiveRecord::Base
     # be present.
     return false unless result && result.respond_to?('title') && result.title
     
+    # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
+    if (result.entries.size() > 45) 
+      self.update_attribute(:disabled, true)
+      return
+    end
+    
     self.title = result.title.strip
 
     # The SAX machine may or may not have added description
@@ -102,7 +123,7 @@ class Feed < ActiveRecord::Base
 
     self.url = result.url.strip if result.url    
     # Bug: Fix image url parsing
-    self.image_url = result.image.url.strip if result.respond_to?('image') && result.image && result.image.url
+    self.image_url = result.image.url.strip if result.respond_to?('image') && result.image && result.image.url  
     add_entries(result.entries, feed_parse_log)
     feed_parse_log.parse_finish = Time.new
     feed_parse_log.save

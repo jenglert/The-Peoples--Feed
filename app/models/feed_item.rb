@@ -54,26 +54,22 @@ class FeedItem < ActiveRecord::Base
   end
   
   def update_categories(categories)
-    temp = []
     categories.each do |rss_category|
       rss_category.strip.split(',').each do |rss_category_split|
         # Create the new category is necessary
         category_name = rss_category_split.strip
-        unless temp.include? category_name
-          temp << category_name
-          category = Category.find_by_name(category_name)
-          unless category  
-            # Try to find a merge category before creating a new category.x
-            category_merge = CategoryMerge.find_by_merge_src(category_name)
-            if category_merge
-              category = Category.find_by_id(category_merge.merge_target)
-            end 
-          end
-          if !category
-            category = Category.new :name => category_name
-          end
-          self.categories << category
+        category = Category.find_by_name(category_name)
+        unless category  
+          # Try to find a merge category before creating a new category.
+          category_merge = CategoryMerge.find_by_merge_src(category_name)
+          if category_merge
+            category = Category.find_by_id(category_merge.merge_target)
+          end 
         end
+        if !category
+          category = Category.new(:name => category_name).save!
+        end
+        self.categories << category unless self.categories.include? category
       end
     end
     
