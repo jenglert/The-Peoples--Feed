@@ -66,6 +66,7 @@ class Feed < ActiveRecord::Base
     
     # Ensure that the operation took less than 15 seconds. If it took more, set the feed to disabled.
     if(Time.now - startTime > 15) 
+      update_attributes(:disabled_reason, "Too long processing (#{Time.now - startTime})")
       update_attribute(:disabled, true)
     end
   end
@@ -112,7 +113,8 @@ class Feed < ActiveRecord::Base
 
     # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
     if (result.entries.size() > 45) 
-      self.update_attribute(:disabled, true)
+      update_attribute(:disabled_reason, "Too many entires " + result.entries.size().to_s)
+      update_attribute(:disabled, true)
       return
     end
     

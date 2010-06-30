@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :collection => { :login_submit => :post }
   map.connect 'login', :controller => 'users', :action => 'login'
   map.connect 'logout', :controller => 'users', :action => 'logout'
+  map.connect 'feed/admin', :controller => 'feed', :action => 'admin'
   map.resources :feed
   map.resources :feed_comment
   map.connect 'feed_item/media', :controller => 'feed_item', :action => 'media'

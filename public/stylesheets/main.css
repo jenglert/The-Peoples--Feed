@@ -43,7 +43,7 @@ INPUT                      { -moz-border-radius: 5px; -webkit-border-radius: 5px
 .footer A:VISITED       { font-size: 13px; }
 .centerColumn, .rightHandList   { vertical-align: top; text-align: center; float:left; }
 .centerColumn                   { width: 740px; padding-top: 10px; padding-right: 10px; }
-.rightHandList                  { width: 175px; }
+.rightHandList                  { width: 175px; padding-top: 15px; }
 .rightHandList H3               { padding: 3px 0px; margin-top: 10px; margin-bottom: 5px;
 								  background-color: #CCF; color: black;}
 								
@@ -225,3 +225,8 @@ TABLE.userSignup .rightAlign { text-align: right; }
 
 /* Forgot Password Screen */
 .forgotPassword FORM       { padding-top: 10px; padding-bottom: 15px;  }
+
+/* Admin Feed Listing Pages */
+.adminFeedsPage            { font-size: 12px; padding-top: 15px; }
+.adminFeedsPage TABLE TD,
+.adminFeedsPage Table TH   { border: 1px solid black; }

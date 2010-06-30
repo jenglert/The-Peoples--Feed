@@ -47,4 +47,9 @@ class FeedController < ApplicationController
     redirect_to :controller => 'feed', :action => 'index'
   end
   
+  def admin
+    @feeds = Feed.find(:all)
+    render :layout => 'search'
+  end
+  
 end
