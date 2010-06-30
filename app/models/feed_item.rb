@@ -74,7 +74,7 @@ class FeedItem < ActiveRecord::Base
     end
     
   rescue => ex
-    LOG.error "Failed to update categories: #{ex.message}: #{ex.backtrace}"
+    logger.error "Failed to update categories: #{ex.message}: #{ex.backtrace}"
   end
   
   def update_rating
