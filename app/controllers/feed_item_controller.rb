@@ -1,7 +1,13 @@
 class FeedItemController < ApplicationController
 
   def show
-      @feed_item = FeedItem.find(params[:id])
+      begin
+        @feed_item = FeedItem.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => rnf
+        flash[:error] = "Unable to find feed item"
+        redirect_to '/'
+        return
+      end
 
       if @feed_item.clicks.nil?
         @feed_item.clicks = 0
