@@ -1,6 +1,6 @@
 <div class="adminFeedsPage">
 
-<table>
+<table border="1px">
 	<tr>
 		<th>ID</th>
 		<th>Title</th>
@@ -17,14 +17,16 @@
 	</tr>
 	<% @feeds.each { |it| %>
 		<tr>
-			<td><%= it.id %></td>
-			<td><%= it.title %></td>
-			<td><%= it.image_url %></td>
-			<td><%= it.feed_url %></td>
-			<td><%= it.description %></td>
-			<td><%= it.created_at %></td>
-			<td><%= it.updated_at %></td>
-			<td><%= it.url %></td>
+			<td>
+				<%= link_to it.id, :controller => "feed", :action => "admin_parse_logs", :id => it.id %>
+			</td>
+			<td title="<%= it.title %>"><%= truncate(it.title, 15, '...') %></td>
+			<td title="<%= it.image_url %>"><%= truncate(it.image_url, 15, '...') %></td>
+			<td title="<%= it.feed_url %>"><%= truncate(it.feed_url, 15, '...') %></td>
+			<td title="<%= it.description %>"><%= truncate(it.description, 20, '...') %></td>
+			<td><%= it.created_at.pretty() %></td>
+			<td><%= it.updated_at.pretty() %></td>
+			<td title="<% it.url %>"><%= truncate(it.url, 15, '...') %></td>
 			<td><%= it.clicks %></td>
 			<td><%= it.rating %></td>
 			<td><%= it.disabled %></td>

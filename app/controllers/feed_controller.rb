@@ -49,7 +49,13 @@ class FeedController < ApplicationController
   
   def admin
     @feeds = Feed.find(:all)
-    render :layout => 'search'
+    render :layout => 'admin'
+  end
+  
+  def admin_parse_logs
+    @logs = FeedParseLog.find(:all, :limit => 30, :conditions => ['feed_id = ?', params[:id]], :order => 'parse_start desc')
+    @feed_id = params[:id]
+    render :layout => 'admin'
   end
   
 end

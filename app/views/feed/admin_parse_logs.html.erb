@@ -1,0 +1,19 @@
+<h2>Results for <%= @feed_id %></h2>
+<table border="1px">
+	<tr>
+		<th>ID</th>
+		<th>Items Added</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Time</th>
+	</tr>
+	<% @logs.each{ |it| %>
+		<tr>
+			<td><%= it.id %></td>
+			<td><%= it.feed_items_added %></td>
+			<td><%= it.parse_start ? it.parse_start : "&nbsp;" %></td>
+			<td><%= it.parse_finish ? it.parse_finish : "&nbsp;" %></td>
+			<td><%= (it.parse_finish and it.parse_start) ? (it.parse_finish - it.parse_start) : "&nbsp;" %></td>
+		</tr>
+	<% } %>	
+</table>	
