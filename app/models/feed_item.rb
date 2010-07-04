@@ -14,7 +14,20 @@ class FeedItem < ActiveRecord::Base
   named_scope :for_feed, lambda { |*args| {:conditions => ["feed_id = ?", args.first]}}
   
   def FeedItem.find_top_feed_items
-    FeedItem.find(:all, :limit => 20, :order => 'rating desc')
+    @feedItems = FeedItem.find(:all, :limit => 50, :order => 'rating desc')
+    feedPenalty = {}
+    
+    @feedItems.each{ |feedItem| 
+      if (feedPenalty[feedItem.feed]) 
+        feedItem.rating -= feedPenalty[feedItem.feed]
+        feedPenalty[feedItem.feed] = feedPenalty[feedItem.feed] * 1.5
+      else
+        feedPenalty[feedItem.feed] = 1 
+      end 
+    }
+    @feedItems.sort(){ |a, b| b.rating <=> a.rating }
+    
+    @feedItems.slice(0,25)
   end
   
   # Finds feed items related to the current feed item we are looking at.
