@@ -15,8 +15,9 @@ class FeedItem < ActiveRecord::Base
   
   def FeedItem.find_top_feed_items
     @feedItems = FeedItem.find(:all, :limit => 50, :order => 'rating desc')
-    feedPenalty = {}
     
+    # Ensure that the list of feed items pulls from a variety of different feeds.
+    feedPenalty = {}    
     @feedItems.each{ |feedItem| 
       if (feedPenalty[feedItem.feed]) 
         feedItem.rating -= feedPenalty[feedItem.feed]
