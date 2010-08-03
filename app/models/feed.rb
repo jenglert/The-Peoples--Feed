@@ -66,7 +66,7 @@ class Feed < ActiveRecord::Base
     
     # Ensure that the operation took less than 15 seconds. If it took more, set the feed to disabled.
     if(Time.now - startTime > 15) 
-      update_attributes(:disabled_reason, "Too long processing (#{Time.now - startTime})")
+      update_attribute(:disabled_reason, "Too long processing (#{Time.now - startTime})")
       update_attribute(:disabled, true)
     end
   end
