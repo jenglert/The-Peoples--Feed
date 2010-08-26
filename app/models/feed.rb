@@ -64,7 +64,7 @@ class Feed < ActiveRecord::Base
     # Force the feed's rating to be updated
     self.rating
     
-    # Ensure that the operation took less than 15 seconds. If it took more, set the feed to disabled.
+    # Ensure that the operation took less than 30 seconds. If it took more, set the feed to disabled.
     if(Time.now - startTime > 30) 
       update_attribute(:disabled_reason, "Took too long processing (#{Time.now - startTime})")
       update_attribute(:disabled, true)
