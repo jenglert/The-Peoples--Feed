@@ -64,8 +64,8 @@ class Feed < ActiveRecord::Base
     # Force the feed's rating to be updated
     self.rating
     
-    # Ensure that the operation took less than 30 seconds. If it took more, set the feed to disabled.
-    if(Time.now - startTime > 30) 
+    # Ensure that the operation took less than 60 seconds. If it took more, set the feed to disabled.
+    if(Time.now - startTime > 60) 
       update_attribute(:disabled_reason, "Took too long processing (#{Time.now - startTime})")
       update_attribute(:disabled, true)
     end
@@ -112,7 +112,7 @@ class Feed < ActiveRecord::Base
     
 
     # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
-    if (result.entries.size() > 45) 
+    if (result.entries.size() > 55) 
       update_attribute(:disabled_reason, "Too many entires " + result.entries.size().to_s)
       update_attribute(:disabled, true)
       return
