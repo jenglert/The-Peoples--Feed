@@ -1,7 +1,5 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
 
   # render new.rhtml
   def new
@@ -12,11 +10,10 @@ class SessionsController < ApplicationController
     if logged_in?
 
       # Always drop the logged in cookie.
-      cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => Time.new + 360.days }
+      cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => 360.days.from_now }
 
       default = '/'
-
-      puts "referrer:" + request.referrer
+      
       # Attempt to determine if we came from the login page, if so, do nothing. If not, go to the page we used to be at
       default = request.referrer if !request.referrer.include?('sessions')
 
