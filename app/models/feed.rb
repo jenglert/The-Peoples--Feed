@@ -29,7 +29,7 @@ class Feed < ActiveRecord::Base
   end
   
   def Feed.update_some
-    15.times do
+    5.times do
       Feed.random_feed.update_feed
     end
   end
