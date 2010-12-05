@@ -24,6 +24,16 @@ class Feed < ActiveRecord::Base
     FeedParseLog.find_all_by_feed_id(self.id).each { |fpl| fpl.destroy }
   end
   
+  def Feed.random_feed
+    Feed.all[rand(Feed.count)]
+  end
+  
+  def Feed.update_some
+    15.times do
+      Feed.random_feed.update_feed
+    end
+  end
+  
   def validate
     if feed_items.length == 0
       errors.add_to_base 'Sorry, we were unable to parse the feed you provided.  Please double check the URL you have provided.'
