@@ -123,7 +123,7 @@ class Feed < ActiveRecord::Base
     
 
     # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
-    if (result.entries.size() > 55) 
+    if (result.entries.size() > 200) 
       update_attribute(:disabled_reason, "Too many entires " + result.entries.size().to_s)
       update_attribute(:disabled, true)
       return
