@@ -1,0 +1,19 @@
+<td>
+	<%= link_to it.id, :controller => "feed", :action => "admin_parse_logs", :id => it.id %>
+</td>
+<td title="<%= it.title %>"><%= truncate(it.title, 15, '...') %></td>
+<td title="<%= it.image_url %>"><%= truncate(it.image_url, 15, '...') || "&nbsp;" %></td>
+<td title="<%= it.feed_url %>"><%= truncate(it.feed_url, 15, '...') %></td>
+<td title="<%= it.description %>"><%= truncate(it.description, 20, '...') || "&nbsp;" %></td>
+<td><%= it.created_at.pretty() %></td>
+<td><%= it.updated_at.pretty() %></td>
+<td title="<% it.url %>"><%= truncate(it.url, 15, '...') %></td>
+<td><%= it.clicks %></td>
+<td><%= it.rating(false) %></td>
+<td><%= it.disabled %></td>
+<td><%= it.disabled_reason || "&nbsp;" %></td>
+<td>
+	<% if it.disabled %>
+		<a href="javascript:tpf.enableFeed(<%= it.id %>)">Enable</a>
+	<% else %> &nbsp; <% end %>
+</td>

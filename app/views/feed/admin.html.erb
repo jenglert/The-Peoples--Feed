@@ -14,23 +14,11 @@
 		<th>Rating</th>
 		<th>Disabled</th>
 		<th>Disabled Reason</th>
+		<th>Actions</th>
 	</tr>
 	<% @feeds.each { |it| %>
-		<tr>
-			<td>
-				<%= link_to it.id, :controller => "feed", :action => "admin_parse_logs", :id => it.id %>
-			</td>
-			<td title="<%= it.title %>"><%= truncate(it.title, 15, '...') %></td>
-			<td title="<%= it.image_url %>"><%= truncate(it.image_url, 15, '...') %></td>
-			<td title="<%= it.feed_url %>"><%= truncate(it.feed_url, 15, '...') %></td>
-			<td title="<%= it.description %>"><%= truncate(it.description, 20, '...') %></td>
-			<td><%= it.created_at.pretty() %></td>
-			<td><%= it.updated_at.pretty() %></td>
-			<td title="<% it.url %>"><%= truncate(it.url, 15, '...') %></td>
-			<td><%= it.clicks %></td>
-			<td><%= it.rating %></td>
-			<td><%= it.disabled %></td>
-			<td><%= it.disabled_reason %></td>
+		<tr id="feedRow<%= it.id %>">
+			<%= render :partial => 'admin_row', :locals => { :it => it } %>
 		</tr>
 	<% } %>
 </table>

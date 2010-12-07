@@ -41,7 +41,7 @@ class Feed < ActiveRecord::Base
   end
   
   # Determines the rating for
-  def rating
+  def rating(perform_update = true)
     return 0 if new_record?
     return 0 if self.feed_items.count.zero?    
     calculated_rating = 0

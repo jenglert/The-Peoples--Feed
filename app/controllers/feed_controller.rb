@@ -48,8 +48,21 @@ class FeedController < ApplicationController
   end
   
   def admin
-    @feeds = Feed.find(:all)
+    @feeds = Feed.find(:all, :order => 'rating desc')
     render :layout => 'admin'
+  end
+  
+  def enable_feed
+    @feed = Feed.find(params[:id])
+    @feed.update_attributes(:disabled => 0, :disabled_reason => nil)
+    
+    render :layout => false
+  end
+  
+  def admin_row
+    @feed = Feed.find(params[:id])
+    
+    render :layout => false
   end
   
   def admin_parse_logs

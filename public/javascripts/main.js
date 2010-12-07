@@ -29,6 +29,14 @@ tpf.hideShowEmailAFriendSection = function() {
 	hiddenElements.show();
 }
 
+// Enables a particular feed
+tpf.enableFeed = function(id) {
+	jQuery.ajax({
+		dataType: 'script',
+		url: '/feed/enable_feed?id=' + id	
+	});
+}
+
 // Ensure that jQuery sends all javascript files with a text/javascript header
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}

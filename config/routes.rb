@@ -48,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'logout', :controller => 'users', :action => 'logout'
   map.connect 'feed/admin_parse_logs', :controller => 'feed', :action => 'admin_parse_logs'
   map.connect 'feed/admin', :controller => 'feed', :action => 'admin'
+  map.connect 'feed/admin_row', :controller => 'feed', :action => 'admin_row'
+  map.connect 'feed/enable_feed', :controller => 'feed', :action => 'enable_feed'
   map.resources :feed
   map.resources :feed_comment
   map.connect 'feed_item/media', :controller => 'feed_item', :action => 'media'
