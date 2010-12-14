@@ -29,7 +29,7 @@ class Feed < ActiveRecord::Base
   end
   
   def Feed.update_some
-    5.times do
+    3.times do
       Feed.random_feed.update_feed
     end
   end
@@ -123,7 +123,7 @@ class Feed < ActiveRecord::Base
     
 
     # Ensure that the feed doesn't have too many entries. If it does, ignore the feed.
-    if (result.entries.size() > 200) 
+    if (result.entries.size() > 300) 
       update_attribute(:disabled_reason, "Too many entires " + result.entries.size().to_s)
       update_attribute(:disabled, true)
       return
