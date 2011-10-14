@@ -2,3 +2,5 @@ The Peoples Feed
 ================
 
 This Ruby on Rails project provides a framework for parsing and downloading RSS feeds as a website.  This project could easily be transformed into something much more interesting than http://www.thepeoplesfeed.com.  For example, you could use this as the base for a site that pulls from the twitter accounts and blogs of professional athletes.
+
+Download it now!
